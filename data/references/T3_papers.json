@@ -1,0 +1,90 @@
+[
+  {
+    "id": 1,
+    "title": "TDC: Therapeutics Data Commons",
+    "authors": "Huang et al.",
+    "arxiv_id": "2102.09548",
+    "url": "https://arxiv.org/abs/2102.09548",
+    "year": 2021,
+    "venue": "NeurIPS 2021 Datasets Track",
+    "type": "benchmark",
+    "summary": "Unified framework for therapeutic tasks including ADMET, drug-target interaction, and molecular generation."
+  },
+  {
+    "id": 2,
+    "title": "TDC-2: Multimodal Foundation for Therapeutic Science",
+    "authors": "Velez-Arce et al.",
+    "arxiv_id": "",
+    "url": "https://doi.org/10.1101/2024.06.12.598655",
+    "year": 2024,
+    "venue": "bioRxiv 2024",
+    "type": "benchmark",
+    "summary": "Second generation TDC with multimodal data, expanded ADMET benchmarks, and improved evaluation protocols."
+  },
+  {
+    "id": 3,
+    "title": "Matbench Discovery: An evaluation framework for ML crystal stability prediction",
+    "authors": "Riebesell et al.",
+    "arxiv_id": "",
+    "url": "https://doi.org/10.1038/s42256-023-00583-6",
+    "year": 2025,
+    "venue": "Nature Machine Intelligence 2025",
+    "type": "benchmark",
+    "summary": "~250K crystal stability predictions. SOTA F1=0.924. Evaluation framework for materials discovery ML."
+  },
+  {
+    "id": 4,
+    "title": "AlphaFold 3: Accurate structure prediction of biomolecular interactions",
+    "authors": "Abramson et al.",
+    "arxiv_id": "",
+    "url": "https://doi.org/10.1038/s41586-024-07487-w",
+    "year": 2024,
+    "venue": "Nature 2024",
+    "type": "method",
+    "summary": "Joint structure prediction of proteins, nucleic acids, small molecules, ions, and post-translational modifications."
+  },
+  {
+    "id": 5,
+    "title": "RFdiffusion2: De novo enzyme active site design",
+    "authors": "Ahern et al.",
+    "arxiv_id": "",
+    "url": "https://doi.org/10.1038/s41592-025-02975-x",
+    "year": 2026,
+    "venue": "Nature Methods 2026",
+    "type": "method",
+    "summary": "De novo enzyme active site design using diffusion models. Demonstrates AI-driven molecular design capabilities."
+  },
+  {
+    "id": 6,
+    "title": "IsoDDE (AlphaFold4)",
+    "authors": "Isomorphic Labs",
+    "arxiv_id": "",
+    "url": "https://doi.org/10.5281/zenodo.18606681",
+    "year": 2026,
+    "venue": "Zenodo 2026",
+    "type": "finding",
+    "summary": "PROVOCATIVE: Accuracy doubled over AlphaFold3 but closed-source, sparking open vs closed science debate."
+  },
+  {
+    "id": 7,
+    "title": "Rentosertib Phase IIa: First AI-discovered drug clinical validation",
+    "authors": "Xu et al.",
+    "arxiv_id": "",
+    "url": "https://doi.org/10.1038/s41591-025-03743-2",
+    "year": 2025,
+    "venue": "Nature Medicine 2025",
+    "type": "finding",
+    "summary": "PROVOCATIVE: First AI-discovered drug (Insilico Medicine) passes clinical validation. Proof of AI drug discovery."
+  },
+  {
+    "id": 8,
+    "title": "The AI Drug Revolution Needs a Revolution",
+    "authors": "Jacobson",
+    "arxiv_id": "",
+    "url": "https://doi.org/10.1038/s44386-025-00013-6",
+    "year": 2025,
+    "venue": "npj Drug Discovery 2025",
+    "type": "finding",
+    "summary": "PROVOCATIVE: AI has not improved the ~90% clinical failure rate. Calls for fundamental rethinking of AI drug discovery."
+  }
+]

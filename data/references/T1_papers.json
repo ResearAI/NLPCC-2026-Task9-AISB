@@ -1,0 +1,90 @@
+[
+  {
+    "id": 1,
+    "title": "Humanity's Last Exam",
+    "authors": "Phan, Gatti et al.",
+    "arxiv_id": "2501.14249",
+    "url": "https://arxiv.org/abs/2501.14249",
+    "year": 2026,
+    "venue": "Nature 2026",
+    "type": "benchmark",
+    "summary": "A benchmark of 2,500 expert-level academic questions across all domains to assess AI capabilities at the frontier of human knowledge."
+  },
+  {
+    "id": 2,
+    "title": "HLE-Verified: A Systematic Verification and Structured Revision",
+    "authors": "",
+    "arxiv_id": "2602.13964",
+    "url": "https://arxiv.org/abs/2602.13964",
+    "year": 2026,
+    "venue": "arXiv Feb 2026",
+    "type": "benchmark",
+    "summary": "Verified version of HLE with 641 verified + 1,170 revised = 1,811 questions, improving answer reliability."
+  },
+  {
+    "id": 3,
+    "title": "FeatureBench: Benchmarking Agentic Coding for Complex Feature Development",
+    "authors": "Zhou et al.",
+    "arxiv_id": "2602.10975",
+    "url": "https://arxiv.org/abs/2602.10975",
+    "year": 2026,
+    "venue": "ICLR 2026",
+    "type": "benchmark",
+    "summary": "200 tasks across 24 Python repos testing complex feature development. SOTA GPT-5.1-Codex: 12.5%."
+  },
+  {
+    "id": 4,
+    "title": "s1: Simple Test-Time Scaling",
+    "authors": "Muennighoff et al.",
+    "arxiv_id": "2501.19393",
+    "url": "https://arxiv.org/abs/2501.19393",
+    "year": 2025,
+    "venue": "EMNLP 2025",
+    "type": "method",
+    "summary": "1,000 examples matching o1-preview performance, supporting test-time compute scaling route."
+  },
+  {
+    "id": 5,
+    "title": "DeepSeek-R1: Incentivizing Reasoning in LLMs through RL",
+    "authors": "DeepSeek",
+    "arxiv_id": "2501.12948",
+    "url": "https://arxiv.org/abs/2501.12948",
+    "year": 2026,
+    "venue": "Nature 2026",
+    "type": "method",
+    "summary": "RL-based reasoning model achieving strong performance across math, coding, and reasoning benchmarks."
+  },
+  {
+    "id": 6,
+    "title": "Does RL Really Incentivize Reasoning Beyond the Base Model?",
+    "authors": "Yue et al.",
+    "arxiv_id": "2504.13837",
+    "url": "https://arxiv.org/abs/2504.13837",
+    "year": 2025,
+    "venue": "NeurIPS 2025 Oral",
+    "type": "finding",
+    "summary": "PROVOCATIVE: RL merely releases rather than creates reasoning capabilities. Questions the fundamental assumption of RL-for-reasoning."
+  },
+  {
+    "id": 7,
+    "title": "The Illusion of Thinking",
+    "authors": "Shojaee et al. (Apple)",
+    "arxiv_id": "2506.06941",
+    "url": "https://arxiv.org/abs/2506.06941",
+    "year": 2025,
+    "venue": "arXiv Jun 2025",
+    "type": "finding",
+    "summary": "PROVOCATIVE: Reasoning models completely collapse on high-complexity tasks, suggesting fundamental limitations."
+  },
+  {
+    "id": 8,
+    "title": "Reasoning Models Don't Always Say What They Think",
+    "authors": "Chen et al. (Anthropic)",
+    "arxiv_id": "2505.05410",
+    "url": "https://arxiv.org/abs/2505.05410",
+    "year": 2025,
+    "venue": "arXiv May 2025",
+    "type": "finding",
+    "summary": "PROVOCATIVE: Chain-of-thought is unfaithful to actual model reasoning, undermining safety monitoring."
+  }
+]
