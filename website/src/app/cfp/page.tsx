@@ -103,11 +103,10 @@ export default function CfpPage() {
                 <div>
                   <div className="text-xs uppercase tracking-wider mb-2" style={{ color: 'var(--gray-400)' }}>Evaluation</div>
                   <div style={{ fontFamily: "'Source Code Pro', monospace" }} className="text-xs leading-relaxed">
-                    Dual Score = 0.4 x PQS + 0.3 x CAS + 0.2 x BI + 0.1 x ESR<br/>
-                    PQS: Paper Quality Score (innovation, originality)<br/>
-                    CAS: Claim Accuracy Score (paper vs logs)<br/>
-                    BI: Benchmark Improvement<br/>
-                    ESR: Experiment Success Rate<br/>
+                    Evaluated on:<br/>
+                    - Paper Quality (significance, novelty, methodology, writing)<br/>
+                    - Benchmark Performance<br/>
+                    - Reproducibility (CAS: claims vs experiment logs)<br/>
                     <span style={{ color: 'var(--gold-600)' }}>Top-10: human expert review</span>
                   </div>
                 </div>
@@ -134,9 +133,9 @@ export default function CfpPage() {
                 </p>
                 <div className="grid md:grid-cols-3 gap-4">
                   {[
-                    { id: "B-T1", name: "AI/CS Reasoning & Engineering", cn: "推理与工程", detail: "HLE-Verified 50q + FeatureBench 20 tasks", baseline: "SOTA: 37-45% / 12.5%" },
-                    { id: "B-T2", name: "Math & Proof", cn: "数学证明", detail: "FormalMATH 50 problems (Lean4)", baseline: "Baseline: 28% (DeepSeek-Prover)" },
-                    { id: "B-T3", name: "Scientific Discovery", cn: "科学发现", detail: "TDC ADMET 5 endpoints + Matbench", baseline: "Baseline: MAE 0.93" },
+                    { id: "T1", name: "AI/CS Reasoning & Engineering", cn: "推理与工程", detail: "HLE-Verified + FeatureBench", baseline: "Significant headroom" },
+                    { id: "T2", name: "Formal Math Proof", cn: "形式化数学证明", detail: "FormalMATH (Lean4)", baseline: "Significant headroom" },
+                    { id: "T3", name: "Scientific Discovery", cn: "自然科学发现", detail: "TDC ADMET + Matbench Discovery", baseline: "Significant headroom" },
                   ].map((t) => (
                     <div key={t.id} className="p-4 rounded-lg" style={{ background: 'var(--gray-100)', border: '1px solid var(--white-alpha-06)' }}>
                       <span className="text-xs font-semibold" style={{ color: 'var(--violet-500)', fontFamily: "'Source Code Pro', monospace" }}>{t.id}</span>

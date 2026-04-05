@@ -2,10 +2,10 @@ import Link from "next/link";
 import Image from "next/image";
 
 const STATS = [
-  { value: "12", label: "Research Directions", sub: "研究方向" },
-  { value: "113", label: "Benchmarks", sub: "评测基准" },
-  { value: "8", label: "AI Scientist Systems", sub: "AI 科学家系统" },
-  { value: "73%", label: "Fabrication Rate", sub: "结果伪造率", warn: true },
+  { value: "3", label: "Research Directions", sub: "研究方向" },
+  { value: "2", label: "Competition Tracks", sub: "竞赛赛道" },
+  { value: "24", label: "Reference Papers", sub: "参考论文" },
+  { value: "ICLR", label: "Paper Format", sub: "论文格式" },
 ];
 
 const WORKFLOW = [
@@ -86,7 +86,7 @@ export default function HomePage() {
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
           {STATS.map((s) => (
             <div key={s.label} className="card p-5 text-center">
-              <div style={{ fontFamily: "'Source Code Pro', monospace", color: s.warn ? 'var(--red-500)' : 'var(--navy-700)' }}
+              <div style={{ fontFamily: "'Source Code Pro', monospace", color: 'var(--navy-700)' }}
                    className="text-3xl font-semibold">
                 {s.value}
               </div>
