@@ -108,34 +108,11 @@ export default function IntegrityPage() {
         subtitle="A 4-layer anti-fabrication architecture. The first benchmark system designed to verify that AI research systems actually ran their claimed experiments."
       />
 
-      {/* 4-Layer Architecture */}
-      <div className="mb-12">
-        <h3
-          style={{ fontFamily: "'Playfair Display', Georgia, serif" }}
-          className="text-xl mb-6"
-        >
-          4-Layer Architecture
-        </h3>
-        <div className="flex justify-center mb-8">
-          <Image src="/integrity-layers.jpeg" alt="4-Layer Integrity Architecture: L1 Docker Sandbox, L2 Execution Trace, L3 CAS, L4 Canary Tokens"
-                 width={1600} height={900} className="rounded-xl"
-                 style={{ maxWidth: '700px', width: '100%', height: 'auto' }} />
-        </div>
-      </div>
-
-      {/* Evaluation Flow */}
-      <div className="mb-12">
-        <h3
-          style={{ fontFamily: "'Playfair Display', Georgia, serif" }}
-          className="text-xl mb-6"
-        >
-          Evaluation Flow
-        </h3>
-        <div className="flex justify-center mb-8">
-          <Image src="/integrity-flow.png" alt="Evaluation Flow: Submission → L1 Sandbox → L2 Trace → L3 CAS → L4 Canary → Final Score"
-                 width={2000} height={500} className="rounded-xl"
-                 style={{ maxWidth: '900px', width: '100%', height: 'auto' }} />
-        </div>
+      {/* 4-Layer Architecture — compact like homepage poster */}
+      <div className="flex justify-center mb-10">
+        <Image src="/integrity-layers.jpeg" alt="4-Layer Integrity Architecture"
+               width={800} height={450} className="rounded-xl"
+               style={{ maxWidth: '420px', width: '100%', height: 'auto' }} />
       </div>
 
       {/* Layer Cards */}
@@ -176,6 +153,13 @@ export default function IntegrityPage() {
             </div>
           ))}
         </div>
+      </div>
+
+      {/* Evaluation Flow */}
+      <div className="flex justify-center mb-8">
+        <Image src="/integrity-flow-tight.png" alt="Evaluation Flow: Submission → L1→L2→L3→L4 → Final Score"
+               width={1200} height={240} className="rounded-lg"
+               style={{ maxWidth: '700px', width: '100%', height: 'auto' }} />
       </div>
 
       {/* CAS Scoring */}
