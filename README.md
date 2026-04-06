@@ -6,8 +6,7 @@
 
 **AI系统能否自主进行科学研究？发现问题、思考探索、实验验证、表达结论。**
 
-[![Website](https://img.shields.io/badge/Website-Live-blue)](https://researai.github.io/NLPCC-2026-Task9-AISB/)
-[![Platform](https://img.shields.io/badge/Platform-Codabench-orange)](https://codabench.org)
+[![Register](https://img.shields.io/badge/Register-Google%20Form-green)](https://forms.gle/9oWtS77UduudpRM1A)
 
 [English](#task-description) | [中文](#任务描述) | [Tracks](#tracks--赛道) | [Timeline](#timeline--时间线) | [Submission](#submission--提交) | [Contact](#contact--联系方式)
 
