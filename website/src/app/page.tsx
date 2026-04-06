@@ -90,20 +90,14 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* AI Research Cycle */}
-      <section className="max-w-7xl mx-auto px-6 py-16">
-        <div className="text-center mb-8">
-          <h2 style={{ fontFamily: "'Playfair Display', Georgia, serif", color: 'var(--navy-700)' }} className="text-3xl font-semibold mb-2">
-            The Research Cycle
-          </h2>
-          <p style={{ color: 'var(--gray-500)', fontFamily: "'Noto Sans SC', sans-serif" }}>
-            发现问题 → 思考探索 → 实验验证 → 表达结论
-          </p>
-        </div>
-        <div className="flex justify-center">
-          <Image src={`${process.env.NEXT_PUBLIC_BASE_PATH || ""}/research-cycle.png`} alt="AI Scientific Research Cycle" width={800} height={450}
-                 className="rounded-xl" style={{ maxWidth: '600px', width: '100%', height: 'auto' }} />
-        </div>
+      {/* Research Cycle text */}
+      <section className="max-w-7xl mx-auto px-6 py-12 text-center">
+        <h2 style={{ fontFamily: "'Playfair Display', Georgia, serif", color: 'var(--navy-700)' }} className="text-3xl font-semibold mb-2">
+          The Research Cycle
+        </h2>
+        <p style={{ color: 'var(--gray-500)', fontFamily: "'Noto Sans SC', sans-serif" }}>
+          发现问题 → 思考探索 → 实验验证 → 表达结论
+        </p>
       </section>
 
       {/* Two Tracks Visual */}

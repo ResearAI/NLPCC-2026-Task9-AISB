@@ -12,31 +12,26 @@ interface LeaderboardEntry {
   autonomy: "auto" | "human";
   score: number;
   cas: number;
-  cost: string;
   integrity: "PASS" | "FLAGGED" | "FAIL";
   dualScore: number;
 }
 
 const DATA: Record<Track, LeaderboardEntry[]> = {
   T1: [
-    { rank: 1, team: "AISB Baseline", system: "Direct CoT", autonomy: "auto", score: 42.3, cas: 0.91, cost: "$8.20", integrity: "PASS", dualScore: 38.5 },
-    { rank: 2, team: "AutoResearch", system: "GPT-4o Agent", autonomy: "auto", score: 56.8, cas: 0.62, cost: "$18.50", integrity: "FLAGGED", dualScore: 35.2 },
-    { rank: 3, team: "DeepScientist", system: "Claude Opus + RAG", autonomy: "human", score: 61.2, cas: 0.31, cost: "$22.10", integrity: "FAIL", dualScore: 19.0 },
+    { rank: 1, team: "AISB Baseline", system: "Direct CoT", autonomy: "auto", score: 42.3, cas: 0.91, integrity: "PASS", dualScore: 38.5 },
+    { rank: 2, team: "AutoResearch", system: "GPT-4o Agent", autonomy: "auto", score: 56.8, cas: 0.62, integrity: "FLAGGED", dualScore: 35.2 },
   ],
   T2: [
-    { rank: 1, team: "AISB Baseline", system: "DeepSeek-Prover-V2", autonomy: "auto", score: 28.0, cas: 1.00, cost: "$12.40", integrity: "PASS", dualScore: 28.0 },
-    { rank: 2, team: "AutoResearch", system: "Lean4 + GPT-4o", autonomy: "auto", score: 34.0, cas: 0.88, cost: "$19.80", integrity: "PASS", dualScore: 29.9 },
-    { rank: 3, team: "DeepScientist", system: "AlphaProof-lite", autonomy: "human", score: 40.0, cas: 0.45, cost: "$25.60", integrity: "FLAGGED", dualScore: 18.0 },
+    { rank: 1, team: "AISB Baseline", system: "DeepSeek-Prover-V2", autonomy: "auto", score: 28.0, cas: 1.00, integrity: "PASS", dualScore: 28.0 },
+    { rank: 2, team: "AutoResearch", system: "Lean4 + GPT-4o", autonomy: "auto", score: 34.0, cas: 0.88, integrity: "PASS", dualScore: 29.9 },
   ],
   T3: [
-    { rank: 1, team: "AISB Baseline", system: "RF + XGBoost", autonomy: "auto", score: 45.2, cas: 0.95, cost: "$5.10", integrity: "PASS", dualScore: 42.9 },
-    { rank: 2, team: "AutoResearch", system: "AutoML Agent", autonomy: "auto", score: 58.7, cas: 0.72, cost: "$16.90", integrity: "PASS", dualScore: 42.3 },
-    { rank: 3, team: "DeepScientist", system: "GNN + LLM", autonomy: "human", score: 63.1, cas: 0.28, cost: "$21.30", integrity: "FAIL", dualScore: 17.7 },
+    { rank: 1, team: "AISB Baseline", system: "RF + XGBoost", autonomy: "auto", score: 45.2, cas: 0.95, integrity: "PASS", dualScore: 42.9 },
+    { rank: 2, team: "AutoResearch", system: "AutoML Agent", autonomy: "auto", score: 58.7, cas: 0.72, integrity: "PASS", dualScore: 42.3 },
   ],
   Overall: [
-    { rank: 1, team: "AISB Baseline", system: "Ensemble", autonomy: "auto", score: 38.5, cas: 0.95, cost: "$25.70", integrity: "PASS", dualScore: 36.6 },
-    { rank: 2, team: "AutoResearch", system: "Multi-Agent", autonomy: "auto", score: 49.8, cas: 0.74, cost: "$55.20", integrity: "FLAGGED", dualScore: 36.9 },
-    { rank: 3, team: "DeepScientist", system: "Full Pipeline", autonomy: "human", score: 54.8, cas: 0.35, cost: "$69.00", integrity: "FAIL", dualScore: 19.2 },
+    { rank: 1, team: "AISB Baseline", system: "Ensemble", autonomy: "auto", score: 38.5, cas: 0.95, integrity: "PASS", dualScore: 36.6 },
+    { rank: 2, team: "AutoResearch", system: "Multi-Agent", autonomy: "auto", score: 49.8, cas: 0.74, integrity: "FLAGGED", dualScore: 36.9 },
   ],
 };
 
@@ -68,7 +63,7 @@ function casColor(cas: number) {
 
 export default function LeaderboardPage() {
   const [activeTrack, setActiveTrack] = useState<Track>("Overall");
-  const [sortBy, setSortBy] = useState<"dualScore" | "score" | "cas" | "cost">(
+  const [sortBy, setSortBy] = useState<"dualScore" | "score" | "cas">(
     "dualScore"
   );
   const [autonomyFilter, setAutonomyFilter] = useState<"all" | "auto" | "human">("all");
@@ -77,9 +72,6 @@ export default function LeaderboardPage() {
     (e) => autonomyFilter === "all" || e.autonomy === autonomyFilter
   );
   const entries = [...filtered].sort((a, b) => {
-    if (sortBy === "cost") {
-      return parseFloat(a.cost.slice(1)) - parseFloat(b.cost.slice(1));
-    }
     return b[sortBy] - a[sortBy];
   });
 
@@ -158,12 +150,6 @@ export default function LeaderboardPage() {
               >
                 CAS {sortBy === "cas" ? "v" : ""}
               </th>
-              <th
-                className="py-3 px-4 text-right font-medium cursor-pointer hover:text-[var(--navy-700)] transition"
-                onClick={() => setSortBy("cost")}
-              >
-                Cost {sortBy === "cost" ? "v" : ""}
-              </th>
               <th className="py-3 px-4 text-center font-medium">Integrity</th>
               <th
                 className="py-3 px-4 text-right font-medium cursor-pointer hover:text-[var(--navy-700)] transition"
@@ -208,12 +194,6 @@ export default function LeaderboardPage() {
                 >
                   {row.cas.toFixed(2)}
                 </td>
-                <td
-                  className="py-4 px-4 text-right text-[var(--gray-500)]"
-                  style={{ fontFamily: "'Source Code Pro', monospace" }}
-                >
-                  {row.cost}
-                </td>
                 <td className="py-4 px-4 text-center">
                   <span
                     className={`px-2 py-0.5 rounded text-xs ${integrityStyle(
@@ -253,10 +233,6 @@ export default function LeaderboardPage() {
             <div>
               <strong className="text-[var(--navy-700)]">Dual Score</strong> -- Score x
               CAS. Penalizes fabrication. This is the primary ranking metric.
-            </div>
-            <div>
-              <strong className="text-[var(--navy-700)]">Cost</strong> -- Total API
-              spend during evaluation run
             </div>
           </div>
         </div>
