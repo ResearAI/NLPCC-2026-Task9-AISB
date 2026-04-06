@@ -1,3 +1,4 @@
+import Image from "next/image";
 import SectionHeading from "@/components/SectionHeading";
 
 const TIMELINE_EVENTS = [
@@ -92,6 +93,12 @@ export default function TimelinePage() {
         title="Timeline"
         subtitle="Key dates for AISB 2026, from registration through the NLPCC 2026 workshop."
       />
+
+      <div className="flex justify-center mb-12">
+        <Image src="/timeline-visual.png" alt="AISB 2026 Competition Timeline"
+               width={2000} height={500} className="rounded-xl"
+               style={{ maxWidth: '900px', width: '100%', height: 'auto' }} />
+      </div>
 
       <div className="relative">
         {/* Vertical line */}

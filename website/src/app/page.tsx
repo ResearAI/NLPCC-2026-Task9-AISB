@@ -2,20 +2,13 @@ import Link from "next/link";
 import Image from "next/image";
 
 const STATS = [
-  { value: "3", label: "Research Directions", sub: "研究方向" },
-  { value: "2", label: "Competition Tracks", sub: "竞赛赛道" },
-  { value: "24", label: "Reference Papers", sub: "参考论文" },
-  { value: "ICLR", label: "Paper Format", sub: "论文格式" },
+  { value: "12", label: "Research Directions", sub: "研究方向" },
+  { value: "113", label: "Benchmarks", sub: "评测基准" },
+  { value: "8", label: "AI Scientist Systems", sub: "AI 科学家系统" },
+  { value: "73%", label: "Fabrication Rate", sub: "结果伪造率", warn: true },
 ];
 
-const WORKFLOW = [
-  { step: "01", label: "Literature", cn: "文献阅读" },
-  { step: "02", label: "Hypothesis", cn: "假设提出" },
-  { step: "03", label: "Experiment", cn: "实验设计" },
-  { step: "04", label: "Execution", cn: "代码执行" },
-  { step: "05", label: "Analysis", cn: "结果分析" },
-  { step: "06", label: "Paper", cn: "论文产出" },
-];
+// Research cycle and dual-track visuals are now image-based (see /public/)
 
 export default function HomePage() {
   return (
@@ -86,7 +79,7 @@ export default function HomePage() {
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
           {STATS.map((s) => (
             <div key={s.label} className="card p-5 text-center">
-              <div style={{ fontFamily: "'Source Code Pro', monospace", color: 'var(--navy-700)' }}
+              <div style={{ fontFamily: "'Source Code Pro', monospace", color: s.warn ? 'var(--red-500)' : 'var(--navy-700)' }}
                    className="text-3xl font-semibold">
                 {s.value}
               </div>
@@ -97,56 +90,35 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* AI Workflow */}
+      {/* AI Research Cycle */}
       <section className="max-w-7xl mx-auto px-6 py-16">
-        <div className="text-center mb-10">
+        <div className="text-center mb-8">
           <h2 style={{ fontFamily: "'Playfair Display', Georgia, serif", color: 'var(--navy-700)' }} className="text-3xl font-semibold mb-2">
-            Autonomous AI Research Pipeline
+            The Research Cycle
           </h2>
           <p style={{ color: 'var(--gray-500)', fontFamily: "'Noto Sans SC', sans-serif" }}>
-            AI 自主科研全流程
+            发现问题 → 思考探索 → 实验验证 → 表达结论
           </p>
         </div>
-        <div className="flex flex-wrap justify-center gap-3">
-          {WORKFLOW.map((w, i) => (
-            <div key={w.step} className="flex items-center gap-3">
-              <div className="card-gold px-5 py-4 text-center min-w-[100px]">
-                <div className="text-xs font-semibold mb-1" style={{ color: 'var(--gold-600)', fontFamily: "'Source Code Pro', monospace" }}>{w.step}</div>
-                <div className="text-sm font-medium" style={{ color: 'var(--navy-700)' }}>{w.label}</div>
-                <div className="text-xs mt-0.5" style={{ color: 'var(--gray-400)', fontFamily: "'Noto Sans SC', sans-serif" }}>{w.cn}</div>
-              </div>
-              {i < WORKFLOW.length - 1 && (
-                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" className="shrink-0" style={{ color: 'var(--gold-500)', opacity: 0.5 }}>
-                  <path d="M6 10h8m0 0l-3-3m3 3l-3 3" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
-                </svg>
-              )}
-            </div>
-          ))}
+        <div className="flex justify-center">
+          <Image src="/research-cycle.png" alt="AI Scientific Research Cycle" width={800} height={450}
+                 className="rounded-xl" style={{ maxWidth: '600px', width: '100%', height: 'auto' }} />
         </div>
       </section>
 
-      {/* Fabrication Callout */}
-      <section className="max-w-7xl mx-auto px-6 py-4">
-        <div className="rounded-2xl p-8 relative overflow-hidden" style={{ background: 'var(--red-50)', border: '1px solid rgba(229,62,62,0.15)' }}>
-          <span className="px-3 py-1 rounded-full text-xs font-semibold"
-                style={{ background: 'rgba(26,54,93,0.08)', color: 'var(--navy-700)', border: '1px solid rgba(26,54,93,0.15)', fontFamily: "'Source Code Pro', monospace" }}>
-            WHY THIS MATTERS
-          </span>
-          <h3 style={{ fontFamily: "'Playfair Display', Georgia, serif", color: 'var(--navy-800)' }}
-              className="text-2xl md:text-3xl mt-4 mb-4 font-semibold">
-            The full research cycle:{" "}
-            <span style={{ color: 'var(--gold-600)' }}>Idea + Experiment + Report</span>
-          </h3>
-          <p style={{ color: 'var(--gray-600)' }} className="leading-relaxed max-w-3xl">
-            Can an AI discover a meaningful scientific problem? Form a hypothesis and reason about
-            why an approach should work? Design experiments that validate — not just optimize?
-            Then communicate findings in a way humans can understand and reproduce?
-          </p>
-          <p className="leading-relaxed max-w-3xl mt-3 text-sm" style={{ color: 'var(--gray-500)', fontFamily: "'Noto Sans SC', sans-serif" }}>
-            发现科学问题 → 思考探索 → 假设-实验验证 → 将结论讲出来，让人理解。73%的AI论文伪造结果，AISB通过CAS验证每个声明的真实性。
-          </p>
+      {/* Two Tracks Visual */}
+      <section className="max-w-7xl mx-auto px-6 py-8">
+        <div className="flex justify-center">
+          <Image src="/dual-track.jpeg" alt="Track A: Scientific Research vs Track B: SOTA Challenge"
+                 width={1600} height={800} className="rounded-xl"
+                 style={{ maxWidth: '800px', width: '100%', height: 'auto' }} />
+        </div>
+        <p className="text-center mt-4 text-sm" style={{ color: 'var(--gray-500)', fontFamily: "'Noto Sans SC', sans-serif" }}>
+          Track A 以科学发现为核心，Track B 以实验提升为核心，共享 AI Scientist 底座
+        </p>
+        <div className="text-center mt-4">
           <Link href="/integrity"
-                className="inline-block mt-6 px-5 py-2.5 rounded-lg text-sm font-medium transition"
+                className="inline-block px-5 py-2.5 rounded-lg text-sm font-medium transition"
                 style={{ background: 'rgba(26,54,93,0.08)', color: 'var(--navy-700)', border: '1px solid rgba(26,54,93,0.15)' }}>
             How we verify integrity
           </Link>

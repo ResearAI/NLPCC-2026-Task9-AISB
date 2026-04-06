@@ -1,3 +1,4 @@
+import Image from "next/image";
 import SectionHeading from "@/components/SectionHeading";
 
 const LAYERS = [
@@ -106,6 +107,13 @@ export default function IntegrityPage() {
         title="Integrity Verification System"
         subtitle="A 4-layer anti-fabrication architecture. The first benchmark system designed to verify that AI research systems actually ran their claimed experiments."
       />
+
+      {/* Pipeline Visual */}
+      <div className="flex justify-center mb-12">
+        <Image src="/integrity-pipeline.png" alt="5-Stage Evaluation Pipeline"
+               width={2000} height={400} className="rounded-xl"
+               style={{ maxWidth: '800px', width: '100%', height: 'auto' }} />
+      </div>
 
       {/* Architecture Overview */}
       <div className="mb-16">
