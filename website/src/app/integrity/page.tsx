@@ -108,63 +108,38 @@ export default function IntegrityPage() {
         subtitle="A 4-layer anti-fabrication architecture. The first benchmark system designed to verify that AI research systems actually ran their claimed experiments."
       />
 
-      {/* Pipeline Visual */}
-      <div className="flex justify-center mb-12">
-        <Image src={`${process.env.NEXT_PUBLIC_BASE_PATH || ""}/integrity-pipeline.png`} alt="5-Stage Evaluation Pipeline"
-               width={2000} height={400} className="rounded-xl"
-               style={{ maxWidth: '800px', width: '100%', height: 'auto' }} />
-      </div>
-
-      {/* Architecture Overview */}
-      <div className="mb-16">
+      {/* 4-Layer Architecture */}
+      <div className="mb-12">
         <h3
           style={{ fontFamily: "'Playfair Display', Georgia, serif" }}
           className="text-xl mb-6"
         >
           4-Layer Architecture
         </h3>
-
-        {/* Text-based diagram */}
-        <div className="card rounded-xl p-6 bg-gray-50 mb-8 overflow-x-auto">
-          <pre
-            className="text-xs leading-relaxed text-[var(--gray-500)]"
-            style={{ fontFamily: "'Source Code Pro', monospace" }}
-          >
-{`  +--------------------------------------------------------------------+
-  |                     AISB Integrity System                          |
-  +--------------------------------------------------------------------+
-  |                                                                    |
-  |  L4  Canary Token Detection                                        |
-  |  +-----------------------------------------------------------------+
-  |  |  Hidden tokens in test data catch label peeking                 |
-  |  +-----------------------------------------------------------------+
-  |                                                                    |
-  |  L3  Claim Accuracy Score (CAS)                                    |
-  |  +-----------------------------------------------------------------+
-  |  |  Every number in output traced to execution log                 |
-  |  |  CAS = verified_claims / total_claims                           |
-  |  +-----------------------------------------------------------------+
-  |                                                                    |
-  |  L2  Execution Trace Logging                                       |
-  |  +-----------------------------------------------------------------+
-  |  |  All commands, API calls, file writes logged + hashed           |
-  |  +-----------------------------------------------------------------+
-  |                                                                    |
-  |  L1  Docker Sandbox                                                |
-  |  +-----------------------------------------------------------------+
-  |  |  Isolated container | No internet | Read-only FS | Resource cap |
-  |  +-----------------------------------------------------------------+
-  |                                                                    |
-  +--------------------------------------------------------------------+
-
-  Submission  --->  L1 (sandbox)  --->  L2 (trace)  --->  L3 (CAS)  --->  L4 (canary)
-                                                                            |
-                                                                       Final Score
-                                                                   DualScore = Raw x CAS`}
-          </pre>
+        <div className="flex justify-center mb-8">
+          <Image src={`${process.env.NEXT_PUBLIC_BASE_PATH || ""}/integrity-layers.jpeg`} alt="4-Layer Integrity Architecture: L1 Docker Sandbox, L2 Execution Trace, L3 CAS, L4 Canary Tokens"
+                 width={1600} height={900} className="rounded-xl"
+                 style={{ maxWidth: '700px', width: '100%', height: 'auto' }} />
         </div>
+      </div>
 
-        {/* Layer Cards */}
+      {/* Evaluation Flow */}
+      <div className="mb-12">
+        <h3
+          style={{ fontFamily: "'Playfair Display', Georgia, serif" }}
+          className="text-xl mb-6"
+        >
+          Evaluation Flow
+        </h3>
+        <div className="flex justify-center mb-8">
+          <Image src={`${process.env.NEXT_PUBLIC_BASE_PATH || ""}/integrity-flow.png`} alt="Evaluation Flow: Submission → L1 Sandbox → L2 Trace → L3 CAS → L4 Canary → Final Score"
+                 width={2000} height={500} className="rounded-xl"
+                 style={{ maxWidth: '900px', width: '100%', height: 'auto' }} />
+        </div>
+      </div>
+
+      {/* Layer Cards */}
+      <div className="mb-16">
         <div className="space-y-4">
           {LAYERS.map((layer) => (
             <div
