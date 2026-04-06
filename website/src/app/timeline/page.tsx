@@ -95,7 +95,7 @@ export default function TimelinePage() {
       />
 
       <div className="flex justify-center mb-12">
-        <Image src="/timeline-visual.png" alt="AISB 2026 Competition Timeline"
+        <Image src={`${process.env.NEXT_PUBLIC_BASE_PATH || ""}/timeline-visual.png`} alt="AISB 2026 Competition Timeline"
                width={2000} height={500} className="rounded-xl"
                style={{ maxWidth: '900px', width: '100%', height: 'auto' }} />
       </div>

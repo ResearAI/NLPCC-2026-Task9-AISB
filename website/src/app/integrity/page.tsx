@@ -110,7 +110,7 @@ export default function IntegrityPage() {
 
       {/* Pipeline Visual */}
       <div className="flex justify-center mb-12">
-        <Image src="/integrity-pipeline.png" alt="5-Stage Evaluation Pipeline"
+        <Image src={`${process.env.NEXT_PUBLIC_BASE_PATH || ""}/integrity-pipeline.png`} alt="5-Stage Evaluation Pipeline"
                width={2000} height={400} className="rounded-xl"
                style={{ maxWidth: '800px', width: '100%', height: 'auto' }} />
       </div>

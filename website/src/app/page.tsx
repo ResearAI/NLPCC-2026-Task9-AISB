@@ -63,7 +63,7 @@ export default function HomePage() {
             <div className="relative">
               <div className="rounded-2xl overflow-hidden shadow-2xl"
                    style={{ border: '2px solid rgba(212,168,83,0.3)', boxShadow: '0 24px 64px rgba(0,0,0,0.4)' }}>
-                <Image src="/poster.png" alt="AISB 2026 Poster" width={800} height={450}
+                <Image src={`${process.env.NEXT_PUBLIC_BASE_PATH || ""}/poster.png`} alt="AISB 2026 Poster" width={800} height={450}
                        className="w-full h-auto" priority />
               </div>
             </div>
@@ -101,7 +101,7 @@ export default function HomePage() {
           </p>
         </div>
         <div className="flex justify-center">
-          <Image src="/research-cycle.png" alt="AI Scientific Research Cycle" width={800} height={450}
+          <Image src={`${process.env.NEXT_PUBLIC_BASE_PATH || ""}/research-cycle.png`} alt="AI Scientific Research Cycle" width={800} height={450}
                  className="rounded-xl" style={{ maxWidth: '600px', width: '100%', height: 'auto' }} />
         </div>
       </section>
@@ -109,7 +109,7 @@ export default function HomePage() {
       {/* Two Tracks Visual */}
       <section className="max-w-7xl mx-auto px-6 py-8">
         <div className="flex justify-center">
-          <Image src="/dual-track.jpeg" alt="Track A: Scientific Research vs Track B: SOTA Challenge"
+          <Image src={`${process.env.NEXT_PUBLIC_BASE_PATH || ""}/dual-track.jpeg`} alt="Track A: Scientific Research vs Track B: SOTA Challenge"
                  width={1600} height={800} className="rounded-xl"
                  style={{ maxWidth: '800px', width: '100%', height: 'auto' }} />
         </div>
