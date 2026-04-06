@@ -59,6 +59,11 @@ export default function Nav() {
                 }}>
             CFP
           </Link>
+          <a href="https://forms.gle/9oWtS77UduudpRM1A" target="_blank" rel="noopener noreferrer"
+                className="px-4 py-2 rounded-lg text-sm font-semibold ml-1 transition-all hover:brightness-110"
+                style={{ background: 'var(--navy-700)', color: 'white' }}>
+            Register
+          </a>
         </nav>
 
         <div className="flex items-center gap-4">

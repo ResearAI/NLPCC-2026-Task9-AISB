@@ -42,15 +42,15 @@ export default function HomePage() {
               </p>
 
               <div className="flex gap-3 flex-wrap">
-                <Link href="/cfp"
+                <a href="https://forms.gle/9oWtS77UduudpRM1A" target="_blank" rel="noopener noreferrer"
                       className="px-6 py-3 rounded-xl font-semibold text-sm transition hover:brightness-110"
                       style={{ background: 'var(--gold-500)', color: 'var(--navy-900)' }}>
-                  Call for Participation
-                </Link>
-                <Link href="/leaderboard"
+                  Register Now
+                </a>
+                <Link href="/cfp"
                       className="px-6 py-3 rounded-xl font-medium text-sm transition border"
                       style={{ borderColor: 'rgba(255,255,255,0.25)', color: 'rgba(255,255,255,0.85)' }}>
-                  Leaderboard
+                  Call for Participation
                 </Link>
                 <Link href="/tracks"
                       className="px-6 py-3 rounded-xl font-medium text-sm transition border"
