@@ -25,7 +25,7 @@ export default function CfpPage() {
       {/* Poster */}
       <div className="rounded-2xl overflow-hidden border mb-16 shadow-2xl"
            style={{ borderColor: 'rgba(212,168,83,0.2)', boxShadow: '0 24px 64px rgba(0,0,0,0.4)' }}>
-        <Image src={`${process.env.NEXT_PUBLIC_BASE_PATH || ""}/poster.png`} alt="AISB 2026 Official Poster" width={1600} height={900}
+        <Image src="/poster.png" alt="AISB 2026 Official Poster" width={1600} height={900}
                className="w-full h-auto" priority />
       </div>
 

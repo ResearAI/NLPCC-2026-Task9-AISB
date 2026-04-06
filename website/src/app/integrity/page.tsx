@@ -117,7 +117,7 @@ export default function IntegrityPage() {
           4-Layer Architecture
         </h3>
         <div className="flex justify-center mb-8">
-          <Image src={`${process.env.NEXT_PUBLIC_BASE_PATH || ""}/integrity-layers.jpeg`} alt="4-Layer Integrity Architecture: L1 Docker Sandbox, L2 Execution Trace, L3 CAS, L4 Canary Tokens"
+          <Image src="/integrity-layers.jpeg" alt="4-Layer Integrity Architecture: L1 Docker Sandbox, L2 Execution Trace, L3 CAS, L4 Canary Tokens"
                  width={1600} height={900} className="rounded-xl"
                  style={{ maxWidth: '700px', width: '100%', height: 'auto' }} />
         </div>
@@ -132,7 +132,7 @@ export default function IntegrityPage() {
           Evaluation Flow
         </h3>
         <div className="flex justify-center mb-8">
-          <Image src={`${process.env.NEXT_PUBLIC_BASE_PATH || ""}/integrity-flow.png`} alt="Evaluation Flow: Submission → L1 Sandbox → L2 Trace → L3 CAS → L4 Canary → Final Score"
+          <Image src="/integrity-flow.png" alt="Evaluation Flow: Submission → L1 Sandbox → L2 Trace → L3 CAS → L4 Canary → Final Score"
                  width={2000} height={500} className="rounded-xl"
                  style={{ maxWidth: '900px', width: '100%', height: 'auto' }} />
         </div>
