@@ -66,7 +66,7 @@ export default function CfpPage() {
                 自主进行科学研究的AI系统。CAS（声明准确度分数）确保所有声称的结果真实可追溯。
               </p>
               <p>
-                由西湖大学 NLP 实验室组织，张岳教授指导。前三名团队获得 CCF-NLP 认证。
+                由WestlakeNLP组织，张岳教授指导。前三名团队获得 CCF-NLP 认证。
               </p>
             </div>
           </div>
@@ -103,11 +103,10 @@ export default function CfpPage() {
                 <div>
                   <div className="text-xs uppercase tracking-wider mb-2" style={{ color: 'var(--gray-400)' }}>Evaluation</div>
                   <div style={{ fontFamily: "'Source Code Pro', monospace" }} className="text-xs leading-relaxed">
-                    Dual Score = 0.4 x PQS + 0.3 x CAS + 0.2 x BI + 0.1 x ESR<br/>
-                    PQS: Paper Quality Score (innovation, originality)<br/>
-                    CAS: Claim Accuracy Score (paper vs logs)<br/>
-                    BI: Benchmark Improvement<br/>
-                    ESR: Experiment Success Rate<br/>
+                    Evaluated on:<br/>
+                    - Paper Quality (significance, novelty, methodology, writing)<br/>
+                    - Benchmark Performance<br/>
+                    - Reproducibility (CAS: claims vs experiment logs)<br/>
                     <span style={{ color: 'var(--gold-600)' }}>Top-10: human expert review</span>
                   </div>
                 </div>
@@ -296,7 +295,7 @@ export default function CfpPage() {
             Contact / 联系方式
           </h2>
           <p className="text-sm mb-2" style={{ color: 'var(--gray-600)', fontFamily: "'Noto Sans SC', sans-serif" }}>
-            西湖大学 NLP Lab &middot; Prof. Yue Zhang
+            WestlakeNLP &middot; Prof. Yue Zhang
           </p>
           <p className="text-sm mb-6" style={{ color: 'var(--gray-500)' }}>
             Email:{" "}
@@ -305,7 +304,7 @@ export default function CfpPage() {
             </a>
           </p>
           <div className="flex justify-center gap-4 flex-wrap">
-            <a href="https://github.com/giao-123-sun/AISB_2026" target="_blank" rel="noreferrer"
+            <a href="https://github.com/ResearAI/NLPCC-2026-Task9-AISB" target="_blank" rel="noreferrer"
                className="px-6 py-3 rounded-xl font-semibold text-sm transition hover:brightness-110"
                style={{ background: 'var(--gold-500)', color: 'var(--navy-950)' }}>
               GitHub Repository

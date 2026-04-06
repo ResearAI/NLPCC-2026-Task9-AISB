@@ -67,7 +67,7 @@ export default function Nav() {
         </nav>
 
         <div className="flex items-center gap-4">
-          <a href="https://github.com/giao-123-sun/AISB_2026" target="_blank" rel="noreferrer"
+          <a href="https://github.com/ResearAI/NLPCC-2026-Task9-AISB" target="_blank" rel="noreferrer"
              className="text-sm transition hidden sm:block" style={{ color: 'var(--gray-400)' }}>
             GitHub
           </a>

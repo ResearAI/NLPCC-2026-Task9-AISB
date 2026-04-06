@@ -18,7 +18,7 @@ export default function Footer() {
               Evaluating autonomous AI research systems with integrity verification.
             </p>
             <p className="text-sm mt-2 opacity-70" style={{ fontFamily: "'Noto Sans SC', sans-serif" }}>
-              西湖大学 NLP Lab &middot; Prof. Yue Zhang
+              WestlakeNLP &middot; Prof. Yue Zhang
             </p>
           </div>
           <div className="flex flex-col gap-2 text-sm opacity-70">
@@ -32,7 +32,7 @@ export default function Footer() {
             <span className="text-xs uppercase tracking-wider font-semibold mb-1 opacity-50">Resources</span>
             <Link href="/integrity" className="hover:text-white transition">Integrity System</Link>
             <Link href="/timeline" className="hover:text-white transition">Timeline</Link>
-            <a href="https://github.com/giao-123-sun/AISB_2026" target="_blank" rel="noreferrer" className="hover:text-white transition">GitHub</a>
+            <a href="https://github.com/ResearAI/NLPCC-2026-Task9-AISB" target="_blank" rel="noreferrer" className="hover:text-white transition">GitHub</a>
             <a href="mailto:sunjoey035@gmail.com" className="hover:text-white transition">sunjoey035@gmail.com</a>
           </div>
         </div>

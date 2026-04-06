@@ -20,9 +20,9 @@ const TRACKS = [
       },
     ],
     baseline: "SOTA: HLE ~45%, FeatureBench 12.5%",
-    scoring: "T1 weight: 0.35 of total. Track A: 0.3*benchmark + 0.7*paper. Track B: 0.7*benchmark + 0.3*paper.",
-    budget: "No fixed limit. Report cost in paper.",
-    dataLink: "https://github.com/giao-123-sun/AISB_2026/tree/main/tracks/leaderboard_track/T1",
+    scoring: "Paper quality + benchmark performance + reproducibility (CAS)",
+    budget: "No fixed resource limit. Report cost in paper.",
+    dataLink: "https://github.com/ResearAI/NLPCC-2026-Task9-AISB",
   },
   {
     id: "T2",
@@ -38,9 +38,9 @@ const TRACKS = [
       },
     ],
     baseline: "Baseline DeepSeek-Prover-V2: 28% completion rate",
-    scoring: "0.8 x completion_rate + 0.2 x efficiency_bonus",
-    budget: "6 hours wall-clock, $30 API budget, Lean4 toolchain provided",
-    dataLink: "https://github.com/giao-123-sun/AISB_2026/tree/main/tracks/leaderboard_track/T2",
+    scoring: "Paper quality + proof completion rate + reproducibility (CAS)",
+    budget: "No fixed resource limit. Report cost in paper.",
+    dataLink: "https://github.com/ResearAI/NLPCC-2026-Task9-AISB",
   },
   {
     id: "T3",
@@ -61,9 +61,9 @@ const TRACKS = [
       },
     ],
     baseline: "Baseline RF/XGBoost: TDC avg MAE 0.82, Matbench F1 0.58",
-    scoring: "0.5 x TDC_norm + 0.5 x Matbench_norm",
-    budget: "6 hours wall-clock, $30 API budget, GPU access provided",
-    dataLink: "https://github.com/giao-123-sun/AISB_2026/tree/main/tracks/leaderboard_track/T3",
+    scoring: "Paper quality + benchmark performance + reproducibility (CAS)",
+    budget: "No fixed resource limit. Report cost in paper.",
+    dataLink: "https://github.com/ResearAI/NLPCC-2026-Task9-AISB",
   },
 ];
 

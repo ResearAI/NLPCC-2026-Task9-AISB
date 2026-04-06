@@ -147,65 +147,7 @@ export default function RulesPage() {
         </div>
       </section>
 
-      {/* Resource Limits */}
-      <section className="mb-12">
-        <h3
-          style={{ fontFamily: "'Playfair Display', Georgia, serif" }}
-          className="text-xl mb-6"
-        >
-          Resource Limits
-        </h3>
-        <div className="overflow-x-auto">
-          <table className="w-full text-sm">
-            <thead>
-              <tr className="border-b border-white/[0.12] text-[var(--gray-400)] text-xs uppercase tracking-wider">
-                <th className="py-3 px-4 text-left font-medium">Resource</th>
-                <th className="py-3 px-4 text-center font-medium">T1: LM Reasoning</th>
-                <th className="py-3 px-4 text-center font-medium">T2: Math and Proof</th>
-                <th className="py-3 px-4 text-center font-medium">T3: Discovery</th>
-              </tr>
-            </thead>
-            <tbody className="text-[var(--gray-500)]" style={{ fontFamily: "'Source Code Pro', monospace" }}>
-              <tr className="border-b border-[var(--gray-200)]">
-                <td className="py-3 px-4 font-medium text-[var(--navy-700)]" style={{ fontFamily: "'Sora', sans-serif" }}>Wall-clock time</td>
-                <td className="py-3 px-4 text-center">4 hours</td>
-                <td className="py-3 px-4 text-center">6 hours</td>
-                <td className="py-3 px-4 text-center">6 hours</td>
-              </tr>
-              <tr className="border-b border-[var(--gray-200)]">
-                <td className="py-3 px-4 font-medium text-[var(--navy-700)]" style={{ fontFamily: "'Sora', sans-serif" }}>API budget</td>
-                <td className="py-3 px-4 text-center">$20</td>
-                <td className="py-3 px-4 text-center">$30</td>
-                <td className="py-3 px-4 text-center">$30</td>
-              </tr>
-              <tr className="border-b border-[var(--gray-200)]">
-                <td className="py-3 px-4 font-medium text-[var(--navy-700)]" style={{ fontFamily: "'Sora', sans-serif" }}>GPU</td>
-                <td className="py-3 px-4 text-center">1x A100 40GB</td>
-                <td className="py-3 px-4 text-center">1x A100 40GB</td>
-                <td className="py-3 px-4 text-center">1x A100 80GB</td>
-              </tr>
-              <tr className="border-b border-[var(--gray-200)]">
-                <td className="py-3 px-4 font-medium text-[var(--navy-700)]" style={{ fontFamily: "'Sora', sans-serif" }}>RAM</td>
-                <td className="py-3 px-4 text-center">64 GB</td>
-                <td className="py-3 px-4 text-center">64 GB</td>
-                <td className="py-3 px-4 text-center">128 GB</td>
-              </tr>
-              <tr className="border-b border-[var(--gray-200)]">
-                <td className="py-3 px-4 font-medium text-[var(--navy-700)]" style={{ fontFamily: "'Sora', sans-serif" }}>Disk</td>
-                <td className="py-3 px-4 text-center">100 GB</td>
-                <td className="py-3 px-4 text-center">100 GB</td>
-                <td className="py-3 px-4 text-center">200 GB</td>
-              </tr>
-              <tr>
-                <td className="py-3 px-4 font-medium text-[var(--navy-700)]" style={{ fontFamily: "'Sora', sans-serif" }}>Docker image size</td>
-                <td className="py-3 px-4 text-center">20 GB max</td>
-                <td className="py-3 px-4 text-center">20 GB max</td>
-                <td className="py-3 px-4 text-center">30 GB max</td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-      </section>
+      {/* Resource note */}
 
       {/* Evaluation Procedure */}
       <section className="mb-12">
