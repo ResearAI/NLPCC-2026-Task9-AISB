@@ -108,16 +108,9 @@ export default function IntegrityPage() {
         subtitle="A 4-layer anti-fabrication architecture. The first benchmark system designed to verify that AI research systems actually ran their claimed experiments."
       />
 
-      {/* 4-Layer Architecture — compact like homepage poster */}
-      <div className="flex justify-center mb-10">
-        <Image src="/integrity-layers.jpeg" alt="4-Layer Integrity Architecture"
-               width={800} height={450} className="rounded-xl"
-               style={{ maxWidth: '420px', width: '100%', height: 'auto' }} />
-      </div>
-
-      {/* Layer Cards */}
-      <div className="mb-16">
-        <div className="space-y-4">
+      {/* 4-Layer Architecture — image on right, cards on left */}
+      <div className="mb-16 grid md:grid-cols-5 gap-8 items-start">
+        <div className="md:col-span-3 space-y-4">
           {LAYERS.map((layer) => (
             <div
               key={layer.number}
@@ -152,6 +145,10 @@ export default function IntegrityPage() {
               </div>
             </div>
           ))}
+        </div>
+        <div className="md:col-span-2 md:sticky md:top-24">
+          <Image src="/integrity-layers.jpeg" alt="4-Layer Integrity Architecture"
+                 width={800} height={450} className="rounded-xl w-full h-auto" />
         </div>
       </div>
 
