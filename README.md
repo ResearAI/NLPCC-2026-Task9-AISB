@@ -161,7 +161,7 @@ Every numerical claim must trace to experiment logs (CAS). Fabrication = disqual
 
 - **Qiyao SUN** (孙启耀): sunjoey035@gmail.com — Contact Person / 联络人
 - **Yue ZHANG** (张岳) — Project Advisor / 项目指导
-- **Yixuan WENG** (翁亦轩), **Minjun ZHU** (朱敏君), **Qiujie XIE** (谢秋洁), **Zhen LIN** (林桢)
+- **Yixuan WENG** (翁诣轩), **Minjun ZHU** (朱敏郡), **Qiujie XIE** (谢秋婕), **Zhen LIN** (林圳)
 
 ## Citation
 
