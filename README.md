@@ -159,15 +159,16 @@ Every numerical claim must trace to experiment logs (CAS). Fabrication = disqual
 
 ## Contact / 联系方式
 
-- **Qiyao SUN** (孙启耀): sunjoey035@gmail.com
-- **Yue ZHANG** (张岳): Westlake University
+- **Qiyao SUN** (孙启耀): sunjoey035@gmail.com — Contact Person / 联络人
+- **Yue ZHANG** (张岳) — Project Advisor / 项目指导
+- **Yixuan WENG** (翁亦轩), **Minjun ZHU** (朱敏君), **Qiujie XIE** (谢秋洁), **Zhen LIN** (林桢)
 
 ## Citation
 
 ```bibtex
 @inproceedings{aisb2026,
   title={AISB: AI Scientist Benchmark — Evaluating Autonomous Research Capability},
-  author={Sun, Qiyao and Zhang, Yue},
+  author={Sun, Qiyao and Weng, Yixuan and Zhu, Minjun and Xie, Qiujie and Lin, Zhen and Zhang, Yue},
   booktitle={NLPCC 2026 Shared Tasks},
   year={2026}
 }
