@@ -1,0 +1,11 @@
+{
+  "team_name": "starter",
+  "system_name": "starter-agent",
+  "track": "benchmark",
+  "direction": "T2",
+  "autonomy_level": "fully_autonomous",
+  "contact_email": "starter@example.com",
+  "base_models": [],
+  "total_cost_usd": 0.0,
+  "total_runtime_hours": 0.0
+}

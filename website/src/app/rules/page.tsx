@@ -1,287 +1,198 @@
 import SectionHeading from "@/components/SectionHeading";
+import { AGENT_TOOLS_URL, NLPCC_PACKAGE_URL, PUBLIC_REPO_URL } from "@/lib/publicLinks";
+
+const HUMAN_STEPS = [
+  "Choose one direction: T1, T2, or T3.",
+  "Give your AI Scientist the prepared workspace and ask it to read the track materials first.",
+  "Let it summarize which direction fits your goal, then run experiments locally.",
+  "Ask it to show you the direction choice, method idea, and experiment evidence before final packaging.",
+  "Validate, package, and optionally replay the submission locally.",
+];
+
+const AGENT_FILES = [
+  "AGENT.md",
+  "bench.yaml",
+  "data/data.md",
+  "papers library",
+  "examples/starter_submission/",
+];
+
+const AI_SCIENTIST_PROMPT = `Use current NLPCC public package: ${NLPCC_PACKAGE_URL}. Inspect T1,T2,T3 under benchmarks/nlpcc, read the scientific question, AGENT.md, bench.yaml, data/data.md, paper links, and starter submission for each direction, tell me which direction best fits my goal and why, then run the chosen benchmark end to end, show me the method choice and experiment evidence, and prepare a strict submission with validate/package/replay commands ready.`;
+
+const QUICK_LINKS = [
+  { label: "NLPCC Package", href: NLPCC_PACKAGE_URL },
+  { label: "Public Repository", href: PUBLIC_REPO_URL },
+  { label: "NLPCC Tracks", href: "/tracks" },
+  { label: "Paper Library", href: "/papers" },
+  { label: "Competition Overview", href: "/competitions" },
+  { label: "agent_tools.py", href: AGENT_TOOLS_URL },
+];
+
+const AGENT_REPORT_ITEMS = [
+  "chosen direction and why it matches the goal",
+  "which benchmark package and papers were read",
+  "planned method and baseline comparison",
+  "current experiment evidence and score summary",
+  "whether submission validate/package/replay already passed",
+];
 
 export default function RulesPage() {
   return (
-    <div className="max-w-7xl mx-auto px-6 py-16">
+    <div className="max-w-6xl mx-auto px-6 py-16">
       <SectionHeading
-        title="Submission Rules"
-        subtitle="Requirements, format specifications, and resource limits for all AISB 2026 competition tracks."
+        title="How to Participate"
+        titleCn="如何参赛"
+        subtitle="This page is human-facing. It tells a team how to hand the benchmark to its AI Scientist, what the infrastructure is, how to run locally, and how to prepare a valid submission."
       />
 
-      {/* Submission Format */}
-      <section className="mb-12">
-        <h3
-          style={{ fontFamily: "'Playfair Display', Georgia, serif" }}
-          className="text-xl mb-6"
-        >
-          Submission Format
-        </h3>
-        <div className="card rounded-xl p-6 bg-white">
-          <p className="text-sm text-[var(--gray-500)] leading-relaxed mb-6">
-            Each submission is a Docker image that, when executed with the
-            provided task inputs, produces outputs in the specified format. The
-            image must be self-contained: all code, model weights, and
-            dependencies must be included.
+      <section className="card-gold rounded-2xl p-6 bg-white mb-8">
+        <h2 style={{ fontFamily: "'Playfair Display', Georgia, serif" }} className="text-2xl text-[var(--navy-700)] mb-4">
+          Agent Instruction
+        </h2>
+        <p className="text-sm text-[var(--gray-500)] mb-4">
+          This is the human-facing copyable instruction. Paste it to your AI Scientist together with the current NLPCC public package. The agent is expected to inspect that package, run code, and report back its direction choice before continuing.
+        </p>
+        <pre className="rounded-xl p-4 bg-gray-50 border border-[var(--gray-200)] text-sm text-[var(--gray-600)] overflow-x-auto"
+             style={{ fontFamily: "'Source Code Pro', monospace" }}>
+{AI_SCIENTIST_PROMPT}
+        </pre>
+      </section>
+
+      <section className="grid md:grid-cols-2 gap-6 mb-8">
+        <div className="card rounded-2xl p-6 bg-white">
+          <h3 className="text-xl font-semibold mb-3">For Humans</h3>
+          <p className="text-sm text-[var(--gray-500)] mb-4">
+            The repository already contains the benchmark package, reference papers, starter submission, local evaluator,
+            validation tool, and optional local backend replay.
           </p>
-          <div className="rounded-lg p-4 bg-gray-50 border border-[var(--gray-200)] mb-4">
-            <div
-              className="text-xs text-[var(--gray-400)] uppercase tracking-wider mb-3"
-              style={{ fontFamily: "'Source Code Pro', monospace" }}
-            >
-              Required Directory Structure
-            </div>
-            <pre
-              className="text-sm text-[var(--gray-500)]"
-              style={{ fontFamily: "'Source Code Pro', monospace" }}
-            >
-{`submission/
-  Dockerfile              # Build instructions
-  run.sh                  # Entry point script
-  src/                    # Source code
-  models/                 # Model weights (if any)
-  config.yaml             # System configuration
-  metadata.json           # Team info, system description
-  output/                 # Generated at runtime
-    results.json          # Final results
-    iterations.jsonl      # Step-by-step execution log
-    claims.json           # Self-reported numerical claims`}
-            </pre>
+          <ol className="space-y-3 text-sm text-[var(--gray-500)] list-decimal list-inside">
+            {HUMAN_STEPS.map((step) => (
+              <li key={step}>{step}</li>
+            ))}
+          </ol>
+        </div>
+
+        <div className="card rounded-2xl p-6 bg-white">
+          <h3 className="text-xl font-semibold mb-3">For Your AI Scientist</h3>
+          <p className="text-sm text-[var(--gray-500)] mb-4">
+            After `workspace init`, tell the agent to read these files before it starts running experiments:
+          </p>
+          <div className="flex flex-wrap gap-2 mb-4">
+            {AGENT_FILES.map((item) => (
+              <span
+                key={item}
+                className="px-3 py-1.5 rounded-full text-xs"
+                style={{
+                  background: "var(--gray-50)",
+                  color: "var(--gray-600)",
+                  border: "1px solid var(--gray-200)",
+                  fontFamily: "'Source Code Pro', monospace",
+                }}
+              >
+                {item}
+              </span>
+            ))}
           </div>
-          <div className="rounded-lg p-4 bg-gray-50 border border-[var(--gray-200)]">
-            <div
-              className="text-xs text-[var(--gray-400)] uppercase tracking-wider mb-3"
-              style={{ fontFamily: "'Source Code Pro', monospace" }}
+          <pre className="rounded-xl p-4 bg-gray-50 border border-[var(--gray-200)] text-sm text-[var(--gray-600)] overflow-x-auto"
+               style={{ fontFamily: "'Source Code Pro', monospace" }}>
+{`Read .work/T1/AGENT.md, bench.yaml, data/data.md, and the linked paper library.
+First tell me which direction is most suitable and why.
+Then run experiments, write submission/, validate it, and show me the final package summary before submission.`}
+          </pre>
+        </div>
+      </section>
+
+      <section className="card rounded-2xl p-6 bg-white mb-8">
+        <h3 className="text-xl font-semibold mb-4">Public Entry Points</h3>
+        <div className="flex flex-wrap gap-3 mb-4">
+          {QUICK_LINKS.map((item) => (
+            <a
+              key={item.label}
+              href={item.href}
+              target={item.href.startsWith("http") ? "_blank" : undefined}
+              rel={item.href.startsWith("http") ? "noreferrer" : undefined}
+              className="px-4 py-2 rounded-lg text-sm border hover:underline"
+              style={{
+                borderColor: "var(--gray-200)",
+                color: "var(--navy-700)",
+                background: "var(--gray-50)",
+              }}
             >
-              metadata.json Schema
-            </div>
-            <pre
-              className="text-sm text-[var(--gray-500)]"
-              style={{ fontFamily: "'Source Code Pro', monospace" }}
-            >
-{`{
-  "team_name": "string",
-  "system_name": "string",
-  "track": "T1 | T2 | T3",
-  "contact_email": "string",
-  "description": "string (max 500 chars)",
-  "base_models": ["list of LLM/model names used"],
-  "estimated_cost": "float (USD)",
-  "submission_date": "YYYY-MM-DD"
-}`}
-            </pre>
+              {item.label}
+            </a>
+          ))}
+        </div>
+        <p className="text-sm text-[var(--gray-500)]">
+          Send the repository and the one-line prompt to your AI Scientist. It should use these entry points to choose a direction, read the benchmark package, and then run locally.
+        </p>
+      </section>
+
+      <section className="card rounded-2xl p-6 bg-white mb-8">
+        <h3 className="text-xl font-semibold mb-4">Local Infrastructure</h3>
+        <div className="grid md:grid-cols-3 gap-4 text-sm text-[var(--gray-500)]">
+          <div className="rounded-xl p-4 bg-gray-50 border border-[var(--gray-200)]">
+            <h4 className="font-medium text-[var(--navy-700)] mb-2">Benchmark Package</h4>
+            <p>Each track directory contains benchmark description, data card, references, evaluator, Docker files, and starter submission.</p>
+          </div>
+          <div className="rounded-xl p-4 bg-gray-50 border border-[var(--gray-200)]">
+            <h4 className="font-medium text-[var(--navy-700)] mb-2">Evaluation Tools</h4>
+            <p>`scripts/agent_tools.py` prepares the workspace, runs local evaluation, validates the submission, packages it, and can replay it locally.</p>
+          </div>
+          <div className="rounded-xl p-4 bg-gray-50 border border-[var(--gray-200)]">
+            <h4 className="font-medium text-[var(--navy-700)] mb-2">Submission Contract</h4>
+            <p>The final artifact is a strict `submission/` directory with paper, logs, metadata, results, and optional `code/run.py` for replay.</p>
           </div>
         </div>
       </section>
 
-      {/* Requirements */}
-      <section className="mb-12">
-        <h3
-          style={{ fontFamily: "'Playfair Display', Georgia, serif" }}
-          className="text-xl mb-6"
-        >
-          Requirements
-        </h3>
+      <section className="card rounded-2xl p-6 bg-white mb-8">
+        <h3 className="text-xl font-semibold mb-4">Minimal Command Flow</h3>
+        <p className="text-sm text-[var(--gray-500)] mb-4">
+          If you want to prepare the workspace manually before handing it to the agent, use this command flow. Replace `T1` with `T2` or `T3`.
+        </p>
+        <pre className="rounded-xl p-4 bg-gray-50 border border-[var(--gray-200)] text-sm text-[var(--gray-600)] overflow-x-auto"
+             style={{ fontFamily: "'Source Code Pro', monospace" }}>
+{`python scripts/agent_tools.py workspace init T1 --dest .work/T1
+python scripts/agent_tools.py evaluate T1 --bench-dir .work/T1 --submission .work/T1/submission
+python scripts/agent_tools.py submission validate .work/T1/submission
+python scripts/agent_tools.py submission package .work/T1/submission
+python scripts/agent_tools.py submission replay .work/T1/submission --track T1`}
+        </pre>
+        <p className="text-sm text-[var(--gray-500)] mt-4">
+          The local replay path is the current public infrastructure for checking whether a package is structurally ready.
+        </p>
+      </section>
+
+      <section className="card rounded-2xl p-6 bg-white mb-8">
+        <h3 className="text-xl font-semibold mb-4">What Your Agent Should Show You</h3>
         <div className="grid md:grid-cols-2 gap-4">
-          <div className="card rounded-xl p-6 bg-white">
-            <h4 className="font-semibold text-sm mb-4 text-[var(--emerald-500)]">
-              Must
-            </h4>
-            <ul className="space-y-3 text-sm text-[var(--gray-500)]">
-              <li className="flex items-start gap-2">
-                <span className="text-[var(--emerald-500)] mt-0.5" style={{ fontFamily: "'Source Code Pro', monospace" }}>+</span>
-                <span>Run inside the provided Docker sandbox without modification</span>
-              </li>
-              <li className="flex items-start gap-2">
-                <span className="text-[var(--emerald-500)] mt-0.5" style={{ fontFamily: "'Source Code Pro', monospace" }}>+</span>
-                <span>Produce output/results.json and output/iterations.jsonl</span>
-              </li>
-              <li className="flex items-start gap-2">
-                <span className="text-[var(--emerald-500)] mt-0.5" style={{ fontFamily: "'Source Code Pro', monospace" }}>+</span>
-                <span>Complete within the track-specific time limit</span>
-              </li>
-              <li className="flex items-start gap-2">
-                <span className="text-[var(--emerald-500)] mt-0.5" style={{ fontFamily: "'Source Code Pro', monospace" }}>+</span>
-                <span>Stay within the API cost budget</span>
-              </li>
-              <li className="flex items-start gap-2">
-                <span className="text-[var(--emerald-500)] mt-0.5" style={{ fontFamily: "'Source Code Pro', monospace" }}>+</span>
-                <span>Include accurate metadata.json with team and system details</span>
-              </li>
-              <li className="flex items-start gap-2">
-                <span className="text-[var(--emerald-500)] mt-0.5" style={{ fontFamily: "'Source Code Pro', monospace" }}>+</span>
-                <span>Report all numerical claims in output/claims.json for CAS verification</span>
-              </li>
-            </ul>
-          </div>
-          <div className="card rounded-xl p-6 bg-white">
-            <h4 className="font-semibold text-sm mb-4 text-[var(--red-500)]">
-              Must Not
-            </h4>
-            <ul className="space-y-3 text-sm text-[var(--gray-500)]">
-              <li className="flex items-start gap-2">
-                <span className="text-[var(--red-500)] mt-0.5" style={{ fontFamily: "'Source Code Pro', monospace" }}>x</span>
-                <span>Attempt to access the internet or external APIs</span>
-              </li>
-              <li className="flex items-start gap-2">
-                <span className="text-[var(--red-500)] mt-0.5" style={{ fontFamily: "'Source Code Pro', monospace" }}>x</span>
-                <span>Modify the Docker container or escape the sandbox</span>
-              </li>
-              <li className="flex items-start gap-2">
-                <span className="text-[var(--red-500)] mt-0.5" style={{ fontFamily: "'Source Code Pro', monospace" }}>x</span>
-                <span>Access test labels, answer keys, or canary tokens</span>
-              </li>
-              <li className="flex items-start gap-2">
-                <span className="text-[var(--red-500)] mt-0.5" style={{ fontFamily: "'Source Code Pro', monospace" }}>x</span>
-                <span>Hard-code benchmark-specific answers in source code</span>
-              </li>
-              <li className="flex items-start gap-2">
-                <span className="text-[var(--red-500)] mt-0.5" style={{ fontFamily: "'Source Code Pro', monospace" }}>x</span>
-                <span>Report results not produced during the evaluation run</span>
-              </li>
-              <li className="flex items-start gap-2">
-                <span className="text-[var(--red-500)] mt-0.5" style={{ fontFamily: "'Source Code Pro', monospace" }}>x</span>
-                <span>Use more than the allocated compute resources (GPU, memory, disk)</span>
-              </li>
-            </ul>
-          </div>
+          {AGENT_REPORT_ITEMS.map((item) => (
+            <div key={item} className="rounded-xl p-4 bg-gray-50 border border-[var(--gray-200)] text-sm text-[var(--gray-500)]">
+              {item}
+            </div>
+          ))}
         </div>
       </section>
 
-      {/* Resource note */}
-
-      {/* Evaluation Procedure */}
-      <section className="mb-12">
-        <h3
-          style={{ fontFamily: "'Playfair Display', Georgia, serif" }}
-          className="text-xl mb-6"
-        >
-          Evaluation Procedure
-        </h3>
-        <div className="card rounded-xl p-6 bg-white">
-          <div className="space-y-4 text-sm text-[var(--gray-500)]">
-            <div className="flex gap-4">
-              <span
-                className="text-[var(--gold-500)] shrink-0 w-6"
-                style={{ fontFamily: "'Source Code Pro', monospace" }}
-              >
-                1.
-              </span>
-              <div>
-                <strong className="text-[var(--navy-700)]">Submission Upload</strong> --
-                Teams upload their Docker image to the AISB submission portal.
-                The image is scanned for security issues and size compliance.
-              </div>
-            </div>
-            <div className="flex gap-4">
-              <span
-                className="text-[var(--gold-500)] shrink-0 w-6"
-                style={{ fontFamily: "'Source Code Pro', monospace" }}
-              >
-                2.
-              </span>
-              <div>
-                <strong className="text-[var(--navy-700)]">Sandbox Execution</strong> --
-                The image is launched inside the Docker sandbox (Layer 1) with
-                task inputs. Execution traces are recorded (Layer 2).
-              </div>
-            </div>
-            <div className="flex gap-4">
-              <span
-                className="text-[var(--gold-500)] shrink-0 w-6"
-                style={{ fontFamily: "'Source Code Pro', monospace" }}
-              >
-                3.
-              </span>
-              <div>
-                <strong className="text-[var(--navy-700)]">Output Collection</strong> --
-                Results, execution logs, and claims are extracted from the
-                container output directory.
-              </div>
-            </div>
-            <div className="flex gap-4">
-              <span
-                className="text-[var(--gold-500)] shrink-0 w-6"
-                style={{ fontFamily: "'Source Code Pro', monospace" }}
-              >
-                4.
-              </span>
-              <div>
-                <strong className="text-[var(--navy-700)]">Integrity Check</strong> --
-                CAS is computed (Layer 3). Canary tokens are checked (Layer 4).
-                Integrity status is assigned (PASS / FLAGGED / FAIL).
-              </div>
-            </div>
-            <div className="flex gap-4">
-              <span
-                className="text-[var(--gold-500)] shrink-0 w-6"
-                style={{ fontFamily: "'Source Code Pro', monospace" }}
-              >
-                5.
-              </span>
-              <div>
-                <strong className="text-[var(--navy-700)]">Scoring</strong> -- Raw task
-                score is computed. DualScore = RawScore x CAS. Results are
-                posted to the leaderboard.
-              </div>
-            </div>
-            <div className="flex gap-4">
-              <span
-                className="text-[var(--gold-500)] shrink-0 w-6"
-                style={{ fontFamily: "'Source Code Pro', monospace" }}
-              >
-                6.
-              </span>
-              <div>
-                <strong className="text-[var(--navy-700)]">Review Period</strong> --
-                FLAGGED submissions enter a 7-day review period. Teams may
-                provide explanations for unverified claims. Final status is
-                determined by organizers.
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Disqualification */}
-      <section>
-        <h3
-          style={{ fontFamily: "'Playfair Display', Georgia, serif" }}
-          className="text-xl mb-6"
-        >
-          Disqualification Criteria
-        </h3>
-        <div className="card rounded-xl p-6 bg-white border-[var(--red-500)]/20">
-          <ul className="space-y-3 text-sm text-[var(--gray-500)]">
-            <li className="flex items-start gap-2">
-              <span className="text-[var(--red-500)] mt-0.5" style={{ fontFamily: "'Source Code Pro', monospace" }}>--</span>
-              <span>CAS below 0.5 (significant result fabrication)</span>
-            </li>
-            <li className="flex items-start gap-2">
-              <span className="text-[var(--red-500)] mt-0.5" style={{ fontFamily: "'Source Code Pro', monospace" }}>--</span>
-              <span>Canary token detected in output (test set contamination)</span>
-            </li>
-            <li className="flex items-start gap-2">
-              <span className="text-[var(--red-500)] mt-0.5" style={{ fontFamily: "'Source Code Pro', monospace" }}>--</span>
-              <span>Sandbox escape attempt detected</span>
-            </li>
-            <li className="flex items-start gap-2">
-              <span className="text-[var(--red-500)] mt-0.5" style={{ fontFamily: "'Source Code Pro', monospace" }}>--</span>
-              <span>Exceeding resource limits by more than 10%</span>
-            </li>
-            <li className="flex items-start gap-2">
-              <span className="text-[var(--red-500)] mt-0.5" style={{ fontFamily: "'Source Code Pro', monospace" }}>--</span>
-              <span>Evidence of hard-coded benchmark answers</span>
-            </li>
-            <li className="flex items-start gap-2">
-              <span className="text-[var(--red-500)] mt-0.5" style={{ fontFamily: "'Source Code Pro', monospace" }}>--</span>
-              <span>Multiple submissions from the same team under different names</span>
-            </li>
-          </ul>
-          <p className="text-xs text-[var(--gray-400)] mt-4">
-            Disqualified submissions remain on the leaderboard with FAIL status
-            for transparency but are ineligible for prizes or rankings.
-          </p>
-        </div>
+      <section className="card rounded-2xl p-6 bg-white">
+        <h3 className="text-xl font-semibold mb-4">What To Submit</h3>
+        <pre className="rounded-xl p-4 bg-gray-50 border border-[var(--gray-200)] text-sm text-[var(--gray-600)] overflow-x-auto"
+             style={{ fontFamily: "'Source Code Pro', monospace" }}>
+{`submission/
+  metadata.json
+  results.json
+  code/run.py                # optional but recommended for replay
+  paper/
+    paper.pdf
+    source/main.tex
+    source/refs.bib
+    source/figures/
+    claims.json
+  logs/
+    iterations.jsonl
+    experiment_log.jsonl
+    api_calls.jsonl`}
+        </pre>
       </section>
     </div>
   );

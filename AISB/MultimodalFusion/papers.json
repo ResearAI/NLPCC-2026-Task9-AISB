@@ -1,0 +1,183 @@
+[
+  {
+    "title": "Vision Language Models are Biased",
+    "authors": "An Vo, Khai-Nguyen Nguyen et al. (KAIST, William & Mary, U. Alberta, Auburn)",
+    "arxiv": "2505.23941",
+    "venue": "ICLR 2026",
+    "type": "Finding/Benchmark",
+    "contribution": "VLMs achieve 100% accuracy on original images but ~17% on counterfactual modifications, proving they rely on memorized knowledge rather than actual visual analysis. Adopted by Google DeepMind (Gemini 3 Pro evaluation) and ByteDance (Seed1.8 evaluation). Integrated into lmms-eval framework.",
+    "updated": "2026-03-29"
+  },
+  {
+    "title": "The Illusion of Thinking",
+    "authors": "Parshin Shojaee, Iman Mirzadeh et al. (Apple)",
+    "arxiv": "2506.06941",
+    "venue": "arXiv June 2025",
+    "type": "Finding",
+    "contribution": "Large Reasoning Models face complete accuracy collapse beyond complexity thresholds on controllable puzzles; non-reasoning LLMs can outperform LRMs on simple tasks.",
+    "note": "One of the most viral AI papers of 2025. Released before Apple WWDC. 3+ direct response papers.",
+    "updated": "2026-03-29"
+  },
+  {
+    "title": "The Illusion of the Illusion of Thinking (rebuttal)",
+    "authors": "A. Lawsen (Open Philanthropy); v1 co-authored with C. Opus (Claude)",
+    "arxiv": "2506.09250",
+    "venue": "arXiv June 2025",
+    "type": "Finding (rebuttal)",
+    "contribution": "Apple's findings reflect experimental design limitations (token limits, mathematically impossible puzzle instances) rather than fundamental reasoning failures. First arXiv paper co-authored by an AI model.",
+    "updated": "2026-03-29"
+  },
+  {
+    "title": "Can VLMs Actually See and Read? (Modality Collapse Survey)",
+    "authors": "Mong Yuan Sim, Wei Emma Zhang, Xiang Dai, Biaoyan Fang",
+    "arxiv": null,
+    "venue": "ACL 2025 Findings (2025.findings-acl.1256)",
+    "type": "Survey/Finding",
+    "contribution": "Reviews 'modality collapse' -- VLMs rely on text while ignoring vision, yet still achieve competitive performance -- explaining why this occurs.",
+    "updated": "2026-03-29"
+  },
+  {
+    "title": "Breaking Down Video LLM Benchmarks",
+    "authors": "Bo Feng et al.",
+    "arxiv": "2505.14321",
+    "venue": "arXiv May 2025",
+    "type": "Finding/Benchmark",
+    "contribution": "26-35% of video benchmark questions answerable without video. Proposes VBenchComp pipeline exposing that benchmark scores overstate true video understanding.",
+    "updated": "2026-03-29"
+  },
+  {
+    "title": "VideoQA in the Era of LLMs",
+    "authors": "Junbin Xiao et al.",
+    "arxiv": "2408.04223",
+    "venue": "arXiv Aug 2024, revised June 2025",
+    "type": "Finding",
+    "contribution": "Video-LLMs falter on temporal reasoning and are paradoxically unresponsive to adversarial video perturbations while being highly sensitive to simple textual rephrasing.",
+    "updated": "2026-03-29"
+  },
+  {
+    "title": "Multimodal Hallucination Evaluation and Detection (Survey)",
+    "authors": "Zhiyuan Chen et al. (CAS/Huawei)",
+    "arxiv": "2507.19024",
+    "venue": "arXiv July 2025, revised Jan 2026",
+    "type": "Survey",
+    "contribution": "First comprehensive taxonomy of multimodal hallucination based on faithfulness and factuality across both Image-to-Text and Text-to-Image.",
+    "updated": "2026-03-29"
+  },
+  {
+    "title": "VIGIL: Hallucination Detection in Image Recontextualization",
+    "authors": null,
+    "arxiv": "2602.14633",
+    "venue": "KDD 2026 (accepted)",
+    "type": "Benchmark/Method",
+    "contribution": "Granular hallucination detection pipeline using SAM 3, DINOv3, Qwen3-VL; goes beyond binary scores to textual error explanations.",
+    "updated": "2026-03-29"
+  },
+  {
+    "title": "Hallucination of MLLMs (Survey)",
+    "authors": "Zechen Bai, Pichao Wang et al.",
+    "arxiv": "2404.18930",
+    "venue": "arXiv Apr 2024, revised Apr 2025",
+    "type": "Survey",
+    "contribution": "Layered classification tracing hallucinations to root causes with linked mitigation strategies. One of the most cited MLLM hallucination surveys.",
+    "updated": "2026-03-29"
+  },
+  {
+    "title": "Scaling Laws for Native Multimodal Models",
+    "authors": "Mustafa Shukor et al. (Apple)",
+    "arxiv": "2504.07951",
+    "venue": "ICCV 2025",
+    "type": "Method/Finding",
+    "contribution": "Most extensive scaling study (457 trained models); early-fusion architectures match late-fusion at lower parameter counts, are more efficient, benefit from MoE with modality-agnostic routing. Challenges CLIP+LLM paradigm.",
+    "note": "Highly cited; influenced Llama 4 and other early-fusion designs.",
+    "updated": "2026-03-29"
+  },
+  {
+    "title": "Emu3: Next-Token Prediction is All You Need",
+    "authors": "Xinlong Wang et al. (BAAI)",
+    "arxiv": "2409.18869",
+    "venue": "Nature 2025",
+    "type": "Method",
+    "contribution": "Multimodal model trained solely with next-token prediction (no diffusion, no CLIP); tokenizing images, text, and video into discrete tokens with a single transformer matches task-specific models in both generation and perception.",
+    "repo": "https://github.com/baaai/Emu3",
+    "github_stars": 2300,
+    "updated": "2026-03-29"
+  },
+  {
+    "title": "MMaDA: Multimodal Large Diffusion Language Models",
+    "authors": "Ling Yang et al. (Princeton, Peking U., ByteDance)",
+    "arxiv": "2505.15809",
+    "venue": "arXiv May 2025",
+    "type": "Method",
+    "contribution": "First unified multimodal diffusion foundation model eliminating modality-specific components; introduces UniGRPO for unified RL across reasoning and generation. Outperforms LLaMA-3-7B in text and SDXL in images.",
+    "github_stars": 1570,
+    "updated": "2026-03-29"
+  },
+  {
+    "title": "Unified Multimodal Understanding and Generation Models (Survey)",
+    "authors": "Shanshan Zhao et al. (Alibaba)",
+    "arxiv": "2505.02567",
+    "venue": "arXiv May 2025, revised Jan 2026 (v6)",
+    "type": "Survey",
+    "contribution": "Categorizes 50+ unified multimodal models into three paradigms (diffusion-based, autoregressive, hybrid). Most complete taxonomy and timeline available.",
+    "updated": "2026-03-29"
+  },
+  {
+    "title": "Gemini 2.5: Pushing the Frontier with Advanced Reasoning, Multimodality, Long Context, and Agentic Capabilities",
+    "authors": "Google DeepMind",
+    "arxiv": null,
+    "venue": "arXiv 2025",
+    "type": "Technical Report",
+    "contribution": "Gemini 2.5 technical report: multimodal understanding/reasoning and Agent capability SOTA.",
+    "paper_url": "https://arxiv.org/abs/2507.06261",
+    "doi": "10.48550/arXiv.2507.06261",
+    "citations": 119,
+    "updated": "2026-03-29"
+  },
+  {
+    "title": "Qwen2.5-VL Technical Report",
+    "authors": "Alibaba",
+    "arxiv": null,
+    "venue": "arXiv 2025",
+    "type": "Technical Report",
+    "contribution": "Open-source multi-size multimodal model technical report.",
+    "paper_url": "https://arxiv.org/abs/2502.13923",
+    "doi": "10.48550/arXiv.2502.13923",
+    "citations": 39,
+    "updated": "2026-03-29"
+  },
+  {
+    "title": "InternVL3: Exploring Advanced Training and Test-Time Recipes for Open-Source Multimodal Models",
+    "authors": "Anonymous",
+    "arxiv": null,
+    "venue": "arXiv 2025",
+    "type": "Technical Report",
+    "contribution": "Open-source multimodal model strong baseline reference.",
+    "paper_url": "https://arxiv.org/abs/2504.10479",
+    "citations": 191,
+    "updated": "2026-03-29"
+  },
+  {
+    "title": "MMMU-Pro: A More Robust Multi-discipline Multimodal Understanding Benchmark",
+    "authors": "Xiang Yue et al.",
+    "arxiv": "2409.02813",
+    "venue": "ACL 2025",
+    "type": "Benchmark",
+    "contribution": "Forced vision-text coupling causes significant score drops. Replacement benchmark for saturated MMMU.",
+    "repo": "https://github.com/MMMU-Benchmark/MMMU",
+    "doi": "10.18653/v1/2025.acl-long.736",
+    "citations": 15,
+    "updated": "2026-03-29"
+  },
+  {
+    "title": "MPBench: A Comprehensive Multimodal Reasoning Benchmark for Process Errors Identification",
+    "authors": "Zhaopan Xu et al.",
+    "arxiv": null,
+    "venue": "ACL Findings 2025",
+    "type": "Benchmark",
+    "contribution": "Multimodal reasoning process error identification.",
+    "doi": "10.18653/v1/2025.findings-acl.1112",
+    "dataset_url": "https://huggingface.co/datasets/xuzhaopan/MPBench",
+    "citations": 4,
+    "updated": "2026-03-29"
+  }
+]

@@ -1,0 +1,5 @@
+numpy==1.26.4
+pandas==2.2.1
+scikit-learn==1.4.1.post1
+rdkit==2023.9.5
+PyTDC>=1.0.0

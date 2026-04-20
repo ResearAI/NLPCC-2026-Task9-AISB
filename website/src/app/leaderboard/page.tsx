@@ -1,272 +1,104 @@
-"use client";
-
-import { useState } from "react";
 import SectionHeading from "@/components/SectionHeading";
 
-type Track = "T1" | "T2" | "T3" | "Overall";
-
-interface LeaderboardEntry {
-  rank: number;
-  team: string;
-  system: string;
-  autonomy: "auto" | "human";
-  score: number;
-  cas: number;
-  integrity: "PASS" | "FLAGGED" | "FAIL";
-  dualScore: number;
-}
-
-const DATA: Record<Track, LeaderboardEntry[]> = {
-  T1: [
-    { rank: 1, team: "AISB Baseline", system: "Direct CoT", autonomy: "auto", score: 42.3, cas: 0.91, integrity: "PASS", dualScore: 38.5 },
-    { rank: 2, team: "AutoResearch", system: "GPT-4o Agent", autonomy: "auto", score: 56.8, cas: 0.62, integrity: "FLAGGED", dualScore: 35.2 },
-  ],
-  T2: [
-    { rank: 1, team: "AISB Baseline", system: "DeepSeek-Prover-V2", autonomy: "auto", score: 28.0, cas: 1.00, integrity: "PASS", dualScore: 28.0 },
-    { rank: 2, team: "AutoResearch", system: "Lean4 + GPT-4o", autonomy: "auto", score: 34.0, cas: 0.88, integrity: "PASS", dualScore: 29.9 },
-  ],
-  T3: [
-    { rank: 1, team: "AISB Baseline", system: "RF + XGBoost", autonomy: "auto", score: 45.2, cas: 0.95, integrity: "PASS", dualScore: 42.9 },
-    { rank: 2, team: "AutoResearch", system: "AutoML Agent", autonomy: "auto", score: 58.7, cas: 0.72, integrity: "PASS", dualScore: 42.3 },
-  ],
-  Overall: [
-    { rank: 1, team: "AISB Baseline", system: "Ensemble", autonomy: "auto", score: 38.5, cas: 0.95, integrity: "PASS", dualScore: 36.6 },
-    { rank: 2, team: "AutoResearch", system: "Multi-Agent", autonomy: "auto", score: 49.8, cas: 0.74, integrity: "FLAGGED", dualScore: 36.9 },
-  ],
-};
-
-const TRACK_TABS: { key: Track; label: string; color: string }[] = [
-  { key: "Overall", label: "Overall", color: "var(--navy-700)" },
-  { key: "T1", label: "T1: LM Reasoning", color: "var(--gold-500)" },
-  { key: "T2", label: "T2: Math & Proof", color: "var(--violet-500)" },
-  { key: "T3", label: "T3: Discovery", color: "var(--emerald-500)" },
+const READY_CARDS = [
+  {
+    title: "Benchmark Leaderboard",
+    subtitle: "基准榜单",
+    detail:
+      "Update later. Official benchmark rows will appear after public submission collection opens and organizer replay is enabled.",
+  },
+  {
+    title: "Paper Leaderboard",
+    subtitle: "论文榜单",
+    detail:
+      "Update later. Paper rows will be published after submission review, claim traceability checks, and organizer-side evaluation.",
+  },
+  {
+    title: "Human-Assisted Board",
+    subtitle: "人机协同榜单",
+    detail:
+      "Update later. Human-assisted runs will be reported separately from fully autonomous runs.",
+  },
 ];
 
-function integrityStyle(status: string) {
-  switch (status) {
-    case "PASS":
-      return "bg-[var(--emerald-500)]/10 text-[var(--emerald-500)]";
-    case "FLAGGED":
-      return "bg-[var(--gold-500)]/10 text-[var(--gold-500)]";
-    case "FAIL":
-      return "bg-[var(--red-500)]/10 text-[var(--red-500)]";
-    default:
-      return "";
-  }
-}
-
-function casColor(cas: number) {
-  if (cas >= 0.8) return "text-[var(--emerald-500)]";
-  if (cas >= 0.5) return "text-[var(--gold-500)]";
-  return "text-[var(--red-500)]";
-}
+const FUTURE_FILTERS = [
+  "competition",
+  "leaderboard",
+  "direction",
+  "autonomy mode",
+  "result type",
+  "experiment setting",
+];
 
 export default function LeaderboardPage() {
-  const [activeTrack, setActiveTrack] = useState<Track>("Overall");
-  const [sortBy, setSortBy] = useState<"dualScore" | "score" | "cas">(
-    "dualScore"
-  );
-  const [autonomyFilter, setAutonomyFilter] = useState<"all" | "auto" | "human">("all");
-
-  const filtered = DATA[activeTrack].filter(
-    (e) => autonomyFilter === "all" || e.autonomy === autonomyFilter
-  );
-  const entries = [...filtered].sort((a, b) => {
-    return b[sortBy] - a[sortBy];
-  });
-
-  // Re-rank after sort
-  const ranked = entries.map((e, i) => ({ ...e, rank: i + 1 }));
-
   return (
     <div className="max-w-7xl mx-auto px-6 py-16">
       <SectionHeading
-        title="Leaderboard"
-        subtitle="Rankings across all competition tracks. Sorted by Dual Score (performance x integrity) by default."
+        title="AISB Leaderboard"
+        titleCn="比赛榜单"
+        subtitle="The leaderboard page is in ready state. Public rows will be updated later after organizer replay and submission opening."
       />
 
-      {/* Track Tabs */}
-      <div className="flex gap-2 mb-8 flex-wrap">
-        {TRACK_TABS.map((tab) => (
-          <button
-            key={tab.key}
-            onClick={() => setActiveTrack(tab.key)}
-            className={`px-4 py-2 rounded-lg text-sm font-medium transition-all ${
-              activeTrack === tab.key
-                ? "bg-gray-50 border border-white/[0.12]"
-                : "text-[var(--gray-400)] hover:text-[var(--gray-500)]"
-            }`}
-            style={
-              activeTrack === tab.key ? { color: tab.color } : undefined
-            }
-          >
-            {tab.label}
-          </button>
-        ))}
-      </div>
+      <section className="card-gold rounded-2xl p-6 bg-white mb-8">
+        <h3 className="text-xl font-semibold mb-3">Current Status</h3>
+        <p className="text-sm text-[var(--gray-500)] leading-relaxed">
+          NLPCC 2026 is currently publishing benchmark packages, papers, tools, and local replay infrastructure.
+          Public leaderboard rows are intentionally held in <strong>update later</strong> state until official submission
+          collection opens.
+        </p>
+      </section>
 
-      {/* Autonomy Filter */}
-      <div className="flex gap-2 mb-4">
-        <span className="text-xs text-[var(--gray-400)] self-center mr-2">Award Category:</span>
-        {([["all", "All"], ["auto", "Fully Autonomous"], ["human", "Human-Assisted"]] as const).map(([key, label]) => (
-          <button
-            key={key}
-            onClick={() => setAutonomyFilter(key)}
-            className={`px-3 py-1 rounded-md text-xs font-medium transition-all ${
-              autonomyFilter === key
-                ? "bg-[var(--navy-700)] text-white"
-                : "text-[var(--gray-400)] hover:text-[var(--gray-600)] border border-[var(--gray-200)]"
-            }`}
-          >
-            {label}
-          </button>
-        ))}
-      </div>
-
-      {/* Note */}
-      <div className="mb-6 p-3 rounded-lg bg-[var(--gold-500)]/5 border border-[var(--gold-500)]/20 text-xs text-[var(--gray-500)]">
-        Placeholder data shown below. Real results will populate as submissions
-        are evaluated. Click column headers to sort.
-      </div>
-
-      {/* Table */}
-      <div className="overflow-x-auto">
-        <table className="w-full text-sm">
-          <thead>
-            <tr className="border-b border-white/[0.12] text-[var(--gray-400)] text-xs uppercase tracking-wider">
-              <th className="py-3 px-4 text-left font-medium">Rank</th>
-              <th className="py-3 px-4 text-left font-medium">Team</th>
-              <th className="py-3 px-4 text-left font-medium">System</th>
-              <th className="py-3 px-4 text-center font-medium">Mode</th>
-              <th
-                className="py-3 px-4 text-right font-medium cursor-pointer hover:text-[var(--navy-700)] transition"
-                onClick={() => setSortBy("score")}
-              >
-                Score {sortBy === "score" ? "v" : ""}
-              </th>
-              <th
-                className="py-3 px-4 text-right font-medium cursor-pointer hover:text-[var(--navy-700)] transition"
-                onClick={() => setSortBy("cas")}
-              >
-                CAS {sortBy === "cas" ? "v" : ""}
-              </th>
-              <th className="py-3 px-4 text-center font-medium">Integrity</th>
-              <th
-                className="py-3 px-4 text-right font-medium cursor-pointer hover:text-[var(--navy-700)] transition"
-                onClick={() => setSortBy("dualScore")}
-              >
-                Dual Score {sortBy === "dualScore" ? "v" : ""}
-              </th>
-            </tr>
-          </thead>
-          <tbody>
-            {ranked.map((row) => (
-              <tr
-                key={row.team + row.system}
-                className="leaderboard-row border-b border-[var(--gray-200)]"
-              >
-                <td
-                  className="py-4 px-4 text-[var(--gray-400)]"
-                  style={{ fontFamily: "'Source Code Pro', monospace" }}
-                >
-                  {row.rank}
-                </td>
-                <td className="py-4 px-4 font-semibold">{row.team}</td>
-                <td className="py-4 px-4 text-[var(--gray-500)]">{row.system}</td>
-                <td className="py-4 px-4 text-center">
-                  <span className={`px-2 py-0.5 rounded-full text-xs font-medium ${
-                    row.autonomy === "auto"
-                      ? "bg-[var(--emerald-500)]/10 text-[var(--emerald-500)]"
-                      : "bg-[var(--violet-500)]/10 text-[var(--violet-500)]"
-                  }`}>
-                    {row.autonomy === "auto" ? "Auto" : "Human"}
-                  </span>
-                </td>
-                <td
-                  className="py-4 px-4 text-right"
-                  style={{ fontFamily: "'Source Code Pro', monospace" }}
-                >
-                  {row.score.toFixed(1)}
-                </td>
-                <td
-                  className={`py-4 px-4 text-right ${casColor(row.cas)}`}
-                  style={{ fontFamily: "'Source Code Pro', monospace" }}
-                >
-                  {row.cas.toFixed(2)}
-                </td>
-                <td className="py-4 px-4 text-center">
-                  <span
-                    className={`px-2 py-0.5 rounded text-xs ${integrityStyle(
-                      row.integrity
-                    )}`}
-                    style={{ fontFamily: "'Source Code Pro', monospace" }}
-                  >
-                    {row.integrity}
-                  </span>
-                </td>
-                <td
-                  className="py-4 px-4 text-right font-bold"
-                  style={{ fontFamily: "'Source Code Pro', monospace" }}
-                >
-                  {row.dualScore.toFixed(1)}
-                </td>
-              </tr>
-            ))}
-          </tbody>
-        </table>
-      </div>
-
-      {/* Legend */}
-      <div className="mt-8 grid md:grid-cols-2 gap-4">
-        <div className="card rounded-xl p-5 bg-white">
-          <h3 className="font-semibold text-sm mb-3">Scoring Legend</h3>
-          <div className="space-y-2 text-xs text-[var(--gray-500)]">
-            <div>
-              <strong className="text-[var(--navy-700)]">Score</strong> -- Raw task
-              performance (higher is better)
+      <section className="grid md:grid-cols-3 gap-4 mb-8">
+        {READY_CARDS.map((card) => (
+          <div key={card.title} className="card rounded-2xl p-6 bg-white">
+            <div
+              className="text-xs uppercase tracking-wider mb-2"
+              style={{ color: "var(--gray-400)", fontFamily: "'Source Code Pro', monospace" }}
+            >
+              {card.subtitle}
             </div>
-            <div>
-              <strong className="text-[var(--navy-700)]">CAS</strong> -- Claim Accuracy
-              Score: fraction of numerical claims verified against actual
-              experiment outputs (0.0 to 1.0)
+            <h3 className="text-xl font-semibold text-[var(--navy-700)] mb-3">{card.title}</h3>
+            <div className="inline-block px-3 py-1 rounded-full text-xs font-medium mb-4"
+                 style={{ background: "var(--gray-50)", color: "var(--gray-600)", border: "1px solid var(--gray-200)" }}>
+              update later
             </div>
-            <div>
-              <strong className="text-[var(--navy-700)]">Dual Score</strong> -- Score x
-              CAS. Penalizes fabrication. This is the primary ranking metric.
-            </div>
+            <p className="text-sm text-[var(--gray-500)] leading-relaxed">{card.detail}</p>
           </div>
+        ))}
+      </section>
+
+      <section className="card rounded-2xl p-6 bg-white mb-8">
+        <h3 className="text-lg font-semibold mb-3">What Will Appear Here Later</h3>
+        <div className="flex flex-wrap gap-2 mb-4">
+          {FUTURE_FILTERS.map((item) => (
+            <span
+              key={item}
+              className="px-3 py-1.5 rounded-full text-xs"
+              style={{
+                background: "var(--gray-50)",
+                color: "var(--gray-600)",
+                border: "1px solid var(--gray-200)",
+                fontFamily: "'Source Code Pro', monospace",
+              }}
+            >
+              {item}
+            </span>
+          ))}
         </div>
-        <div className="card rounded-xl p-5 bg-white">
-          <h3 className="font-semibold text-sm mb-3">Integrity Status</h3>
-          <div className="space-y-2 text-xs">
-            <div className="flex items-center gap-3">
-              <span className="px-2 py-0.5 rounded bg-[var(--emerald-500)]/10 text-[var(--emerald-500)]">
-                PASS
-              </span>
-              <span className="text-[var(--gray-500)]">
-                CAS &gt;= 0.8. All major claims verified.
-              </span>
-            </div>
-            <div className="flex items-center gap-3">
-              <span className="px-2 py-0.5 rounded bg-[var(--gold-500)]/10 text-[var(--gold-500)]">
-                FLAGGED
-              </span>
-              <span className="text-[var(--gray-500)]">
-                CAS 0.5-0.8. Some claims unverifiable. Under review.
-              </span>
-            </div>
-            <div className="flex items-center gap-3">
-              <span className="px-2 py-0.5 rounded bg-[var(--red-500)]/10 text-[var(--red-500)]">
-                FAIL
-              </span>
-              <span className="text-[var(--gray-500)]">
-                CAS &lt; 0.5. Significant fabrication detected. Disqualified
-                from prize consideration.
-              </span>
-            </div>
-          </div>
+        <p className="text-sm text-[var(--gray-500)] leading-relaxed">
+          When live updates open, this page will support filtering by competition, direction, leaderboard type,
+          autonomy mode, and experiment setting, similar to a modern benchmark hub rather than a static score table.
+        </p>
+      </section>
+
+      <section className="card rounded-2xl p-6 bg-white">
+        <h3 className="text-lg font-semibold mb-3">Leaderboard Policy</h3>
+        <div className="space-y-3 text-sm text-[var(--gray-500)]">
+          <p>Paper and benchmark leaderboards are separate. T1/T2/T3 are benchmark directions, not fixed weighted mixtures.</p>
+          <p>External papers and public SOTA references may be shown as context, but not as official NLPCC rows.</p>
+          <p>Official rows will be published only after organizer-side replay and integrity checks.</p>
         </div>
-      </div>
+      </section>
     </div>
   );
 }

@@ -1,0 +1,57 @@
+{
+  "baseline_name": "deterministic_lean_router",
+  "proof_rate": 0.0,
+  "final_score": 0.0,
+  "checked": 2,
+  "status": "local_smoke_rerun",
+  "validated_at": "2026-04-19",
+  "experiment_setting": {
+    "data": "data/competition/T2/dev/formalmath_dev.json",
+    "max_items": 2,
+    "lean": "Lean 4.15.0",
+    "mathlib": "v4.15.0",
+    "docker_image": "aisb-t2:latest",
+    "candidate_policy": "deterministic tactic router, first 3 candidates per theorem"
+  },
+  "reference_results": [
+    {
+      "method": "Novita DeepSeek-Prover-V2-671B",
+      "source": "https://api.novita.ai/openai",
+      "reported_results": {
+        "NLPCC public dev smoke": "0.0 proof_rate on 5 theorems"
+      },
+      "experiment_setting": {
+        "model": "deepseek/deepseek-prover-v2-671b",
+        "temperature": 1.0,
+        "max_tokens": 8192,
+        "samples": 3,
+        "verifier": "Lean 4.15.0 + Mathlib v4.15.0",
+        "validated_at": "2026-04-20",
+        "checked": 5,
+        "proof_rate": 0.0,
+        "repair_loop": "generate -> Lean verify -> feed diagnostics back to model",
+        "diagnostics": "Generated candidates were rechecked by Lean. Failures were tactic/proof errors or provider remote-close events; import preamble normalization removes narrow Mathlib import failures."
+      },
+      "scope": "organizer smoke rerun under AISB/NLPCC evaluator; full 160000-token setting remains the required reporting configuration when provider connection permits"
+    },
+    {
+      "method": "DeepSeek-Prover-V1.5-RL + RMaxTS",
+      "source": "https://github.com/deepseek-ai/DeepSeek-Prover-V1.5",
+      "reported_results": {
+        "miniF2F-test": "63.5%",
+        "ProofNet": "25.3%"
+      },
+      "scope": "external full benchmark reference, not AISB/NLPCC official score"
+    },
+    {
+      "method": "ReProver",
+      "source": "https://github.com/lean-dojo/ReProver",
+      "reported_results": {
+        "miniF2F-test": "26.5%",
+        "ProofNet": "13.8%"
+      },
+      "scope": "external full benchmark reference, not AISB/NLPCC official score"
+    }
+  ],
+  "note": "The local baseline confirms AISB Lean/Mathlib execution. Competitive T2 proof-search should build on DeepSeek-Prover/ReProver-style search, but those external results are reference results only until rerun under the NLPCC package."
+}

@@ -1,0 +1,115 @@
+{
+  "direction": "LMReasoning",
+  "last_updated": "2026-03-29",
+  "update_source": "AISB compass update 2026-03-30",
+  "papers": [
+    {
+      "title": "DeepSeek-R1: Incentivizing Reasoning Capability in LLMs via Reinforcement Learning",
+      "authors": "Daya Guo et al. (DeepSeek-AI)",
+      "arxiv": "2501.12948",
+      "venue": "Nature, Sep 2025",
+      "type": "method",
+      "contribution": "Shows reasoning abilities emerge via pure RL (GRPO) without supervised traces; emergent self-reflection behaviors.",
+      "engagement": "92K GitHub stars; 443 HF upvotes; #1 Paper of the Day"
+    },
+    {
+      "title": "s1: Simple test-time scaling",
+      "authors": "Niklas Muennighoff et al.",
+      "arxiv": "2501.19393",
+      "venue": "arXiv, Jan 2025",
+      "type": "method",
+      "contribution": "Achieves test-time scaling with only 1,000 SFT examples + 'budget forcing'; beats o1-preview by 27% on AIME24.",
+      "engagement": "6.6K GitHub stars; 124 HF upvotes; #1 Paper of the Day"
+    },
+    {
+      "title": "Think Deep, Not Just Long",
+      "authors": "Wei-Lin Chen et al. (UVA + Google)",
+      "arxiv": "2602.13517",
+      "venue": "arXiv, Feb 2026",
+      "type": "method",
+      "contribution": "Introduces Deep-Thinking Ratio (DTR) showing token quality matters more than quantity; Think@n reduces cost ~50%.",
+      "engagement": "MarkTechPost coverage"
+    },
+    {
+      "title": "Does RL Really Incentivize Reasoning Capacity in LLMs Beyond the Base Model?",
+      "authors": "Yang Yue et al. (Tsinghua)",
+      "arxiv": "2504.13837",
+      "venue": "NeurIPS 2025 Best Paper Runner-Up",
+      "type": "finding",
+      "contribution": "RLVR does NOT elicit new reasoning -- base models achieve higher pass@k; RL merely biases distribution.",
+      "engagement": "332 GitHub stars; 120+ citations in 2 months"
+    },
+    {
+      "title": "The Illusion of Thinking",
+      "authors": "Parshin Shojaee et al. (Apple)",
+      "arxiv": "2506.06941",
+      "venue": "arXiv, Jun 2025",
+      "type": "finding",
+      "contribution": "LRMs exhibit 'reasoning cliff' -- performance collapses beyond a complexity threshold.",
+      "engagement": "Extremely viral on X/Twitter; generated published rebuttals"
+    },
+    {
+      "title": "Reasoning Models Don't Always Say What They Think",
+      "authors": "Yanda Chen et al. (Anthropic)",
+      "arxiv": "2505.05410",
+      "venue": "arXiv, May 2025",
+      "type": "finding",
+      "contribution": "CoT faithfulness is low (<20% hint reveal rate); RL-trained models improve but plateau.",
+      "engagement": "Widely discussed in safety community"
+    },
+    {
+      "title": "Inverse Scaling in Test-Time Compute",
+      "authors": "Aryo Gema et al.",
+      "arxiv": "2507.14417",
+      "venue": "TMLR, Dec 2025",
+      "type": "finding",
+      "contribution": "Constructs tasks where longer reasoning HURTS accuracy; identifies 5 failure modes.",
+      "engagement": "Core 'reasoning tax' paper"
+    },
+    {
+      "title": "Spurious Rewards: Rethinking Training Signals in RLVR",
+      "authors": "Rulin Shao et al.",
+      "arxiv": "2506.10947",
+      "venue": "arXiv, Jun 2025",
+      "type": "finding",
+      "contribution": "RLVR works even with random/incorrect rewards -- MATH-500 improves 21.4% with random reward vs 29.1% with ground truth.",
+      "engagement": "Highly provocative; questions RL signal necessity"
+    },
+    {
+      "title": "GSM-Symbolic",
+      "authors": "Iman Mirzadeh et al. (Apple)",
+      "arxiv": "2410.05229",
+      "venue": "ICLR 2025",
+      "type": "finding",
+      "contribution": "LLMs show significant variance when numerical values change; performance declines with added complexity.",
+      "engagement": "GitHub: apple/ml-gsm-symbolic; HF dataset available"
+    },
+    {
+      "title": "MATH-Perturb",
+      "authors": "Kaixuan Huang et al. (Princeton + Google)",
+      "arxiv": "2502.06453",
+      "venue": "ICML 2025",
+      "type": "finding",
+      "contribution": "'Hard perturbations' cause all models including o1-mini to drop 16.49%, revealing technique memorization.",
+      "engagement": "GitHub: Kaffaljidhmah2/MATH-Perturb"
+    },
+    {
+      "title": "Chain-of-Thought Reasoning In The Wild Is Not Always Faithful",
+      "authors": "Ivan Arcuschin et al.",
+      "arxiv": "2503.08679",
+      "venue": "arXiv, Mar 2025",
+      "type": "finding",
+      "contribution": "Unfaithful CoT occurs on natural prompts -- models give coherent justifications for contradictory answers. GPT-4o-mini: 13% unfaithful; frontier thinking models: <1%.",
+      "engagement": null
+    },
+    {
+      "title": "SFT Memorizes, RL Generalizes",
+      "authors": "Tianzhe Chu et al.",
+      "arxiv": "2501.17161",
+      "venue": "ICML 2025",
+      "type": "finding",
+      "contribution": "RL with outcome-based reward generalizes across textual/visual variants while SFT memorizes; SFT still essential as stabilizer.",
+      "engagement": "GitHub: LeslieTrue/SFTvsRL"
+    }
+  ]
+}

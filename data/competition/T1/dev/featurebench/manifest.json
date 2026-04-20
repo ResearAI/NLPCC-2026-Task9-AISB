@@ -1,0 +1,25 @@
+{
+  "name": "AISB FeatureBench-lite",
+  "version": "2026.04",
+  "description": "Public runnable engineering-task subset for T1 local development.",
+  "tasks": [
+    {
+      "task_id": "run_report_summary",
+      "title": "Summarize experiment runs and render a markdown report",
+      "task_relpath": "tasks/run_report_summary",
+      "test_command": ["python", "-m", "pytest", "tests", "-q"]
+    },
+    {
+      "task_id": "submission_paths",
+      "title": "Resolve sanitized submission output paths and deep-merge runtime config",
+      "task_relpath": "tasks/submission_paths",
+      "test_command": ["python", "-m", "pytest", "tests", "-q"]
+    },
+    {
+      "task_id": "prediction_cleanup",
+      "title": "Clean prediction rows before export and remove canary/comment pollution",
+      "task_relpath": "tasks/prediction_cleanup",
+      "test_command": ["python", "-m", "pytest", "tests", "-q"]
+    }
+  ]
+}

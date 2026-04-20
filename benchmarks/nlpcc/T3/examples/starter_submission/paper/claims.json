@@ -1,0 +1,25 @@
+{
+  "claims": [
+    {
+      "claim_id": "t3_c1",
+      "experiment_id": "exp_t3_001",
+      "metric_name": "final_score",
+      "value": 0.6385,
+      "direction": "T3"
+    },
+    {
+      "claim_id": "t3_c2",
+      "experiment_id": "exp_t3_001",
+      "metric_name": "herg_accuracy",
+      "value": 1.0,
+      "direction": "T3"
+    },
+    {
+      "claim_id": "t3_c3",
+      "experiment_id": "exp_t3_001",
+      "metric_name": "ames_accuracy",
+      "value": 0.5227,
+      "direction": "T3"
+    }
+  ]
+}

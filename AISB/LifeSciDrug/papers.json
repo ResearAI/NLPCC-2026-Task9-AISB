@@ -1,0 +1,117 @@
+{
+  "direction": "LifeSciDrug",
+  "last_updated": "2026-03-29",
+  "update_source": "AISB compass update 2026-03-30",
+  "papers": [
+    {
+      "title": "AlphaFold 3",
+      "authors": "Josh Abramson et al. (DeepMind)",
+      "arxiv": null,
+      "venue": "Nature 630:493-500, Jun 2024",
+      "type": "method",
+      "contribution": "First unified framework for protein-nucleic acid-small molecule complex prediction; 2024 Nobel Prize."
+    },
+    {
+      "title": "Boltz-2",
+      "authors": "Saro Passaro et al. (MIT/Recursion)",
+      "arxiv": null,
+      "bioRxiv": "2025.06.14.659707",
+      "venue": "bioRxiv, Jun 2025",
+      "type": "method",
+      "contribution": "First model approaching FEP-level binding affinity at 1000x speed; outperformed all CASP16 affinity participants."
+    },
+    {
+      "title": "RFdiffusion2",
+      "authors": "Woody Ahern et al. (Baker Lab)",
+      "arxiv": null,
+      "venue": "Nat. Methods 23:96-105, Jan 2026",
+      "type": "method",
+      "contribution": "Enzyme design from functional group geometries; scaffolded all 41 active sites in benchmark."
+    },
+    {
+      "title": "ESM3",
+      "authors": "Thomas Hayes et al. (EvolutionaryScale)",
+      "arxiv": null,
+      "venue": "Science 387:850-858, Feb 2025",
+      "type": "method",
+      "contribution": "98B multimodal protein LM; generated novel GFP at 58% identity -- simulating 500M years of evolution."
+    },
+    {
+      "title": "Chai-2",
+      "authors": "Jacques Boitreaud et al. (Chai Discovery)",
+      "arxiv": null,
+      "bioRxiv": "2025.07.05.663018",
+      "venue": "bioRxiv, Jul 2025",
+      "type": "method",
+      "contribution": "Zero-shot antibody design with 16% hit rate across 52 targets (100x improvement); first GPCR agonist antibodies."
+    },
+    {
+      "title": "Protenix-v1",
+      "authors": "ByteDance AI4Science",
+      "arxiv": null,
+      "bioRxiv": "2026.02.05.703733",
+      "venue": "bioRxiv, Feb 2026",
+      "type": "method",
+      "contribution": "First fully open-source model outperforming AF3; Apache 2.0 license; 368M params."
+    },
+    {
+      "title": "The AI drug revolution needs a revolution",
+      "authors": "R.D. Jacobson",
+      "arxiv": null,
+      "venue": "npj Drug Discov. 2:10, Jun 2025",
+      "type": "finding",
+      "contribution": "AI drug discovery must incorporate functional human data; hasn't improved ~90% clinical failure rate."
+    },
+    {
+      "title": "ISM001-055 Phase IIa (first AI drug clinical validation)",
+      "authors": "Insilico Medicine",
+      "arxiv": null,
+      "venue": "Nat. Medicine, Jun 2025",
+      "type": "finding",
+      "contribution": "First AI-designed drug (target + molecule) completes Phase IIa; dose-dependent FVC improvement in IPF."
+    },
+    {
+      "title": "AF3 in Drug Discovery: Comprehensive Assessment",
+      "authors": "Haiyang Zheng et al.",
+      "arxiv": null,
+      "bioRxiv": "2025.04.07.647682",
+      "venue": "bioRxiv, Apr 2025",
+      "type": "finding",
+      "contribution": "AF3 struggles with conformational changes >5A; cannot rank binding affinities; persistent GPCR bias."
+    },
+    {
+      "title": "Critical Assessment of ML models for TDC ADMET",
+      "authors": "Receptor.AI",
+      "arxiv": null,
+      "bioRxiv": "2026.02.26.708193",
+      "venue": "bioRxiv, Feb 2026",
+      "type": "finding",
+      "contribution": "Only 3/top TDC models pass reproducibility checks; data leakage in several top methods. Deliberately overfitted models could achieve top rankings."
+    },
+    {
+      "title": "CASP16 monomer assessment",
+      "authors": "Yuan et al.",
+      "arxiv": null,
+      "venue": "Proteins 94(1):86-105, Jan 2026",
+      "type": "finding",
+      "contribution": "Single-domain fold prediction 'nearly solved'; AF3 improves confidence over AF2."
+    },
+    {
+      "title": "CASP16 complex assessment",
+      "authors": "Zhang et al.",
+      "arxiv": null,
+      "bioRxiv": "2025.05.29.656875",
+      "venue": "bioRxiv, 2025",
+      "type": "finding",
+      "contribution": "Complex prediction unsolved; >30% of targets intractable; antibody-antigen remains very hard."
+    },
+    {
+      "title": "AI drug clinical trial analysis",
+      "authors": "Jayatunga et al.",
+      "arxiv": null,
+      "venue": "Drug Discov. Today 29:104009, 2024",
+      "type": "finding",
+      "contribution": "Phase I: 80-90% success (above average); Phase II: ~40% (industry average) -- AI hasn't cracked biology. 8 leading AI drug companies had 31 drugs in human trials by mid-2024."
+    }
+  ]
+}

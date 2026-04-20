@@ -1,0 +1,11 @@
+{
+  "claims": [
+    {
+      "claim_id": "t1_c1",
+      "experiment_id": "exp_t1_001",
+      "metric_name": "final_score",
+      "value": 0.0,
+      "direction": "T1"
+    }
+  ]
+}

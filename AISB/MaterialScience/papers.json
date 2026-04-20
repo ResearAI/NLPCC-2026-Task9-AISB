@@ -1,0 +1,144 @@
+{
+  "direction": "MaterialScience",
+  "last_updated": "2026-03-29",
+  "update_source": "AISB compass update 2026-03-30",
+  "papers": [
+    {
+      "title": "Pushing the limits of unconstrained MLIPs (PET-OAM-XL)",
+      "authors": "Filippo Bigi et al. (EPFL)",
+      "arxiv": "2601.16195",
+      "venue": "arXiv, Jan 2026",
+      "type": "method",
+      "contribution": "UPET architecture; 730M params; #1 Matbench Discovery (CPS=0.898, F1=0.924)."
+    },
+    {
+      "title": "PET-MAD",
+      "authors": "Arslan Mazitov et al. (EPFL)",
+      "arxiv": "2503.14118",
+      "venue": "Nat. Commun. 16:10653, Nov 2025",
+      "type": "method",
+      "contribution": "Lightweight universal MLIP competitive with larger models via 'Massive Atomistic Diversity' training."
+    },
+    {
+      "title": "eSEN",
+      "authors": "Xiang Fu et al. (Meta FAIR)",
+      "arxiv": "2502.12147",
+      "venue": "ICML 2025",
+      "type": "method",
+      "contribution": "Identifies PES smoothness as critical; direct-force pre-training; #2 Matbench Discovery. 30M params ~ 730M performance."
+    },
+    {
+      "title": "MACE-MP-0",
+      "authors": "Ilyes Batatia et al. (Cambridge)",
+      "arxiv": "2401.00096",
+      "venue": "J. Chem. Phys. 163:184110, Nov 2025",
+      "type": "method",
+      "contribution": "Universal potential covering 89 elements; most widely used open-source MLIP."
+    },
+    {
+      "title": "MatterSim",
+      "authors": "Han Yang et al. (Microsoft)",
+      "arxiv": "2405.04967",
+      "venue": "arXiv, May 2024",
+      "type": "method",
+      "contribution": "89 elements, 0-5000K, 0-1000 GPa; 10x accuracy for finite-T/P properties."
+    },
+    {
+      "title": "Artificial Intelligence Driving Materials Discovery?",
+      "authors": "Anthony K. Cheetham et al.",
+      "arxiv": null,
+      "venue": "Chem. Mater. 36:3490, Apr 2024",
+      "type": "finding",
+      "contribution": "GNoME critique: 'scant evidence for novelty, credibility, and utility' in 380K predictions."
+    },
+    {
+      "title": "Systematic softening in universal MLIPs",
+      "authors": "Bowen Deng et al.",
+      "arxiv": null,
+      "venue": "npj Comput. Mater. 11:9, Jan 2025",
+      "type": "finding",
+      "contribution": "Systematic PES softening in M3GNet/CHGNet/MACE for surfaces, defects, phonons; caused by biased near-equilibrium training data."
+    },
+    {
+      "title": "Performance Assessment of UIPs for Surfaces",
+      "authors": "Bruno M. Focassio et al.",
+      "arxiv": null,
+      "venue": "ACS Appl. Mater. Inter. 17:13111, 2025",
+      "type": "finding",
+      "contribution": "Surface energy calculations show significant shortcomings; errors correlate with distance from bulk training."
+    },
+    {
+      "title": "AI is dreaming up millions of new materials. Are they any good?",
+      "authors": "Nature News",
+      "arxiv": null,
+      "venue": "Nature 646:22-25, 2025",
+      "type": "finding",
+      "contribution": "Balanced assessment: 'critics slammed attempts but genuine progress behind the hype'."
+    },
+    {
+      "title": "A practical guide to MLIPs",
+      "authors": "Ryan Jacobs et al. (25+ co-authors)",
+      "arxiv": "2503.09814",
+      "venue": "Curr. Opin. Solid State Mater. Sci. 35:101214",
+      "type": "finding",
+      "contribution": "Comprehensive review of MLIP capabilities, limitations, and selection guidance."
+    },
+    {
+      "title": "Universal MLIPs for reduced dimensionality (0123D)",
+      "authors": null,
+      "arxiv": "2508.15614",
+      "venue": "arXiv, Aug 2025",
+      "type": "finding",
+      "contribution": "Most models show 'considerable' errors for 0D systems; eSEN best overall. Establishes that current UIPs are 'periodic bulk' potentials."
+    },
+    {
+      "title": "LLaMat: LLMs for materials research",
+      "authors": null,
+      "arxiv": null,
+      "venue": "Nat. Mach. Intell., 2026",
+      "type": "finding",
+      "contribution": "30B-token materials LLM; smaller specialized models outperform larger general ones."
+    },
+    {
+      "title": "MatSciAgent",
+      "authors": null,
+      "arxiv": null,
+      "venue": "Commun. Mater. (Nature), Mar 2025",
+      "type": "finding",
+      "contribution": "Multi-agent LLM framework achieving 100% success in parameter extraction."
+    },
+    {
+      "title": "A framework to evaluate machine learning crystal stability predictions (Matbench Discovery)",
+      "authors": "Janosh Riebesell et al.",
+      "arxiv": "2308.14920",
+      "venue": "Nature Machine Intelligence 7:836-847, 2025",
+      "type": "method",
+      "contribution": "Matbench Discovery benchmark paper. 45 ranked models. Defines CPS and F1 metrics for stability prediction.",
+      "repo": "https://github.com/janosh/matbench-discovery"
+    },
+    {
+      "title": "Foundation models for materials discovery -- current state and future directions",
+      "authors": null,
+      "arxiv": null,
+      "venue": "npj Computational Materials, 2025",
+      "type": "finding",
+      "contribution": "Comprehensive survey of foundation models in materials science."
+    },
+    {
+      "title": "Universal machine learning interatomic potentials are ready for phonons",
+      "authors": null,
+      "arxiv": null,
+      "venue": "npj Computational Materials, 2025",
+      "type": "finding",
+      "contribution": "Benchmark showing uMLIPs are ready for phonon calculations."
+    },
+    {
+      "title": "Foundation models for atomistic simulation of chemistry and materials",
+      "authors": null,
+      "arxiv": null,
+      "venue": "Nature Reviews Chemistry, 2026",
+      "type": "finding",
+      "contribution": "2026 review of foundation models for atomistic simulation."
+    }
+  ]
+}

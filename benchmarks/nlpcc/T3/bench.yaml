@@ -1,0 +1,55 @@
+id: aisb.nlpcc.t3
+name: T3 Scientific Discovery
+version: 0.1.0
+one_line: Evaluate whether an AI Scientist can improve drug/materials discovery models through real experiments.
+capability_tags:
+  - scientific_discovery
+  - drug_discovery
+  - materials_discovery
+  - tabular_ml
+  - hypothesis_experiment_validation
+aisb_direction: T3
+track_fit:
+  - paper
+  - benchmark
+task_mode: experiment_driven
+requires_execution: true
+requires_paper: true
+integrity_level: cas_plus_canary
+cost_band: low
+time_band: 1-2h
+difficulty: medium
+data_access: public
+public_data:
+  dev_dir: data/dev
+  endpoints:
+    - caco2_wang
+    - herg
+    - ames
+    - cyp3a4_veith
+    - lipophilicity_az
+minimum_config:
+  cpu: 4
+  memory: 16GB
+  disk: 20GB
+  docker: true
+recommended_config:
+  cpu: 8
+  memory: 32GB
+  disk: 40GB
+  docker: true
+recommended_when: Use this benchmark to test hypothesis-driven experimental improvement on molecular/materials datasets.
+not_recommended_when: Do not use this for pure reasoning agents that cannot train/evaluate models.
+docker:
+  image: aisb-t3:latest
+  dockerfile: docker/Dockerfile
+docs:
+  overview: README.md
+  agent_instructions: AGENT.md
+  data_card: data/data.md
+  baselines: baselines/baseline.md
+  references: references/papers.json
+  licenses: LICENSES.md
+submission:
+  starter: examples/starter_submission
+  validator: aisb submit validate

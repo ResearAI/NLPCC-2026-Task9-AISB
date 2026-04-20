@@ -1,5 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
+import { NLPCC_PACKAGE_URL, PUBLIC_REPO_URL } from "@/lib/publicLinks";
+const AI_SCIENTIST_PROMPT = `Use current NLPCC public package: ${NLPCC_PACKAGE_URL}. Inspect T1,T2,T3 under benchmarks/nlpcc, read the scientific question, AGENT.md, bench.yaml, data/data.md, paper links, and starter submission for each direction, tell me which direction best fits my goal and why, then run the chosen benchmark end to end, show me the method choice and experiment evidence, and prepare a strict submission with validate/package/replay commands ready.`;
 
 export default function CfpPage() {
   return (
@@ -15,7 +17,7 @@ export default function CfpPage() {
           AISB 2026: AI Scientist Benchmark
         </h1>
         <p className="text-xl" style={{ color: 'var(--gray-600)' }}>
-          NLPCC 2026 Shared Task
+          Current Competition: NLPCC 2026 Shared Task
         </p>
         <p className="text-lg mt-2" style={{ color: 'var(--gold-600)', fontFamily: "'Noto Sans SC', sans-serif" }}>
           评测AI自主科研能力：发现问题 + 实验验证 + 成果表达
@@ -40,33 +42,34 @@ export default function CfpPage() {
           <div className="grid md:grid-cols-2 gap-8 text-sm leading-relaxed">
             <div style={{ color: 'var(--gray-600)' }}>
               <p className="mb-4">
-                <strong>AISB (AI Scientist Benchmark)</strong> evaluates AI systems as autonomous researchers —
+                <strong>AISB (AI Scientist Benchmark)</strong> is a platform for evaluating AI systems as researchers —
                 the complete cycle of <strong style={{ color: 'var(--gold-600)' }}>Idea + Experiment + Report</strong>.
                 Given a research topic and reference papers, AI systems must discover scientific problems,
                 form hypotheses, validate through experiments, and communicate findings in a paper humans can understand.
               </p>
               <p className="mb-4">
-                As an NLPCC 2026 Shared Task, AISB invites participants to develop AI systems that
-                autonomously conduct scientific research across 12 directions and 117 benchmarks.
+                The current NLPCC 2026 public release is one AISB-hosted competition and exposes three runnable directions:
+                T1 Agentic Coding & Research Engineering, T2 Formal Mathematical Proof, and T3 LifeSci/ADMET Scientific Discovery.
                 Integrity verification (CAS) ensures all claimed results are real, not fabricated.
               </p>
               <p>
-                Organized by Westlake University NLP Lab under the supervision of Prof. Yue Zhang.
-                Top-3 teams receive CCF-NLP certification.
+                The current public package is a local self-service release: benchmark materials,
+                evaluation tools, submission validation, and local backend replay are included in the repository.
               </p>
             </div>
             <div style={{ color: 'var(--gray-500)', fontFamily: "'Noto Sans SC', sans-serif" }}>
               <p className="mb-4">
-                <strong>AISB（AI科学家基准测试）</strong>评测AI系统的自主科研能力——
+                <strong>AISB（AI科学家基准测试）</strong>是评测 AI 科研能力的平台——
                 完整的<strong style={{ color: 'var(--gold-600)' }}>Idea + Experiment + Report</strong>循环。
                 给定研究主题和参考论文，AI系统须发现科学问题、形成假设、通过实验验证、并将结论写成人类可理解的论文。
               </p>
               <p className="mb-4">
-                作为 NLPCC 2026 共享任务，AISB 邀请参赛者开发能够跨12个研究方向、117个基准测试
-                自主进行科学研究的AI系统。CAS（声明准确度分数）确保所有声称的结果真实可追溯。
+                当前 NLPCC 2026 公开版本是 AISB 目前置顶的一场比赛，提供 3 个可运行方向：
+                T1 智能体代码与科研工程、T2 形式化数学证明、T3 生命科学/ADMET 科学发现。
+                CAS（声明准确度分数）确保所有声称的结果真实可追溯。
               </p>
               <p>
-                由WestlakeNLP组织，张岳教授指导。前三名团队获得 CCF-NLP 认证。
+                当前公开包是本地自助版本：benchmark 材料、评测工具、submission 校验和本地 backend replay 都在仓库中提供。
               </p>
             </div>
           </div>
@@ -79,14 +82,14 @@ export default function CfpPage() {
           </h2>
 
           <div className="space-y-6">
-            {/* Track A */}
+            {/* Paper Track */}
             <div className="p-6 rounded-xl" style={{ background: 'var(--gray-50)', border: '1px solid rgba(212,168,83,0.15)' }}>
               <div className="flex items-center gap-3 mb-3">
                 <span className="px-3 py-1 rounded-full text-xs font-bold"
                       style={{ background: 'rgba(212,168,83,0.12)', color: 'var(--gold-600)', fontFamily: "'Source Code Pro', monospace" }}>
                   TRACK A
                 </span>
-                <h3 className="font-semibold text-lg">Track 1: Scientific Research / 科学研究赛道</h3>
+                <h3 className="font-semibold text-lg">Paper Track / 论文赛道</h3>
               </div>
               <div className="grid md:grid-cols-2 gap-4 text-sm" style={{ color: 'var(--gray-500)' }}>
                 <div>
@@ -103,45 +106,46 @@ export default function CfpPage() {
                 <div>
                   <div className="text-xs uppercase tracking-wider mb-2" style={{ color: 'var(--gray-400)' }}>Evaluation</div>
                   <div style={{ fontFamily: "'Source Code Pro', monospace" }} className="text-xs leading-relaxed">
-                    Evaluated on:<br/>
-                    - Paper Quality (significance, novelty, methodology, writing)<br/>
-                    - Benchmark Performance<br/>
-                    - Reproducibility (CAS: claims vs experiment logs)<br/>
-                    <span style={{ color: 'var(--gold-600)' }}>Top-10: human expert review</span>
+                    Paper leaderboard: Paper Quality + CAS integrity gate<br/>
+                    Benchmark leaderboard: Benchmark Score + CAS integrity gate<br/>
+                    T1/T2/T3 are benchmark directions, not score-mixture tracks<br/>
+                    <span style={{ color: 'var(--gold-600)' }}>Top paper rows: human expert review</span>
                   </div>
                 </div>
               </div>
             </div>
 
-            {/* Track B */}
+            {/* Benchmark Track */}
             <div className="p-6 rounded-xl" style={{ background: 'var(--gray-50)', border: '1px solid rgba(139,108,246,0.15)' }}>
               <div className="flex items-center gap-3 mb-3">
                 <span className="px-3 py-1 rounded-full text-xs font-bold"
                       style={{ background: 'rgba(139,108,246,0.12)', color: 'var(--violet-500)', fontFamily: "'Source Code Pro', monospace" }}>
                   TRACK B
                 </span>
-                <h3 className="font-semibold text-lg">Track 2: Benchmark SOTA Challenge / 基准提升赛道</h3>
+                <h3 className="font-semibold text-lg">Benchmark Track / 基准赛道</h3>
               </div>
               <div className="text-sm" style={{ color: 'var(--gray-500)' }}>
                 <p className="mb-2">
-                  The AI system is given a benchmark with known SOTA baselines and must develop a new method
-                  that improves over current SOTA. Experiments are the primary evidence, but the system must
-                  explain <strong>why</strong> the method works — interpretable improvement, not blind optimization.
+                  The AI system is given a benchmark with known baselines and must develop a new method
+                  that improves measurable performance. Experiments are the primary evidence, but the system must
+                  explain <strong>why</strong> the method works. Benchmark leaderboard rows are separate from paper leaderboard rows.
                 </p>
                 <p className="mb-4" style={{ fontFamily: "'Noto Sans SC', sans-serif" }}>
                   AI系统被给定已有SOTA基准线，须提出新方法超越当前最优。实验和跑分作为重要依据，但须解释方法<strong>为什么</strong>有效——可解释的科学提升，而非盲目优化。
                 </p>
                 <div className="grid md:grid-cols-3 gap-4">
                   {[
-                    { id: "B-T1", name: "AI/CS Reasoning & Engineering", cn: "推理与工程", detail: "HLE-Verified 50q + FeatureBench 20 tasks", baseline: "SOTA: 37-45% / 12.5%" },
-                    { id: "B-T2", name: "Math & Proof", cn: "数学证明", detail: "FormalMATH 50 problems (Lean4)", baseline: "Baseline: 28% (DeepSeek-Prover)" },
-                    { id: "B-T3", name: "Scientific Discovery", cn: "科学发现", detail: "TDC ADMET 5 endpoints + Matbench", baseline: "Baseline: MAE 0.93" },
+                    { id: "B-T1", name: "Agentic Coding & Research Engineering", cn: "智能体代码与科研工程", detail: "Scientific question: can an agent improve code-oriented research systems through real execution and engineering iteration?", link: "/tracks#T1" },
+                    { id: "B-T2", name: "Formal Mathematical Proof", cn: "形式化数学证明", detail: "Scientific question: can an agent produce Lean-verified proof research rather than informal math claims?", link: "/tracks#T2" },
+                    { id: "B-T3", name: "LifeSci/ADMET Scientific Discovery", cn: "生命科学/ADMET科学发现", detail: "Scientific question: can an agent improve life-science modeling with real experiments and evidence-backed explanations?", link: "/tracks#T3" },
                   ].map((t) => (
                     <div key={t.id} className="p-4 rounded-lg" style={{ background: 'var(--gray-100)', border: '1px solid var(--white-alpha-06)' }}>
                       <span className="text-xs font-semibold" style={{ color: 'var(--violet-500)', fontFamily: "'Source Code Pro', monospace" }}>{t.id}</span>
                       <h4 className="font-semibold mt-1">{t.name} <span style={{ color: 'var(--gray-400)', fontFamily: "'Noto Sans SC', sans-serif" }}>/ {t.cn}</span></h4>
                       <p className="text-xs mt-2" style={{ color: 'var(--gray-400)' }}>{t.detail}</p>
-                      <p className="text-xs mt-1" style={{ color: 'var(--gray-400)', fontFamily: "'Source Code Pro', monospace" }}>{t.baseline}</p>
+                      <Link href={t.link} className="inline-block text-xs mt-2 hover:underline" style={{ color: 'var(--gold-600)', fontFamily: "'Source Code Pro', monospace" }}>
+                        benchmark + papers
+                      </Link>
                     </div>
                   ))}
                 </div>
@@ -173,16 +177,16 @@ export default function CfpPage() {
           </div>
           <div className="grid md:grid-cols-2 gap-4">
             <div className="p-4 rounded-lg text-sm" style={{ background: 'var(--gray-50)', border: '1px solid rgba(212,168,83,0.15)' }}>
-              <div className="text-xs font-bold mb-2" style={{ color: 'var(--gold-600)' }}>Track 1: Scientific Research</div>
+              <div className="text-xs font-bold mb-2" style={{ color: 'var(--gold-600)' }}>Paper Track</div>
               <div style={{ color: 'var(--gray-500)' }}>Idea is the core. Experiments support and validate the scientific discovery.</div>
             </div>
             <div className="p-4 rounded-lg text-sm" style={{ background: 'var(--gray-50)', border: '1px solid rgba(139,108,246,0.15)' }}>
-              <div className="text-xs font-bold mb-2" style={{ color: 'var(--violet-500)' }}>Track 2: SOTA Challenge</div>
+              <div className="text-xs font-bold mb-2" style={{ color: 'var(--violet-500)' }}>Benchmark Track</div>
               <div style={{ color: 'var(--gray-500)' }}>Experiments are the primary evidence. Must explain why the method works.</div>
             </div>
           </div>
           <p className="mt-4 text-sm text-center" style={{ color: 'var(--gray-500)', fontFamily: "'Noto Sans SC', sans-serif" }}>
-            两个赛道共同评估AI的自主科研能力，差异在于侧重点：Track 1 以idea为核心，Track 2 以实验为核心。
+            两个榜单共同评估 AI 科研能力，但分别排名：Paper Track 看论文与科研论证，Benchmark Track 看可执行 benchmark 结果。
           </p>
         </section>
 
@@ -195,7 +199,7 @@ export default function CfpPage() {
             {[
               { date: "April 15, 2026", cn: "2026年4月15日", event: "Data release and website launch", eventCn: "数据发布及网站上线" },
               { date: "May 25, 2026", cn: "2026年5月25日", event: "Registration deadline", eventCn: "报名截止" },
-              { date: "June 1, 2026", cn: "2026年6月1日", event: "Validation leaderboard opens", eventCn: "验证集排行榜开放" },
+              { date: "June 1, 2026", cn: "2026年6月1日", event: "Leaderboard switches to live-update mode", eventCn: "排行榜切换到实时更新模式" },
               { date: "August 1, 2026", cn: "2026年8月1日", event: "Submission deadline", eventCn: "提交截止" },
               { date: "September 1, 2026", cn: "2026年9月1日", event: "Final evaluation + human review of Top-10", eventCn: "最终评测 + 前10名人工审核" },
               { date: "November 2026", cn: "2026年11月", event: "NLPCC 2026, Macau -- results announcement", eventCn: "NLPCC 2026 澳门 -- 结果发布" },
@@ -220,20 +224,46 @@ export default function CfpPage() {
           <h2 style={{ fontFamily: "'Playfair Display', Georgia, serif" }} className="text-2xl font-semibold mb-6">
             How to Participate / 参赛方式
           </h2>
+          <div className="rounded-xl p-4 mb-6" style={{ background: 'var(--gray-50)', border: '1px solid rgba(212,168,83,0.15)' }}>
+            <h3 className="font-semibold text-sm mb-2">One-Line Prompt / 一句话 Prompt</h3>
+            <p className="text-sm" style={{ color: 'var(--gray-500)' }}>
+              If your AI Scientist can inspect GitHub repositories and execute code, give it this instruction directly together with the current NLPCC public package.
+            </p>
+            <pre className="mt-3 rounded-xl p-4 overflow-x-auto text-sm" style={{ background: 'white', border: '1px solid var(--gray-200)', color: 'var(--gray-600)', fontFamily: "'Source Code Pro', monospace" }}>
+{AI_SCIENTIST_PROMPT}
+            </pre>
+          </div>
+          <div className="rounded-xl p-4 mb-6" style={{ background: 'var(--gray-50)', border: '1px solid rgba(212,168,83,0.15)' }}>
+            <p className="text-sm" style={{ color: 'var(--gray-500)' }}>
+              The current public release is a local self-service benchmark kit. Public portal upload is not yet part of this release; the recommended workflow is repository clone, local evaluation, strict submission validation, and optional local backend replay.
+            </p>
+            <p className="text-xs mt-2" style={{ color: 'var(--gray-400)', fontFamily: "'Noto Sans SC', sans-serif" }}>
+              当前公开版本是本地自助 benchmark 工具包。线上提交门户暂未纳入本次公开发布；推荐流程是 clone 仓库、本地评测、strict submission 校验，以及可选的本地 backend replay。
+            </p>
+          </div>
+          <div className="rounded-xl p-4 mb-6" style={{ background: 'var(--gray-50)', border: '1px solid rgba(26,54,93,0.12)' }}>
+            <h3 className="font-semibold text-sm mb-2">Autonomy Modes / 参与模式</h3>
+            <p className="text-sm" style={{ color: 'var(--gray-500)' }}>
+              The no-human rule applies only to the fully autonomous mode. Human-AI collaboration is allowed in the human-assisted mode, but every human intervention must be disclosed in metadata and logs.
+            </p>
+            <p className="text-xs mt-2" style={{ color: 'var(--gray-400)', fontFamily: "'Noto Sans SC', sans-serif" }}>
+              “人类不能参与”只适用于完全自动化赛道。人机协同赛道允许人类参与，但必须在 metadata 和日志中披露。
+            </p>
+          </div>
           <div className="space-y-6">
             {[
-              { step: "1", title: "Register", cn: "注册",
-                desc: "Register via Google Form (https://forms.gle/9oWtS77UduudpRM1A), then create a HuggingFace account.",
-                descCn: "通过 Google Form 注册（https://forms.gle/9oWtS77UduudpRM1A），然后创建 HuggingFace 账户。" },
-              { step: "2", title: "Download Data", cn: "下载数据",
-                desc: "Run our download script: python scripts/download_competition_data.py --all",
-                descCn: "运行数据下载脚本获取所有赛道数据。" },
-              { step: "3", title: "Develop Your AI Scientist", cn: "开发 AI 科学家系统",
-                desc: "Build a system that designs research strategies for the fixed executor. Test locally with the dev set.",
-                descCn: "开发为固定执行器设计研究策略的系统，使用开发集本地测试。" },
-              { step: "4", title: "Submit", cn: "提交",
-                desc: "Package your system as submission.tar.gz and upload via our HuggingFace Space.",
-                descCn: "将系统打包为 submission.tar.gz 并通过 HuggingFace Space 提交。" },
+              { step: "1", title: "Prepare Workspace", cn: "准备工作空间",
+                desc: "Clone the repository and prepare a writable benchmark workspace with python scripts/agent_tools.py workspace init <track>.",
+                descCn: "克隆仓库，并用 python scripts/agent_tools.py workspace init <track> 准备可写 benchmark 工作空间。" },
+              { step: "2", title: "Read Materials", cn: "阅读材料",
+                desc: "Read AGENT.md, bench.yaml, data card, references, baseline notes, and track-specific instructions inside the prepared workspace.",
+                descCn: "阅读准备好的工作空间中的 AGENT.md、bench.yaml、data card、references、baseline notes 和赛道说明。" },
+              { step: "3", title: "Run Locally", cn: "本地运行",
+                desc: "Let your AI Scientist run experiments, use the local evaluators, and write a strict submission directory.",
+                descCn: "让你的 AI Scientist 执行实验、调用本地 evaluator，并写出 strict submission 目录。" },
+              { step: "4", title: "Validate & Package", cn: "校验并打包",
+                desc: "Run scripts/agent_tools.py submission validate / package, and optionally replay the package locally before release submission opens.",
+                descCn: "运行 scripts/agent_tools.py submission validate / package，并在正式开放收集前可选地本地 replay。" },
             ].map((s) => (
               <div key={s.step} className="flex gap-6 items-start">
                 <div className="w-10 h-10 rounded-full flex items-center justify-center shrink-0 text-sm font-bold"
@@ -262,10 +292,10 @@ export default function CfpPage() {
             <div className="p-4 rounded-lg" style={{ background: 'var(--gray-50)', border: '1px solid var(--white-alpha-06)' }}>
               <h4 className="font-semibold mb-2">Format / 格式</h4>
               <ul className="space-y-1" style={{ color: 'var(--gray-500)' }}>
-                <li>ICLR format paper (paper.md or paper.tex)</li>
-                <li>Complete executable code</li>
-                <li>Standardized iterations.jsonl log</li>
-                <li>metadata.json with team info</li>
+                <li>Strict `submission/` layout</li>
+                <li>`paper/paper.pdf` + `paper/source/main.tex` + `paper/source/refs.bib`</li>
+                <li>`logs/iterations.jsonl`, `logs/experiment_log.jsonl`, `logs/api_calls.jsonl`</li>
+                <li>`metadata.json` + `results.json` + `paper/claims.json`</li>
               </ul>
             </div>
             <div className="p-4 rounded-lg" style={{ background: 'var(--gray-50)', border: '1px solid var(--white-alpha-06)' }}>
@@ -273,17 +303,17 @@ export default function CfpPage() {
               <ul className="space-y-1" style={{ color: 'var(--gray-500)' }}>
                 <li>CAS (Claim Accuracy Score) must be above 0.5</li>
                 <li>All numbers must trace to experiment logs</li>
-                <li>Docker sandbox execution</li>
-                <li>No network access during evaluation</li>
+                <li>Organizer-style replay is supported through `submission/code/run.py`</li>
+                <li>No hidden-answer access or canary leakage</li>
               </ul>
             </div>
             <div className="p-4 rounded-lg" style={{ background: 'var(--gray-50)', border: '1px solid var(--white-alpha-06)' }}>
-              <h4 className="font-semibold mb-2">Resources / 资源</h4>
+              <h4 className="font-semibold mb-2">Materials / 材料</h4>
               <ul className="space-y-1" style={{ color: 'var(--gray-500)' }}>
-                <li>API budget: $10-$30 per track</li>
-                <li>Wall-clock: 30min - 2hr per track</li>
-                <li>Fixed executor (same for all teams)</li>
-                <li>1 submission per day per track</li>
+                <li>GitHub repo contains benchmark packages and starter submissions</li>
+                <li>NLPCC directions expose benchmark links and paper links directly</li>
+                <li>`scripts/agent_tools.py` supports evaluate, validate, package, and replay</li>
+                <li>Paper and benchmark boards remain separate</li>
               </ul>
             </div>
           </div>
@@ -295,7 +325,7 @@ export default function CfpPage() {
             Contact / 联系方式
           </h2>
           <p className="text-sm mb-2" style={{ color: 'var(--gray-600)', fontFamily: "'Noto Sans SC', sans-serif" }}>
-            WestlakeNLP &middot; Prof. Yue Zhang
+            西湖大学 NLP Lab &middot; Prof. Yue Zhang
           </p>
           <p className="text-sm mb-6" style={{ color: 'var(--gray-500)' }}>
             Email:{" "}
@@ -304,7 +334,7 @@ export default function CfpPage() {
             </a>
           </p>
           <div className="flex justify-center gap-4 flex-wrap">
-            <a href="https://github.com/ResearAI/NLPCC-2026-Task9-AISB" target="_blank" rel="noreferrer"
+            <a href={PUBLIC_REPO_URL} target="_blank" rel="noreferrer"
                className="px-6 py-3 rounded-xl font-semibold text-sm transition hover:brightness-110"
                style={{ background: 'var(--gold-500)', color: 'var(--navy-950)' }}>
               GitHub Repository

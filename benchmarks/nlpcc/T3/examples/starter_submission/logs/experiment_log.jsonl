@@ -1,0 +1,1 @@
+{"experiment_id":"exp_t3_001","timestamp":"2026-04-19T00:00:00Z","status":"SUCCESS","code_hash":"starter_frozen_cpu_oof_v1","metrics":{"final_score":0.6385,"tdc_average":0.6385,"caco2_wang_mae":0.6402,"herg_accuracy":1.0,"ames_accuracy":0.5227,"cyp3a4_veith_accuracy":0.5528,"lipophilicity_az_mae":0.9717}}

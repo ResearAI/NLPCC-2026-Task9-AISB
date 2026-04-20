@@ -4,9 +4,9 @@ import Footer from "@/components/Footer";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "AISB 2026 -- AI Scientist Benchmark | NLPCC Shared Task",
+  title: "AISB 2026 -- AI Scientist Benchmark Platform",
   description:
-    "The first benchmark evaluating autonomous AI research systems with integrity verification. 12 directions, 113 benchmarks, 2 competition tracks. NLPCC 2026 Shared Task organized by Westlake University NLP Lab.",
+    "AI Scientist Benchmark platform for integrity-verified AI research evaluation, competitions, leaderboards, benchmark papers, and the current NLPCC 2026 public shared task.",
 };
 
 export default function RootLayout({

@@ -1,0 +1,197 @@
+[
+  {
+    "title": "pi-0: A Vision-Language-Action Flow Model for General Robot Control",
+    "authors": "Kevin Black et al. (Physical Intelligence)",
+    "year": 2024,
+    "arxiv_id": "2410.24164",
+    "citations": 200,
+    "description": "VLA using flow matching on pre-trained VLM; trained on 10K+ hrs, 7 platforms, 68 tasks; 50Hz dexterous control including laundry folding.",
+    "type": "method",
+    "source": "arXiv Oct 2024",
+    "paper_url": "https://arxiv.org/abs/2410.24164",
+    "note": "Open weights on HF/LeRobot; PI raised $400M+."
+  },
+  {
+    "title": "pi-0.5: A VLA Model with Open-World Generalization",
+    "authors": "Kevin Black et al. (Physical Intelligence)",
+    "year": 2025,
+    "arxiv_id": "2504.16054",
+    "citations": 0,
+    "description": "First end-to-end VLA performing long-horizon tasks (cleaning kitchens/bedrooms) in entirely unseen homes. Defines current VLA generalization frontier.",
+    "type": "method",
+    "source": "arXiv Apr 2025",
+    "paper_url": "https://arxiv.org/abs/2504.16054"
+  },
+  {
+    "title": "GR00T N1: Open Foundation Model for Generalist Humanoid Robots",
+    "authors": "Johan Bjorck et al. (NVIDIA)",
+    "year": 2025,
+    "arxiv_id": "2503.14734",
+    "citations": 0,
+    "description": "2.2B-param open VLA with dual-system (VLM + DiT flow-matching); deployed on Fourier GR-1, 1X NEO. N1.6: 2x larger DiT. 60+ partners.",
+    "type": "method",
+    "source": "arXiv Mar 2025",
+    "paper_url": "https://arxiv.org/abs/2503.14734",
+    "note": "GTC announcement; open weights at NVIDIA/Isaac-GR00T."
+  },
+  {
+    "title": "OpenVLA: An Open-Source Vision-Language-Action Model",
+    "authors": "Moo Jin Kim et al. (Stanford)",
+    "year": 2024,
+    "arxiv_id": "2406.09246",
+    "citations": 0,
+    "description": "7B open VLA outperforming RT-2-X (55B) by 16.5% with 7x fewer params; OFT achieves 97.1% LIBERO. Most-used open VLA baseline.",
+    "type": "method",
+    "source": "CoRL 2024",
+    "paper_url": "https://arxiv.org/abs/2406.09246",
+    "note": "OFT: arXiv:2502.19645."
+  },
+  {
+    "title": "RDT-1B: A Diffusion Foundation Model for Bimanual Manipulation",
+    "authors": "Songming Liu et al. (Tsinghua TSAIL)",
+    "year": 2025,
+    "arxiv_id": "2410.07864",
+    "citations": 0,
+    "description": "ICLR 2025. 1.2B-param diffusion transformer for bimanual tasks; pre-trained on 1M+ episodes from 46 datasets; zero-shot + few-shot generalization. MIT licensed.",
+    "type": "method",
+    "source": "ICLR 2025",
+    "paper_url": "https://arxiv.org/abs/2410.07864"
+  },
+  {
+    "title": "Training Agents Inside of Scalable World Models (Dreamer 4)",
+    "authors": "Hafner et al.",
+    "year": 2025,
+    "citations": 230,
+    "description": "Nature 2025. First to obtain diamond in Minecraft from pure offline data (~0.7% success rate). Corrected: old '100%' was incorrect.",
+    "type": "method",
+    "source": "Nature 2025",
+    "repo": "https://github.com/danijar/dreamerv3"
+  },
+  {
+    "title": "Gemini Robotics: Bringing AI into the Physical World",
+    "authors": "Gemini Robotics Team (DeepMind)",
+    "year": 2025,
+    "arxiv_id": "2503.20020",
+    "citations": 0,
+    "description": "More than doubles generalization benchmarks vs other VLAs; thinking-before-acting + Motion Transfer; ER 1.5 SOTA on 15 embodied reasoning benchmarks.",
+    "type": "finding",
+    "source": "arXiv Mar/Oct 2025",
+    "paper_url": "https://arxiv.org/abs/2503.20020",
+    "note": "v1.5: arXiv:2510.03342. SDK released."
+  },
+  {
+    "title": "A Careful Examination of Large Behavior Models (TRI LBM)",
+    "authors": "TRI LBM Team (82 authors, Toyota)",
+    "year": 2025,
+    "arxiv_id": "2507.05331",
+    "citations": 0,
+    "description": "1,800 blind A/B real-world trials: multi-task pretraining (1,700 hrs, 500+ tasks) makes policies more successful and robust; performance increases predictably with scale.",
+    "type": "finding",
+    "source": "arXiv Jul 2025",
+    "paper_url": "https://arxiv.org/abs/2507.05331",
+    "note": "First truly rigorous real-world VLA evaluation."
+  },
+  {
+    "title": "Neural Scaling Laws in Robotics",
+    "authors": "Multiple",
+    "year": 2025,
+    "arxiv_id": "2405.14005",
+    "citations": 0,
+    "description": "Meta-analysis of 131 data-scaling studies: avg power law exponent -0.276 (much weaker than LLMs); naively pooling heterogeneous data can induce negative transfer.",
+    "type": "finding",
+    "source": "arXiv (updated 2025)",
+    "paper_url": "https://arxiv.org/abs/2405.14005"
+  },
+  {
+    "title": "Rethinking VLA Scaling",
+    "authors": "Being Beyond team",
+    "year": 2025,
+    "citations": 0,
+    "description": "Unified EEF-relative action representation is critical; naive dataset pooling causes negative transfer; sensory dropout doesn't consistently help at scale.",
+    "type": "finding",
+    "source": "2025"
+  },
+  {
+    "title": "VLA Vulnerability Analysis",
+    "authors": "Multiple",
+    "year": 2025,
+    "citations": 0,
+    "description": "VLAs extremely sensitive to camera viewpoint and initial state (95%->30% success); insensitive to language variations -- may ignore instructions entirely.",
+    "type": "finding",
+    "source": "2025",
+    "note": "Challenges language grounding assumption."
+  },
+  {
+    "title": "The Reality Gap in Robotics: Challenges, Solutions, and Best Practices",
+    "authors": "Multiple",
+    "year": 2026,
+    "arxiv_id": "2510.20808",
+    "citations": 0,
+    "description": "Zero-shot sim-to-real restricted to medium-complexity rigid-body tasks; for deformables, fluids, precision assembly: real data maintains irreducible premium value.",
+    "type": "finding",
+    "source": "Annual Review of Control, Robotics, 2026",
+    "paper_url": "https://arxiv.org/abs/2510.20808"
+  },
+  {
+    "title": "PACE: Systematic Sim-to-Real Transfer for Diverse Legged Robots",
+    "authors": "Filip Bjelonic et al. (ETH Zurich)",
+    "year": 2025,
+    "arxiv_id": "2509.06342",
+    "citations": 0,
+    "description": "Physics-grounded energy model beats brute-force randomization; 32% reduction in Cost of Transport on ANYmal; validated on 10+ robots.",
+    "type": "finding",
+    "source": "arXiv Sep 2025",
+    "paper_url": "https://arxiv.org/abs/2509.06342"
+  },
+  {
+    "title": "State of VLA Research at ICLR 2026",
+    "authors": "Moritz Reuss",
+    "year": 2026,
+    "citations": 0,
+    "description": "164 VLA submissions; discrete diffusion VLAs emerging; LIBERO near-solved at 97%+; gap between frontier (pi-0, Gemini) and academic research remains large.",
+    "type": "finding",
+    "source": "Blog analysis, Mar 2026",
+    "note": "Community meta-analysis."
+  },
+  {
+    "title": "Evaluating pi-0 in the Wild",
+    "authors": "Jie Wang et al. (UPenn GRASP Lab)",
+    "year": 2025,
+    "citations": 0,
+    "description": "pi-0 achieves 42.3% avg task progress zero-shot -- unprecedented but reveals failures: no collision avoidance, fine-grained manipulation failures.",
+    "type": "finding",
+    "source": "Blog/tech report 2025",
+    "note": "Practical vibe check."
+  },
+  {
+    "title": "Self-Improving VLA with PLD",
+    "authors": "Multiple",
+    "year": 2025,
+    "citations": 0,
+    "description": "RL-generated data delivers >50% performance gains in SimplerEnv; >99% SR on Franka tasks; 1hr continuous GPU operation without human.",
+    "type": "finding",
+    "source": "2025",
+    "note": "Demonstrates data-efficient VLA post-training path."
+  },
+  {
+    "title": "IntPhys2: Benchmarking Intuitive Physics Understanding",
+    "authors": "Bordes et al.",
+    "year": 2025,
+    "citations": 140,
+    "description": "Current SOTA models ~50% (random level) in complex scenes; humans near-perfect. Jun 2025.",
+    "type": "benchmark",
+    "source": "arXiv",
+    "repo": "https://github.com/facebookresearch/IntPhys2"
+  },
+  {
+    "title": "RoboCasa: Large-Scale Simulation of Everyday Tasks for Generalist Robots",
+    "authors": "UT Austin",
+    "year": 2026,
+    "citations": 30,
+    "description": "365 tasks, 2,500+ kitchens. ICLR 2026. VLA model evaluation benchmark.",
+    "type": "benchmark",
+    "source": "ICLR 2026",
+    "repo": "https://github.com/robocasa/robocasa",
+    "paper_url": "https://arxiv.org/abs/2603.04356"
+  }
+]

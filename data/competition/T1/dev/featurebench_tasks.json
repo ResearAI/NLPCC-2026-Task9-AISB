@@ -1,0 +1,24 @@
+{
+  "description": "FeatureBench task subset for AISB T1 direction",
+  "note": "Full 20-task subset released in July 2026 Task Packages. FeatureBench requires Python >= 3.12 + Docker.",
+  "benchmark": "FeatureBench: Benchmarking Agentic Coding for Complex Feature Development",
+  "paper": "Zhou et al., arXiv:2602.10975, ICLR 2026",
+  "github": "https://github.com/LiberCoders/FeatureBench",
+  "install": "pip install git+https://github.com/LiberCoders/FeatureBench.git (requires Python >= 3.12)",
+  "pull_data": "fb pull --mode lite",
+  "subset_size": 20,
+  "total_tasks": 200,
+  "sota": {
+    "GPT-5.1-Codex": "12.5%",
+    "Claude_Opus_4.5": "11.0%"
+  },
+  "evaluation": "Docker containerized pytest test suites; pass/fail automatic judgment",
+  "sample_repos": [
+    "huggingface/accelerate",
+    "django/django",
+    "sympy/sympy",
+    "astropy/astropy",
+    "sphinx-doc/sphinx",
+    "mwaskom/seaborn"
+  ]
+}

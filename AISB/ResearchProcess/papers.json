@@ -1,0 +1,214 @@
+[
+  {
+    "title": "The AI Scientist-v2: Workshop-Level Automated Scientific Discovery via Agentic Tree Search",
+    "authors": "Yutaro Yamada et al. (Sakana AI, UBC, Vector, Oxford)",
+    "arxiv": "2504.08066",
+    "venue": "arXiv Apr 2025; Nature 2026 (doi:10.1038/s41586-026-10265-5)",
+    "type": "Method",
+    "contribution": "End-to-end agentic system using progressive tree search; first entirely AI-generated paper to pass ICLR workshop peer review (scoring 6.33, top ~45%). Cost: ~$15/paper. Automated Reviewer achieved 69% balanced accuracy.",
+    "repo": "https://github.com/SakanaAI/AI-Scientist-v2",
+    "github_stars": 2360,
+    "updated": "2026-03-29"
+  },
+  {
+    "title": "Towards an AI co-scientist",
+    "authors": "Juraj Gottweis et al. (Google Research/DeepMind, 34 authors)",
+    "arxiv": "2502.18864",
+    "venue": "arXiv Feb 2025; featured in Nature Medicine",
+    "type": "Method",
+    "contribution": "Multi-agent system on Gemini 2.0 using generate-debate-evolve; validated with wet-lab results in drug repurposing (AML candidates showing tumor inhibition) and novel liver fibrosis targets.",
+    "updated": "2026-03-29"
+  },
+  {
+    "title": "AI-Researcher: Autonomous Scientific Innovation",
+    "authors": "Jiabin Tang, Lianghao Xia, Zhonghang Li, Chao Huang (HKU)",
+    "arxiv": "2505.18705",
+    "venue": "NeurIPS 2025 Spotlight (D&B Track)",
+    "type": "Method/Benchmark",
+    "contribution": "Fully autonomous research system orchestrating literature review -> idea generation -> implementation -> manuscript; introduces Scientist-Bench.",
+    "repo": "https://github.com/HKUDS/AI-Researcher",
+    "website": "novix.science/chat",
+    "updated": "2026-03-29"
+  },
+  {
+    "title": "Agent Laboratory: Using LLM Agents as Research Assistants",
+    "authors": "Samuel Schmidgall et al. (AMD, JHU, ETH Zurich)",
+    "arxiv": "2501.04227",
+    "venue": "arXiv Jan 2025",
+    "type": "Method",
+    "contribution": "PhD/Postdoc/ML Engineer agents completing research in 3 stages; 84% cost reduction vs. prior methods at $2.33/paper with GPT-4o.",
+    "repo": "https://github.com/SamuelSchmidgall/AgentLaboratory",
+    "citations": 88,
+    "updated": "2026-03-29"
+  },
+  {
+    "title": "AI Can Learn Scientific Taste",
+    "authors": "Jingqi Tong, Mingzhe Li, Hangcheng Li et al. (Fudan, OpenMOSS, Tsinghua)",
+    "arxiv": "2603.14473",
+    "venue": "arXiv March 2026",
+    "type": "Method/Finding",
+    "contribution": "Proposes RLCF (Reinforcement Learning from Community Feedback) using 700K citation-based paper pairs to train 'Scientific Judge' (outperforms GPT-5.2, Gemini 3 Pro at predicting paper impact) and 'Scientific Thinker' (generates higher-impact research ideas).",
+    "repo": "https://github.com/tongjingqi/AI-Can-Learn-Scientific-Taste",
+    "updated": "2026-03-29"
+  },
+  {
+    "title": "Evaluating Sakana's AI Scientist: Bold Claims, Mixed Results, and a Promising Future?",
+    "authors": "Joeran Beel (U. Siegen), Min-Yen Kan (NUS), Moritz Baumgart",
+    "arxiv": "2502.14297",
+    "venue": "ACM SIGIR Forum Vol. 59, No. 1, 2025",
+    "type": "Finding",
+    "contribution": "Independent evaluation finding 42% experiment failure rate due to coding errors, poor novelty assessment (misclassifying micro-batching as novel), and inability to critically assess own results.",
+    "updated": "2026-03-29"
+  },
+  {
+    "title": "The Ideation-Execution Gap: Execution Outcomes of LLM-Generated versus Human Research Ideas",
+    "authors": "Chenglei Si, Tatsunori Hashimoto, Diyi Yang (Stanford)",
+    "arxiv": "2506.20803",
+    "venue": "arXiv June 2025",
+    "type": "Finding",
+    "contribution": "43 expert researchers each spent 100+ hours executing randomly-assigned ideas; AI ideas' novelty scores dropped dramatically after execution (-1.049 vs -0.010 for humans on 1-10 scale). AI ideas appear novel but collapse when implemented.",
+    "updated": "2026-03-29"
+  },
+  {
+    "title": "Measuring AI Ability to Complete Long Tasks",
+    "authors": "T. Kwa, B. West, J. Becker, A. Deng et al. (METR)",
+    "arxiv": "2503.14499",
+    "venue": "arXiv Mar 2025",
+    "type": "Finding/Benchmark",
+    "contribution": "Proposes '50%-task-completion time horizon' metric; finds frontier AI time horizon doubling approximately every 7 months since 2019. Extrapolation predicts 1-month task horizon between mid-2028 and mid-2031.",
+    "updated": "2026-03-29"
+  },
+  {
+    "title": "AI Researchers' Views on Automating AI R&D and Intelligence Explosions",
+    "authors": "Severin Field, Raymond Douglas, David Krueger (MATS, Berkeley)",
+    "arxiv": "2603.03338",
+    "venue": "arXiv Feb/Mar 2026",
+    "type": "Finding/Survey",
+    "contribution": "Interviewed 25 leading researchers from DeepMind, OpenAI, Anthropic, Meta, Berkeley, Princeton, Stanford; 20 of 25 (80%) identified automating AI research as one of the most severe and urgent AI risks.",
+    "updated": "2026-03-29"
+  },
+  {
+    "title": "OpenAI 'North Star' Announcement",
+    "authors": "Jakub Pachocki (OpenAI Chief Scientist), MIT Technology Review interview",
+    "arxiv": null,
+    "venue": "MIT Technology Review, March 20, 2026",
+    "type": "Industry announcement",
+    "contribution": "OpenAI's new 'North Star' is building a fully automated AI researcher. Timeline: autonomous 'AI research intern' by September 2026; fully automated multi-agent research system by 2028. Karpathy commented: 'All frontier LLM labs will do this -- it's the final BOSS battle.'",
+    "updated": "2026-03-29"
+  },
+  {
+    "title": "AI for Scientific Discovery is a Social Problem",
+    "authors": "Georgia Channing (Hugging Face), Avijit Ghosh",
+    "arxiv": "2509.06580",
+    "venue": "arXiv Sep 2025, revised Jan 2026",
+    "type": "Position paper",
+    "contribution": "Argues primary barriers to AI for science are social/institutional (not technical): community dysfunction, misaligned priorities, data fragmentation, infrastructure inequities.",
+    "updated": "2026-03-29"
+  },
+  {
+    "title": "Generative AI lacks the human creativity to achieve scientific discovery from scratch",
+    "authors": "Amy Wenxuan Ding, Shibo Li",
+    "arxiv": null,
+    "doi": "10.1038/s41598-025-93794-9",
+    "venue": "Scientific Reports 15:9587, Mar 2025",
+    "type": "Finding",
+    "contribution": "Using molecular genetics lab simulation, found GenAI makes only incremental discoveries but cannot generate truly original hypotheses or detect anomalies; displays overconfident 'illusion of successful discovery.'",
+    "updated": "2026-03-29"
+  },
+  {
+    "title": "The Leaderboard Illusion",
+    "authors": "Shivalika Singh et al. (Cohere, Princeton, Stanford, AI2, Washington)",
+    "arxiv": "2504.20879",
+    "venue": "NeurIPS 2025 (D&B Track)",
+    "type": "Finding",
+    "contribution": "Identifies systematic gaming of Chatbot Arena: Meta tested 27 private Llama-4 variants before public release; Google/OpenAI received ~19-20% of all arena data each vs. 29.7% for 83 open-weight models combined.",
+    "updated": "2026-03-29"
+  },
+  {
+    "title": "ICLR 2026: 21% AI-Generated Reviews (Pangram Labs / EditLens)",
+    "authors": "Pangram Labs analysis (EditLens)",
+    "arxiv": "2510.03154",
+    "venue": "Nature and Science reports, Nov 2025-early 2026",
+    "type": "Finding",
+    "contribution": "Of 75,800 ICLR 2026 peer reviews, 21% (15,899) flagged as fully AI-generated; >50% showed some AI involvement; only 43% purely human-written.",
+    "updated": "2026-03-29"
+  },
+  {
+    "title": "CycleResearcher: Improving Automated Research via Automated Review",
+    "authors": "Yixuan Weng, Minjun Zhu, Guangsheng Bao et al.",
+    "arxiv": "2411.00816",
+    "venue": "ICLR 2025",
+    "type": "Method",
+    "contribution": "Iterative framework where CycleResearcher generates papers and CycleReviewer simulates peer review with RL feedback; CycleReviewer achieves 26.89% MAE reduction vs. individual human reviewers.",
+    "updated": "2026-03-29"
+  },
+  {
+    "title": "ScienceAgentBench: Toward Rigorous Assessment of Language Agents for Data-Driven Scientific Discovery",
+    "authors": "OSU NLP Group",
+    "arxiv": "2410.05080",
+    "venue": "ICLR 2025",
+    "type": "Benchmark",
+    "contribution": "102 tasks from 44 peer-reviewed publications. 33.33% SOTA. Rigorous HAL-based evaluation framework.",
+    "repo": "https://github.com/OSU-NLP-Group/ScienceAgentBench",
+    "paper_url": "https://arxiv.org/abs/2410.05080",
+    "doi": "10.48550/arXiv.2410.05080",
+    "citations": 121,
+    "updated": "2026-03-29"
+  },
+  {
+    "title": "PaperBench: Evaluating AI's Ability to Reproduce Research",
+    "authors": "OpenAI",
+    "arxiv": "2504.01848",
+    "venue": "ICML 2025",
+    "type": "Benchmark",
+    "contribution": "20 ICML 2024 papers, 8316 sub-tasks. Best agent: 27%; humans: 41%.",
+    "repo": "https://github.com/openai/preparedness",
+    "paper_url": "https://arxiv.org/abs/2504.01848",
+    "citations": 30,
+    "updated": "2026-03-29"
+  },
+  {
+    "title": "LAB-Bench: Measuring Capabilities of Language Models for Biology Research",
+    "authors": "Future House",
+    "arxiv": "2407.10362",
+    "venue": "arXiv 2024",
+    "type": "Benchmark",
+    "contribution": "Biology research capability evaluation. Most commonly used legacy benchmark in 2025-2026.",
+    "repo": "https://github.com/Future-House/LAB-Bench",
+    "paper_url": "https://arxiv.org/abs/2407.10362",
+    "doi": "10.48550/arXiv.2407.10362",
+    "citations": 105,
+    "updated": "2026-03-29"
+  },
+  {
+    "title": "AgentRxiv: Collaborative preprint server for autonomous agent labs",
+    "authors": null,
+    "arxiv": "2503.18102",
+    "venue": "arXiv Mar 2025",
+    "type": "Tool/Method",
+    "contribution": "Collaborative preprint server enabling autonomous agent labs to share research; 13.7% improvement over isolated labs on MATH-500.",
+    "github_stars": 5380,
+    "updated": "2026-03-29"
+  },
+  {
+    "title": "NovelSeek: Unified closed-loop multi-agent framework for autonomous research",
+    "authors": null,
+    "arxiv": "2505.16938",
+    "venue": "arXiv May 2025",
+    "type": "Method",
+    "contribution": "Unified closed-loop multi-agent framework for autonomous research across 12 tasks. Originally titled 'InternAgent.'",
+    "github_stars": 768,
+    "updated": "2026-03-29"
+  },
+  {
+    "title": "Benchmarking self-driving labs",
+    "authors": null,
+    "arxiv": null,
+    "venue": "RSC Publishing 2026",
+    "type": "Survey",
+    "contribution": "Autonomous experiment/SDL metric system survey and benchmarking discussion.",
+    "paper_url": "https://pubs.rsc.org/en/content/articlehtml/2026/dd/d5dd00337g",
+    "citations": 2,
+    "updated": "2026-03-29"
+  }
+]

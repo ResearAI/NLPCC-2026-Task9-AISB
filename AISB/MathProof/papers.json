@@ -1,0 +1,111 @@
+{
+  "direction": "MathProof",
+  "last_updated": "2026-03-29",
+  "update_source": "AISB compass update 2026-03-30",
+  "papers": [
+    {
+      "title": "DeepSeek-Prover-V2",
+      "authors": "Z.Z. Ren et al.",
+      "arxiv": "2504.21801",
+      "venue": "arXiv, Apr 2025",
+      "type": "method",
+      "contribution": "671B model with recursive subgoal decomposition; 88.9% miniF2F, 49 PutnamBench solves."
+    },
+    {
+      "title": "Goedel-Prover-V2",
+      "authors": "Yong Lin et al.",
+      "arxiv": "2508.03613",
+      "venue": "arXiv, Aug 2025",
+      "type": "method",
+      "contribution": "Open-source 8B/32B matching 671B models; 90.4% miniF2F with self-correction; scaffolded data synthesis."
+    },
+    {
+      "title": "Kimina-Prover Preview",
+      "authors": "Haiming Wang et al. (Numina + Kimi)",
+      "arxiv": "2504.11354",
+      "venue": "arXiv, Apr 2025",
+      "type": "method",
+      "contribution": "Pioneered 'formal reasoning pattern' with large-scale RL; corrected 8 unsolvable miniF2F problems."
+    },
+    {
+      "title": "Seed-Prover 1.5",
+      "authors": "Jiangjie Chen et al. (ByteDance)",
+      "arxiv": "2512.17260",
+      "venue": "arXiv, Dec 2025",
+      "type": "method",
+      "contribution": "Agentic RL prover; 88% PutnamBench, 5/6 IMO 2025; balances step-level and whole-proof modes."
+    },
+    {
+      "title": "HILBERT",
+      "authors": "Sumanth Varambally et al. (Google)",
+      "arxiv": "2509.22819",
+      "venue": "arXiv, Sep 2025",
+      "type": "method",
+      "contribution": "Recursive informal-to-formal pipeline with semantic Mathlib retrieval."
+    },
+    {
+      "title": "AlphaProof",
+      "authors": "Thomas Hubert et al. (DeepMind)",
+      "arxiv": null,
+      "venue": "Nature 651:607-613, Nov 2025",
+      "type": "method",
+      "contribution": "AlphaZero-inspired RL; silver medal IMO 2024 (28/42); auto-formalized 80M problems; introduces TTRL."
+    },
+    {
+      "title": "HorizonMath",
+      "authors": "Erik Y. Wang et al. (Oxford/Harvard/Princeton)",
+      "arxiv": "2603.15617",
+      "venue": "arXiv, Mar 2026",
+      "type": "finding",
+      "contribution": "First contamination-proof benchmark of unsolved problems with automated verification. ~0% SOTA."
+    },
+    {
+      "title": "Mathematical exploration and discovery at scale",
+      "authors": "Bogdan Georgiev et al. + Terence Tao",
+      "arxiv": "2511.02864",
+      "venue": "arXiv, Nov 2025",
+      "type": "finding",
+      "contribution": "AlphaEvolve improved bounds on open problems including Nikodym sets and Kakeya bounds in dim 3-5."
+    },
+    {
+      "title": "Aletheia: Semi-Autonomous Mathematics Discovery",
+      "authors": "DeepMind",
+      "arxiv": "2601.22401",
+      "venue": "arXiv, Jan 2026",
+      "type": "finding",
+      "contribution": "Gemini-based agent addressed 13/700 open Erdos problems; discusses 'subconscious plagiarism' risk. ~100 Erdos problems transferred to 'solved' since Oct 2025."
+    },
+    {
+      "title": "miniF2F-Lean Revisited",
+      "authors": "Azim Ospanov et al.",
+      "arxiv": "2511.03108",
+      "venue": "NeurIPS 2025",
+      "type": "finding",
+      "contribution": ">50% of miniF2F formal/informal statement pairs have discrepancies; autoformalization accuracy 'largely inflated'."
+    },
+    {
+      "title": "FormalMATH",
+      "authors": "Zhouliang Yu et al.",
+      "arxiv": "2505.02735",
+      "venue": "arXiv, May 2025",
+      "type": "finding",
+      "contribution": "5,560 Lean 4 problems; inverse relationship between NL guidance and formal proof success."
+    },
+    {
+      "title": "Discovering mathematical concepts through multi-agent system",
+      "authors": null,
+      "arxiv": "2603.04528",
+      "venue": "arXiv, Mar 2026",
+      "type": "finding",
+      "contribution": "Multi-agent system autonomously recovers concept of homology from polyhedral data."
+    },
+    {
+      "title": "Shaping the Future of Mathematics in the Age of AI",
+      "authors": null,
+      "arxiv": "2603.24914",
+      "venue": "arXiv, Mar 2026",
+      "type": "finding",
+      "contribution": "Survey/position paper on AI's transformative role in mathematics."
+    }
+  ]
+}

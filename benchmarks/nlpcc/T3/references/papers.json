@@ -1,0 +1,31 @@
+[
+  {
+    "title": "TDC: Therapeutics Data Commons",
+    "url": "https://arxiv.org/abs/2102.09548",
+    "type": "benchmark"
+  },
+  {
+    "title": "Matbench Discovery: An evaluation framework for ML crystal stability prediction",
+    "url": "https://doi.org/10.1038/s42256-023-00583-6",
+    "type": "benchmark"
+  },
+  {
+    "title": "ADMET-AI: a machine learning ADMET platform for evaluation of large-scale chemical libraries",
+    "url": "https://github.com/swansonk14/admet_ai",
+    "type": "open_source_method",
+    "reported_result": "Paper reports highest average rank on the TDC ADMET leaderboard.",
+    "reproducibility_note": "Pip-installable and CPU/GPU capable; ADMET-AI v2 predictions may not exactly match v1 paper results."
+  },
+  {
+    "title": "TDC ADMET Benchmark Group",
+    "url": "https://tdcommons.ai/benchmark/admet_group/overview/",
+    "type": "public_leaderboard",
+    "reported_results": {
+      "caco2_wang": "CaliciBoost MAE 0.256 ± 0.006",
+      "herg": "MapLight + GNN AUROC 0.880 ± 0.002",
+      "ames": "ZairaChem AUROC 0.871 ± 0.002",
+      "cyp3a4_veith": "MapLight + GNN AUPRC 0.916 ± 0.000",
+      "lipophilicity_astrazeneca": "MiniMol MAE 0.456 ± 0.008"
+    }
+  }
+]

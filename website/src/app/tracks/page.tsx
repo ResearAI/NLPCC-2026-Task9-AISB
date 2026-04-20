@@ -1,256 +1,161 @@
+import Link from "next/link";
 import SectionHeading from "@/components/SectionHeading";
+import { NLPCC_PACKAGE_URL } from "@/lib/publicLinks";
+import { getNlpccPaperGroups } from "@/lib/researchLibrary";
 
 const TRACKS = [
   {
     id: "T1",
-    name: "AI/CS Reasoning & Engineering",
-    color: "var(--gold-500)",
-    description:
-      "Can AI systems produce verifiable improvements in expert-level cross-disciplinary reasoning and real software engineering? 8 reference papers provided including 3 provocative findings on reasoning limitations.",
-    benchmarks: [
-      {
-        name: "HLE-Verified (50 questions)",
-        detail: "Humanity's Last Exam — Verified. 50 questions stratified across math/physics, CS/logic, bio/chem, social science, and cross-disciplinary. SOTA: Gemini 3.1 Pro ~45%.",
-        metrics: "Exact-match accuracy + o3-mini judge for short answers",
-      },
-      {
-        name: "FeatureBench (20 tasks)",
-        detail: "Agentic coding for complex feature development. 20 tasks from 13 Docker images across 24 Python repos. SOTA: GPT-5.1-Codex 12.5%.",
-        metrics: "Docker containerized pytest pass/fail",
-      },
-    ],
-    baseline: "SOTA: HLE ~45%, FeatureBench 12.5%",
-    scoring: "Paper quality + benchmark performance + reproducibility (CAS)",
-    budget: "No fixed resource limit. Report cost in paper.",
-    dataLink: "https://github.com/ResearAI/NLPCC-2026-Task9-AISB",
+    name: "Agentic Coding & Research Engineering",
+    nameCn: "智能体代码与科研工程",
+    question:
+      "Can an AI Scientist improve code-oriented research systems through real execution, debugging, ablation, and evidence-backed engineering iteration?",
+    benchmark:
+      "Public package includes runnable engineering tasks, benchmark docs, agent instructions, starter submissions, and local replay tools.",
+    packageLink: `${NLPCC_PACKAGE_URL}/T1`,
   },
   {
     id: "T2",
-    name: "Math and Proof",
-    color: "var(--violet-500)",
-    description:
-      "Test formal mathematical reasoning and proof generation. Systems must produce machine-verifiable proofs in Lean4, not just natural language solutions. This track has zero tolerance for fabrication -- proofs either verify or they do not.",
-    benchmarks: [
-      {
-        name: "FormalMATH",
-        detail: "50 problems from undergraduate to research-level mathematics. Each problem requires a complete formal proof in Lean4 that type-checks successfully.",
-        metrics: "Proof completion rate (%), proof length efficiency",
-      },
-    ],
-    baseline: "Baseline DeepSeek-Prover-V2: 28% completion rate",
-    scoring: "Paper quality + proof completion rate + reproducibility (CAS)",
-    budget: "No fixed resource limit. Report cost in paper.",
-    dataLink: "https://github.com/ResearAI/NLPCC-2026-Task9-AISB",
+    name: "Formal Mathematical Proof",
+    nameCn: "形式化数学证明",
+    question:
+      "Can an AI Scientist run formal proof-search research that produces Lean-verified results rather than informal mathematical claims?",
+    benchmark:
+      "Public package centers on Lean4 theorem proving with executable verification, proof-trace requirements, and strict organizer-side rechecking.",
+    packageLink: `${NLPCC_PACKAGE_URL}/T2`,
   },
   {
     id: "T3",
-    name: "Scientific Discovery",
-    color: "var(--emerald-500)",
-    description:
-      "Evaluate AI systems on real scientific prediction tasks. This track requires systems to make quantitative predictions on held-out data, combining domain knowledge with computational methods. No room for fabrication -- predictions are scored against ground truth.",
-    benchmarks: [
-      {
-        name: "TDC ADMET",
-        detail: "5 ADMET endpoints (Caco-2 permeability, hERG inhibition, Microsomal clearance, Lipophilicity, Solubility). Systems predict molecular properties from SMILES strings.",
-        metrics: "Average MAE across 5 endpoints, normalized against baseline",
-      },
-      {
-        name: "Matbench Discovery",
-        detail: "Materials property prediction. Systems predict formation energy and stability of inorganic crystals from structure data.",
-        metrics: "F1 score for stable/unstable classification, MAE for energy",
-      },
-    ],
-    baseline: "Baseline RF/XGBoost: TDC avg MAE 0.82, Matbench F1 0.58",
-    scoring: "Paper quality + benchmark performance + reproducibility (CAS)",
-    budget: "No fixed resource limit. Report cost in paper.",
-    dataLink: "https://github.com/ResearAI/NLPCC-2026-Task9-AISB",
+    name: "LifeSci/ADMET Scientific Discovery",
+    nameCn: "生命科学/ADMET科学发现",
+    question:
+      "Can an AI Scientist run real scientific modeling loops on life-science data, improve predictive performance, and explain why a method works?",
+    benchmark:
+      "Public package currently focuses on ADMET-style public-dev scientific discovery tasks with runnable local evaluation and strict replayable submissions.",
+    packageLink: `${NLPCC_PACKAGE_URL}/T3`,
   },
 ];
 
 export default function TracksPage() {
+  const paperGroups = getNlpccPaperGroups(6);
+
   return (
     <div className="max-w-7xl mx-auto px-6 py-16">
       <SectionHeading
-        title="Competition Tracks"
-        subtitle="Three tracks evaluating different facets of AI scientific capability. All tracks include mandatory integrity verification."
+        title="NLPCC 2026 Tracks"
+        titleCn="NLPCC 当前公开方向"
+        subtitle="NLPCC is the current public AISB package. Each direction is introduced as a scientific problem first, then linked to its runnable benchmark package and paper library."
       />
 
-      {/* Track Overview */}
-      <div className="grid md:grid-cols-3 gap-4 mb-16">
-        {TRACKS.map((track) => (
-          <a
-            key={track.id}
-            href={`#${track.id}`}
-            className="card rounded-xl p-5 bg-white hover:bg-gray-50 transition-all"
-          >
-            <span
-              className="text-xs uppercase tracking-widest"
-              style={{
-                fontFamily: "'Source Code Pro', monospace",
-                color: track.color,
-              }}
-            >
-              {track.id}
-            </span>
-            <h3 className="font-semibold text-lg mt-1">{track.name}</h3>
-            <p className="text-xs text-[var(--gray-400)] mt-2">
-              {track.benchmarks.map((b) => b.name).join(" + ")}
+      <section className="card-gold rounded-2xl p-6 bg-white mb-10">
+        <div className="grid md:grid-cols-3 gap-4 text-sm">
+          <div>
+            <div className="text-xs uppercase tracking-wider mb-2" style={{ color: "var(--gray-400)", fontFamily: "'Source Code Pro', monospace" }}>
+              For Humans
+            </div>
+            <p className="text-[var(--gray-500)]">
+              Read the scientific problem, choose a direction, then hand the package to your AI Scientist.
             </p>
-          </a>
-        ))}
-      </div>
+          </div>
+          <div>
+            <div className="text-xs uppercase tracking-wider mb-2" style={{ color: "var(--gray-400)", fontFamily: "'Source Code Pro', monospace" }}>
+              For Agents
+            </div>
+            <p className="text-[var(--gray-500)]">
+              Read `AGENT.md`, `bench.yaml`, `data/data.md`, and the paper library, then run local experiments and build a strict submission.
+            </p>
+          </div>
+          <div>
+            <div className="text-xs uppercase tracking-wider mb-2" style={{ color: "var(--gray-400)", fontFamily: "'Source Code Pro', monospace" }}>
+              Leaderboard
+            </div>
+            <p className="text-[var(--gray-500)]">
+              Benchmark and paper boards are separate. Public rows are update-later until submission opening.
+            </p>
+          </div>
+        </div>
+      </section>
 
-      {/* Track Details */}
-      <div className="space-y-16">
-        {TRACKS.map((track) => (
-          <section key={track.id} id={track.id} className="scroll-mt-24">
-            <div className="card rounded-2xl p-8 bg-white relative overflow-hidden">
-              <div
-                className="absolute top-0 right-0 w-48 h-48 rounded-full opacity-[0.05] blur-[80px]"
-                style={{ background: track.color }}
-              />
-              <div className="relative z-10">
-                <div className="flex items-center gap-3 mb-4">
-                  <span
-                    className="px-3 py-1 rounded-full text-xs border"
-                    style={{
-                      fontFamily: "'Source Code Pro', monospace",
-                      color: track.color,
-                      borderColor: `${track.color}33`,
-                      background: `${track.color}15`,
-                    }}
-                  >
-                    {track.id}
-                  </span>
-                  <h3
-                    style={{ fontFamily: "'Playfair Display', Georgia, serif" }}
-                    className="text-2xl"
-                  >
-                    {track.name}
-                  </h3>
-                </div>
-                <p className="text-[var(--gray-500)] leading-relaxed mb-8 max-w-3xl">
-                  {track.description}
+      <div className="space-y-8">
+        {TRACKS.map((track) => {
+          const paperGroup = paperGroups.find((group) => group.id === track.id);
+          return (
+          <section key={track.id} id={track.id} className="card rounded-2xl p-8 bg-white">
+            <div className="flex items-center gap-3 mb-4">
+              <span
+                className="px-3 py-1 rounded-full text-xs border"
+                style={{
+                  fontFamily: "'Source Code Pro', monospace",
+                  color: "var(--navy-700)",
+                  borderColor: "var(--gray-200)",
+                  background: "var(--gray-50)",
+                }}
+              >
+                {track.id}
+              </span>
+              <h2 style={{ fontFamily: "'Playfair Display', Georgia, serif" }} className="text-2xl text-[var(--navy-700)]">
+                {track.name}
+              </h2>
+              <span className="text-sm text-[var(--gray-400)]" style={{ fontFamily: "'Noto Sans SC', sans-serif" }}>
+                / {track.nameCn}
+              </span>
+            </div>
+
+            <div className="grid md:grid-cols-3 gap-4">
+              <div className="rounded-xl p-5 bg-gray-50 border border-[var(--gray-200)]">
+                <div className="text-xs uppercase tracking-wider mb-2 text-[var(--gray-400)]">Scientific Question</div>
+                <p className="text-sm text-[var(--gray-500)] leading-relaxed">{track.question}</p>
+              </div>
+              <div className="rounded-xl p-5 bg-gray-50 border border-[var(--gray-200)]">
+                <div className="text-xs uppercase tracking-wider mb-2 text-[var(--gray-400)]">Benchmark Package</div>
+                <p className="text-sm text-[var(--gray-500)] leading-relaxed mb-4">{track.benchmark}</p>
+                <a
+                  href={track.packageLink}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="text-sm hover:underline"
+                  style={{ color: "var(--gold-600)" }}
+                >
+                  Open benchmark package
+                </a>
+              </div>
+              <div className="rounded-xl p-5 bg-gray-50 border border-[var(--gray-200)]">
+                <div className="text-xs uppercase tracking-wider mb-2 text-[var(--gray-400)]">Reference Papers</div>
+                <p className="text-sm text-[var(--gray-500)] leading-relaxed mb-4">
+                  Representative papers are shown below. The full paper library and source JSON remain public.
                 </p>
-
-                {/* Benchmarks */}
-                <h4 className="text-xs text-[var(--gray-400)] uppercase tracking-wider font-medium mb-4">
-                  Benchmarks
-                </h4>
-                <div className="space-y-4 mb-8">
-                  {track.benchmarks.map((bench) => (
-                    <div
-                      key={bench.name}
-                      className="rounded-xl p-5 bg-gray-50 border border-[var(--gray-200)]"
+                <div className="space-y-2 mb-4">
+                  {paperGroup?.papers.map((paper) => (
+                    <a
+                      key={paper.href}
+                      href={paper.href}
+                      target="_blank"
+                      rel="noreferrer"
+                      className="block text-sm hover:underline"
+                      style={{ color: "var(--navy-700)" }}
                     >
-                      <h5 className="font-semibold text-sm mb-2">
-                        {bench.name}
-                      </h5>
-                      <p className="text-sm text-[var(--gray-500)] mb-2">
-                        {bench.detail}
-                      </p>
-                      <div
-                        className="text-xs text-[var(--gray-400)]"
-                        style={{
-                          fontFamily: "'Source Code Pro', monospace",
-                        }}
-                      >
-                        Metrics: {bench.metrics}
-                      </div>
-                    </div>
+                      {paper.title}
+                    </a>
                   ))}
                 </div>
-
-                {/* Details Grid */}
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-                  <div className="rounded-xl p-4 bg-gray-50 border border-[var(--gray-200)]">
-                    <div className="text-xs text-[var(--gray-400)] uppercase tracking-wider mb-2">
-                      Scoring Formula
-                    </div>
-                    <div
-                      className="text-sm"
-                      style={{
-                        fontFamily: "'Source Code Pro', monospace",
-                      }}
-                    >
-                      {track.scoring}
-                    </div>
-                  </div>
-                  <div className="rounded-xl p-4 bg-gray-50 border border-[var(--gray-200)]">
-                    <div className="text-xs text-[var(--gray-400)] uppercase tracking-wider mb-2">
-                      Baseline
-                    </div>
-                    <div
-                      className="text-sm text-[var(--gray-500)]"
-                      style={{
-                        fontFamily: "'Source Code Pro', monospace",
-                      }}
-                    >
-                      {track.baseline}
-                    </div>
-                  </div>
-                  <div className="rounded-xl p-4 bg-gray-50 border border-[var(--gray-200)]">
-                    <div className="text-xs text-[var(--gray-400)] uppercase tracking-wider mb-2">
-                      Resource Budget
-                    </div>
-                    <div
-                      className="text-sm text-[var(--gray-500)]"
-                      style={{
-                        fontFamily: "'Source Code Pro', monospace",
-                      }}
-                    >
-                      {track.budget}
-                    </div>
-                  </div>
-                </div>
-
-                {/* Data Link */}
-                <div className="mt-6">
+                <div className="flex flex-wrap gap-4 text-sm">
                   <a
-                    href={track.dataLink}
+                    href={paperGroup?.jsonHref}
                     target="_blank"
                     rel="noreferrer"
-                    className="text-sm hover:underline transition"
-                    style={{ color: track.color }}
+                    className="hover:underline"
+                    style={{ color: "var(--gold-600)" }}
                   >
-                    View sample data and starter code on GitHub
+                    Open full paper JSON
                   </a>
+                  <Link href="/papers" className="hover:underline" style={{ color: "var(--gold-600)" }}>
+                    Browse paper library
+                  </Link>
                 </div>
               </div>
             </div>
           </section>
-        ))}
-      </div>
-
-      {/* Common Rules */}
-      <div className="mt-16 card rounded-xl p-6 bg-white">
-        <h3
-          style={{ fontFamily: "'Playfair Display', Georgia, serif" }}
-          className="text-xl mb-4"
-        >
-          Common to All Tracks
-        </h3>
-        <div className="grid md:grid-cols-2 gap-6 text-sm text-[var(--gray-500)]">
-          <div>
-            <h4 className="font-medium text-[var(--navy-700)] mb-2">
-              Integrity Verification
-            </h4>
-            <p>
-              All submissions pass through the 4-layer integrity system. Docker
-              sandboxing ensures reproducibility. CAS (Claim Accuracy Score)
-              must be above 0.5 to qualify for ranking.
-            </p>
-          </div>
-          <div>
-            <h4 className="font-medium text-[var(--navy-700)] mb-2">Dual Score</h4>
-            <p>
-              Final ranking uses DualScore = RawScore x CAS. A system that
-              scores 90% on the task but has CAS of 0.3 gets a DualScore of
-              27, ranked below a system that scores 60% with CAS of 0.9
-              (DualScore 54).
-            </p>
-          </div>
-        </div>
+        )})}
       </div>
     </div>
   );

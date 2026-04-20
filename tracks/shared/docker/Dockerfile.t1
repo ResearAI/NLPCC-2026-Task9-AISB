@@ -1,0 +1,120 @@
+# =============================================================================
+# AISB 2026 -- Track T1: HLE + FeatureBench (Python-only)
+# Base: python:3.11-slim
+# Spec: SECURITY_SPECIFICATION.md Section 2 & 8.3
+# Resources: 4 CPU, 16 GB RAM, 10 GB disk, 30 min timeout, no network
+# Image target size: ~2.5 GB
+# =============================================================================
+FROM python:3.11-slim AS base
+
+LABEL maintainer="AISB 2026 Organizing Committee"
+LABEL description="Track T1 evaluation container (HLE + FeatureBench)"
+LABEL version="1.0"
+LABEL org.opencontainers.image.source="https://github.com/aisb2026/aisb"
+
+# ---------------------------------------------------------------------------
+# 1. System packages
+# ---------------------------------------------------------------------------
+ENV DEBIAN_FRONTEND=noninteractive
+RUN apt-get update && apt-get install -y --no-install-recommends \
+        build-essential \
+        gcc \
+        g++ \
+        gfortran \
+        libopenblas-dev \
+        liblapack-dev \
+        git \
+        curl \
+        ca-certificates \
+        && rm -rf /var/lib/apt/lists/*
+
+# ---------------------------------------------------------------------------
+# 2. Python packages (pinned for reproducibility)
+# ---------------------------------------------------------------------------
+COPY <<'REQUIREMENTS' /tmp/requirements.txt
+numpy==1.26.4
+pandas==2.2.1
+scikit-learn==1.4.1.post1
+scipy==1.12.0
+matplotlib==3.8.3
+seaborn==0.13.2
+xgboost==2.0.3
+lightgbm==4.3.0
+requests==2.31.0
+jsonschema==4.21.1
+pyyaml==6.0.1
+REQUIREMENTS
+
+RUN pip install --no-cache-dir --upgrade pip setuptools wheel \
+    && pip install --no-cache-dir -r /tmp/requirements.txt \
+    && rm /tmp/requirements.txt
+
+# Verify critical packages imported successfully
+RUN python -c "import numpy; import pandas; import sklearn; import xgboost; import lightgbm; print('T1 packages OK')"
+
+# ---------------------------------------------------------------------------
+# 3. Create non-root agent user (UID 1000)
+# ---------------------------------------------------------------------------
+RUN groupadd --gid 1000 agent \
+    && useradd --uid 1000 --gid agent --shell /bin/bash --create-home agent
+
+# ---------------------------------------------------------------------------
+# 4. Workspace structure (per SECURITY_SPECIFICATION.md Section 2.1)
+# ---------------------------------------------------------------------------
+# Root-owned, read-only directories (actual data bind-mounted at runtime)
+RUN mkdir -p /opt/aisb/task \
+             /opt/aisb/data \
+             /opt/aisb/tests \
+    && chown root:root /opt/aisb/task /opt/aisb/data /opt/aisb/tests \
+    && chmod 555 /opt/aisb/task \
+    && chmod 444 /opt/aisb/data \
+    && chmod 444 /opt/aisb/tests
+
+# Agent-owned directories
+RUN mkdir -p /home/agent/workspace \
+             /home/agent/submission/paper \
+             /home/agent/submission/code \
+             /home/agent/submission/predictions \
+             /home/agent/submission/logs \
+             /home/agent/submission/figures \
+             /home/agent/.cache/pip \
+    && chown -R agent:agent /home/agent/workspace \
+                            /home/agent/submission \
+                            /home/agent/.cache \
+    && chmod 755 /home/agent/workspace \
+    && chmod 755 /home/agent/submission
+
+# ---------------------------------------------------------------------------
+# 5. Security hardening
+# ---------------------------------------------------------------------------
+# Remove compilers but keep runtime libs (libgomp needed by lightgbm/xgboost)
+RUN apt-get purge -y --auto-remove build-essential gcc g++ gfortran \
+    && apt-get update && apt-get install -y --no-install-recommends libgomp1 \
+    && rm -rf /var/lib/apt/lists/* /root/.cache /tmp/*
+
+# Prevent agent from modifying system files
+RUN chmod 755 /usr/local/bin /usr/local/lib/python3.11
+
+# ---------------------------------------------------------------------------
+# 6. Runtime configuration
+# ---------------------------------------------------------------------------
+ENV HOME=/home/agent
+ENV PIP_CACHE_DIR=/home/agent/.cache/pip
+ENV PYTHONUNBUFFERED=1
+ENV PYTHONDONTWRITEBYTECODE=1
+ENV MPLBACKEND=Agg
+
+WORKDIR /home/agent/workspace
+
+# Copy entrypoint (clears cache, validates env)
+COPY tracks/shared/docker/entrypoint.sh /usr/local/bin/entrypoint.sh
+RUN chmod 755 /usr/local/bin/entrypoint.sh
+
+USER agent:agent
+
+# Healthcheck: verify the container starts correctly
+HEALTHCHECK --interval=30s --timeout=5s --start-period=5s --retries=2 \
+    CMD python -c "import numpy; print('healthy')" || exit 1
+
+ENTRYPOINT ["/usr/local/bin/entrypoint.sh"]
+CMD ["python", "/home/agent/workspace/run.py"]

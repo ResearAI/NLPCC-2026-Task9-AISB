@@ -1,0 +1,1684 @@
+{
+  "predictions": [
+    {
+      "id": "CHEMBL596271",
+      "prediction": 2.1680952380952383
+    },
+    {
+      "id": "CHEMBL1951080",
+      "prediction": 2.191875
+    },
+    {
+      "id": "CHEMBL1771",
+      "prediction": 2.1570238095238095
+    },
+    {
+      "id": "CHEMBL234951",
+      "prediction": 2.2373214285714287
+    },
+    {
+      "id": "CHEMBL565079",
+      "prediction": 2.1744940476190475
+    },
+    {
+      "id": "CHEMBL317462",
+      "prediction": 2.1680952380952383
+    },
+    {
+      "id": "CHEMBL1951182",
+      "prediction": 2.191875
+    },
+    {
+      "id": "CHEMBL2030960",
+      "prediction": 2.1570238095238095
+    },
+    {
+      "id": "CHEMBL13097",
+      "prediction": 2.2373214285714287
+    },
+    {
+      "id": "CHEMBL1527751",
+      "prediction": 2.1744940476190475
+    },
+    {
+      "id": "CHEMBL1940306",
+      "prediction": 2.1680952380952383
+    },
+    {
+      "id": "CHEMBL578201",
+      "prediction": 2.191875
+    },
+    {
+      "id": "CHEMBL276218",
+      "prediction": 2.1570238095238095
+    },
+    {
+      "id": "CHEMBL2153181",
+      "prediction": 2.2373214285714287
+    },
+    {
+      "id": "CHEMBL1916276",
+      "prediction": 2.1744940476190475
+    },
+    {
+      "id": "CHEMBL93884",
+      "prediction": 2.1680952380952383
+    },
+    {
+      "id": "CHEMBL2171986",
+      "prediction": 2.191875
+    },
+    {
+      "id": "CHEMBL190044",
+      "prediction": 2.1570238095238095
+    },
+    {
+      "id": "CHEMBL469790",
+      "prediction": 2.2373214285714287
+    },
+    {
+      "id": "CHEMBL2165055",
+      "prediction": 2.1744940476190475
+    },
+    {
+      "id": "CHEMBL322479",
+      "prediction": 2.1680952380952383
+    },
+    {
+      "id": "CHEMBL2036736",
+      "prediction": 2.191875
+    },
+    {
+      "id": "CHEMBL2179291",
+      "prediction": 2.1570238095238095
+    },
+    {
+      "id": "CHEMBL2158823",
+      "prediction": 2.2373214285714287
+    },
+    {
+      "id": "CHEMBL641",
+      "prediction": 2.1744940476190475
+    },
+    {
+      "id": "CHEMBL1289785",
+      "prediction": 2.1680952380952383
+    },
+    {
+      "id": "CHEMBL1381135",
+      "prediction": 2.191875
+    },
+    {
+      "id": "CHEMBL528217",
+      "prediction": 2.1570238095238095
+    },
+    {
+      "id": "CHEMBL2177621",
+      "prediction": 2.2373214285714287
+    },
+    {
+      "id": "CHEMBL475386",
+      "prediction": 2.1744940476190475
+    },
+    {
+      "id": "CHEMBL2325699",
+      "prediction": 2.1680952380952383
+    },
+    {
+      "id": "CHEMBL2010845",
+      "prediction": 2.191875
+    },
+    {
+      "id": "CHEMBL103",
+      "prediction": 2.1570238095238095
+    },
+    {
+      "id": "CHEMBL2208428",
+      "prediction": 2.2373214285714287
+    },
+    {
+      "id": "CHEMBL1796293",
+      "prediction": 2.1744940476190475
+    },
+    {
+      "id": "CHEMBL1557436",
+      "prediction": 2.1680952380952383
+    },
+    {
+      "id": "CHEMBL2031236",
+      "prediction": 2.191875
+    },
+    {
+      "id": "CHEMBL2087849",
+      "prediction": 2.1570238095238095
+    },
+    {
+      "id": "CHEMBL1235773",
+      "prediction": 2.2373214285714287
+    },
+    {
+      "id": "CHEMBL339051",
+      "prediction": 2.1744940476190475
+    },
+    {
+      "id": "CHEMBL168899",
+      "prediction": 2.1680952380952383
+    },
+    {
+      "id": "CHEMBL517",
+      "prediction": 2.191875
+    },
+    {
+      "id": "CHEMBL578288",
+      "prediction": 2.1570238095238095
+    },
+    {
+      "id": "CHEMBL1778648",
+      "prediction": 2.2373214285714287
+    },
+    {
+      "id": "CHEMBL1778635",
+      "prediction": 2.1744940476190475
+    },
+    {
+      "id": "CHEMBL1234354",
+      "prediction": 2.1680952380952383
+    },
+    {
+      "id": "CHEMBL1550278",
+      "prediction": 2.191875
+    },
+    {
+      "id": "CHEMBL1096",
+      "prediction": 2.1570238095238095
+    },
+    {
+      "id": "CHEMBL1807822",
+      "prediction": 2.2373214285714287
+    },
+    {
+      "id": "CHEMBL1310086",
+      "prediction": 2.1744940476190475
+    },
+    {
+      "id": "CHEMBL373364",
+      "prediction": 2.1680952380952383
+    },
+    {
+      "id": "CHEMBL484901",
+      "prediction": 2.191875
+    },
+    {
+      "id": "CHEMBL1233652",
+      "prediction": 2.1570238095238095
+    },
+    {
+      "id": "CHEMBL2059196",
+      "prediction": 2.2373214285714287
+    },
+    {
+      "id": "CHEMBL1934414",
+      "prediction": 2.1744940476190475
+    },
+    {
+      "id": "CHEMBL1415894",
+      "prediction": 2.1680952380952383
+    },
+    {
+      "id": "CHEMBL2335875",
+      "prediction": 2.191875
+    },
+    {
+      "id": "CHEMBL1916269",
+      "prediction": 2.1570238095238095
+    },
+    {
+      "id": "CHEMBL1224139",
+      "prediction": 2.2373214285714287
+    },
+    {
+      "id": "CHEMBL1082812",
+      "prediction": 2.1744940476190475
+    },
+    {
+      "id": "CHEMBL12980",
+      "prediction": 2.1680952380952383
+    },
+    {
+      "id": "CHEMBL1412343",
+      "prediction": 2.191875
+    },
+    {
+      "id": "CHEMBL453862",
+      "prediction": 2.1570238095238095
+    },
+    {
+      "id": "CHEMBL296572",
+      "prediction": 2.2373214285714287
+    },
+    {
+      "id": "CHEMBL239513",
+      "prediction": 2.1744940476190475
+    },
+    {
+      "id": "CHEMBL479445",
+      "prediction": 2.1680952380952383
+    },
+    {
+      "id": "CHEMBL2152917",
+      "prediction": 2.191875
+    },
+    {
+      "id": "CHEMBL299672",
+      "prediction": 2.1570238095238095
+    },
+    {
+      "id": "CHEMBL1682820",
+      "prediction": 2.2373214285714287
+    },
+    {
+      "id": "CHEMBL247367",
+      "prediction": 2.1744940476190475
+    },
+    {
+      "id": "CHEMBL2010834",
+      "prediction": 2.1680952380952383
+    },
+    {
+      "id": "CHEMBL1945293",
+      "prediction": 2.191875
+    },
+    {
+      "id": "CHEMBL1652588",
+      "prediction": 2.1570238095238095
+    },
+    {
+      "id": "CHEMBL190812",
+      "prediction": 2.2373214285714287
+    },
+    {
+      "id": "CHEMBL235392",
+      "prediction": 2.1744940476190475
+    },
+    {
+      "id": "CHEMBL62193",
+      "prediction": 2.1680952380952383
+    },
+    {
+      "id": "CHEMBL1784338",
+      "prediction": 2.191875
+    },
+    {
+      "id": "CHEMBL1650698",
+      "prediction": 2.1570238095238095
+    },
+    {
+      "id": "CHEMBL2062583",
+      "prediction": 2.2373214285714287
+    },
+    {
+      "id": "CHEMBL4",
+      "prediction": 2.1744940476190475
+    },
+    {
+      "id": "CHEMBL2158534",
+      "prediction": 2.1680952380952383
+    },
+    {
+      "id": "CHEMBL492234",
+      "prediction": 2.191875
+    },
+    {
+      "id": "CHEMBL131921",
+      "prediction": 2.1570238095238095
+    },
+    {
+      "id": "CHEMBL21731",
+      "prediction": 2.2373214285714287
+    },
+    {
+      "id": "CHEMBL346528",
+      "prediction": 2.1744940476190475
+    },
+    {
+      "id": "CHEMBL133501",
+      "prediction": 2.1680952380952383
+    },
+    {
+      "id": "CHEMBL2087854",
+      "prediction": 2.191875
+    },
+    {
+      "id": "CHEMBL1689126",
+      "prediction": 2.1570238095238095
+    },
+    {
+      "id": "CHEMBL1650728",
+      "prediction": 2.2373214285714287
+    },
+    {
+      "id": "CHEMBL2178942",
+      "prediction": 2.1744940476190475
+    },
+    {
+      "id": "CHEMBL1800528",
+      "prediction": 2.1680952380952383
+    },
+    {
+      "id": "CHEMBL143305",
+      "prediction": 2.191875
+    },
+    {
+      "id": "CHEMBL2326481",
+      "prediction": 2.1570238095238095
+    },
+    {
+      "id": "CHEMBL15245",
+      "prediction": 2.2373214285714287
+    },
+    {
+      "id": "CHEMBL1852688",
+      "prediction": 2.1744940476190475
+    },
+    {
+      "id": "CHEMBL2171169",
+      "prediction": 2.1680952380952383
+    },
+    {
+      "id": "CHEMBL2216830",
+      "prediction": 2.191875
+    },
+    {
+      "id": "CHEMBL381098",
+      "prediction": 2.1570238095238095
+    },
+    {
+      "id": "CHEMBL284275",
+      "prediction": 2.2373214285714287
+    },
+    {
+      "id": "CHEMBL2177167",
+      "prediction": 2.1744940476190475
+    },
+    {
+      "id": "CHEMBL2331746",
+      "prediction": 2.1680952380952383
+    },
+    {
+      "id": "CHEMBL1712280",
+      "prediction": 2.191875
+    },
+    {
+      "id": "CHEMBL1790041",
+      "prediction": 2.1570238095238095
+    },
+    {
+      "id": "CHEMBL1184060",
+      "prediction": 2.2373214285714287
+    },
+    {
+      "id": "CHEMBL1502799",
+      "prediction": 2.1744940476190475
+    },
+    {
+      "id": "CHEMBL2208436",
+      "prediction": 2.1680952380952383
+    },
+    {
+      "id": "CHEMBL480445",
+      "prediction": 2.191875
+    },
+    {
+      "id": "CHEMBL1392670",
+      "prediction": 2.1570238095238095
+    },
+    {
+      "id": "CHEMBL1455477",
+      "prediction": 2.2373214285714287
+    },
+    {
+      "id": "CHEMBL1939414",
+      "prediction": 2.1744940476190475
+    },
+    {
+      "id": "CHEMBL1617016",
+      "prediction": 2.1680952380952383
+    },
+    {
+      "id": "CHEMBL2207600",
+      "prediction": 2.191875
+    },
+    {
+      "id": "CHEMBL244213",
+      "prediction": 2.1570238095238095
+    },
+    {
+      "id": "CHEMBL404957",
+      "prediction": 2.2373214285714287
+    },
+    {
+      "id": "CHEMBL520252",
+      "prediction": 2.1744940476190475
+    },
+    {
+      "id": "CHEMBL190747",
+      "prediction": 2.1680952380952383
+    },
+    {
+      "id": "CHEMBL1079175",
+      "prediction": 2.191875
+    },
+    {
+      "id": "CHEMBL1499868",
+      "prediction": 2.1570238095238095
+    },
+    {
+      "id": "CHEMBL1824042",
+      "prediction": 2.2373214285714287
+    },
+    {
+      "id": "CHEMBL2158827",
+      "prediction": 2.1744940476190475
+    },
+    {
+      "id": "CHEMBL520925",
+      "prediction": 2.1680952380952383
+    },
+    {
+      "id": "CHEMBL181502",
+      "prediction": 2.191875
+    },
+    {
+      "id": "CHEMBL1962631",
+      "prediction": 2.1570238095238095
+    },
+    {
+      "id": "CHEMBL470915",
+      "prediction": 2.2373214285714287
+    },
+    {
+      "id": "CHEMBL1163803",
+      "prediction": 2.1744940476190475
+    },
+    {
+      "id": "CHEMBL598194",
+      "prediction": 2.1680952380952383
+    },
+    {
+      "id": "CHEMBL42",
+      "prediction": 2.191875
+    },
+    {
+      "id": "CHEMBL2178954",
+      "prediction": 2.1570238095238095
+    },
+    {
+      "id": "CHEMBL373250",
+      "prediction": 2.2373214285714287
+    },
+    {
+      "id": "CHEMBL1169388",
+      "prediction": 2.1744940476190475
+    },
+    {
+      "id": "CHEMBL2171046",
+      "prediction": 2.1680952380952383
+    },
+    {
+      "id": "CHEMBL144960",
+      "prediction": 2.191875
+    },
+    {
+      "id": "CHEMBL271023",
+      "prediction": 2.1570238095238095
+    },
+    {
+      "id": "CHEMBL90531",
+      "prediction": 2.2373214285714287
+    },
+    {
+      "id": "CHEMBL645",
+      "prediction": 2.1744940476190475
+    },
+    {
+      "id": "CHEMBL2178950",
+      "prediction": 2.1680952380952383
+    },
+    {
+      "id": "CHEMBL2178393",
+      "prediction": 2.191875
+    },
+    {
+      "id": "CHEMBL1809049",
+      "prediction": 2.1570238095238095
+    },
+    {
+      "id": "CHEMBL1373079",
+      "prediction": 2.2373214285714287
+    },
+    {
+      "id": "CHEMBL74380",
+      "prediction": 2.1744940476190475
+    },
+    {
+      "id": "CHEMBL257600",
+      "prediction": 2.1680952380952383
+    },
+    {
+      "id": "CHEMBL1362558",
+      "prediction": 2.191875
+    },
+    {
+      "id": "CHEMBL2059861",
+      "prediction": 2.1570238095238095
+    },
+    {
+      "id": "CHEMBL235191",
+      "prediction": 2.2373214285714287
+    },
+    {
+      "id": "CHEMBL197536",
+      "prediction": 2.1744940476190475
+    },
+    {
+      "id": "CHEMBL1086580",
+      "prediction": 2.1680952380952383
+    },
+    {
+      "id": "CHEMBL1290331",
+      "prediction": 2.191875
+    },
+    {
+      "id": "CHEMBL203370",
+      "prediction": 2.1570238095238095
+    },
+    {
+      "id": "CHEMBL1945035",
+      "prediction": 2.2373214285714287
+    },
+    {
+      "id": "CHEMBL551360",
+      "prediction": 2.1744940476190475
+    },
+    {
+      "id": "CHEMBL1783284",
+      "prediction": 2.1680952380952383
+    },
+    {
+      "id": "CHEMBL1909734",
+      "prediction": 2.191875
+    },
+    {
+      "id": "CHEMBL1481866",
+      "prediction": 2.1570238095238095
+    },
+    {
+      "id": "CHEMBL1831079",
+      "prediction": 2.2373214285714287
+    },
+    {
+      "id": "CHEMBL437",
+      "prediction": 2.1744940476190475
+    },
+    {
+      "id": "CHEMBL272105",
+      "prediction": 2.1680952380952383
+    },
+    {
+      "id": "CHEMBL1940108",
+      "prediction": 2.191875
+    },
+    {
+      "id": "CHEMBL370252",
+      "prediction": 2.1570238095238095
+    },
+    {
+      "id": "CHEMBL205245",
+      "prediction": 2.2373214285714287
+    },
+    {
+      "id": "CHEMBL2070946",
+      "prediction": 2.1744940476190475
+    },
+    {
+      "id": "CHEMBL443320",
+      "prediction": 2.1680952380952383
+    },
+    {
+      "id": "CHEMBL1779497",
+      "prediction": 2.191875
+    },
+    {
+      "id": "CHEMBL1332736",
+      "prediction": 2.1570238095238095
+    },
+    {
+      "id": "CHEMBL2070948",
+      "prediction": 2.2373214285714287
+    },
+    {
+      "id": "CHEMBL1732699",
+      "prediction": 2.1744940476190475
+    },
+    {
+      "id": "CHEMBL1917433",
+      "prediction": 2.1680952380952383
+    },
+    {
+      "id": "CHEMBL2141746",
+      "prediction": 2.191875
+    },
+    {
+      "id": "CHEMBL256576",
+      "prediction": 2.1570238095238095
+    },
+    {
+      "id": "CHEMBL87388",
+      "prediction": 2.2373214285714287
+    },
+    {
+      "id": "CHEMBL150606",
+      "prediction": 2.1744940476190475
+    },
+    {
+      "id": "CHEMBL8809",
+      "prediction": 2.1680952380952383
+    },
+    {
+      "id": "CHEMBL1233655",
+      "prediction": 2.191875
+    },
+    {
+      "id": "CHEMBL384962",
+      "prediction": 2.1570238095238095
+    },
+    {
+      "id": "CHEMBL1542764",
+      "prediction": 2.2373214285714287
+    },
+    {
+      "id": "CHEMBL2181927",
+      "prediction": 2.1744940476190475
+    },
+    {
+      "id": "CHEMBL2334590",
+      "prediction": 2.1680952380952383
+    },
+    {
+      "id": "CHEMBL1480987",
+      "prediction": 2.191875
+    },
+    {
+      "id": "CHEMBL2335898",
+      "prediction": 2.1570238095238095
+    },
+    {
+      "id": "CHEMBL401193",
+      "prediction": 2.2373214285714287
+    },
+    {
+      "id": "CHEMBL1950851",
+      "prediction": 2.1744940476190475
+    },
+    {
+      "id": "CHEMBL2035030",
+      "prediction": 2.1680952380952383
+    },
+    {
+      "id": "CHEMBL111955",
+      "prediction": 2.191875
+    },
+    {
+      "id": "CHEMBL316388",
+      "prediction": 2.1570238095238095
+    },
+    {
+      "id": "CHEMBL248380",
+      "prediction": 2.2373214285714287
+    },
+    {
+      "id": "CHEMBL235581",
+      "prediction": 2.1744940476190475
+    },
+    {
+      "id": "CHEMBL1682940",
+      "prediction": 2.1680952380952383
+    },
+    {
+      "id": "CHEMBL1471868",
+      "prediction": 2.191875
+    },
+    {
+      "id": "CHEMBL1076211",
+      "prediction": 2.1570238095238095
+    },
+    {
+      "id": "CHEMBL1951022",
+      "prediction": 2.2373214285714287
+    },
+    {
+      "id": "CHEMBL1987793",
+      "prediction": 2.1744940476190475
+    },
+    {
+      "id": "CHEMBL1947155",
+      "prediction": 2.1680952380952383
+    },
+    {
+      "id": "CHEMBL1939418",
+      "prediction": 2.191875
+    },
+    {
+      "id": "CHEMBL398295",
+      "prediction": 2.1570238095238095
+    },
+    {
+      "id": "CHEMBL174107",
+      "prediction": 2.2373214285714287
+    },
+    {
+      "id": "CHEMBL2089280",
+      "prediction": 2.1744940476190475
+    },
+    {
+      "id": "CHEMBL139347",
+      "prediction": 2.1680952380952383
+    },
+    {
+      "id": "CHEMBL1623",
+      "prediction": 2.191875
+    },
+    {
+      "id": "CHEMBL2171034",
+      "prediction": 2.1570238095238095
+    },
+    {
+      "id": "CHEMBL1689115",
+      "prediction": 2.2373214285714287
+    },
+    {
+      "id": "CHEMBL1628691",
+      "prediction": 2.1744940476190475
+    },
+    {
+      "id": "CHEMBL1515447",
+      "prediction": 2.1680952380952383
+    },
+    {
+      "id": "CHEMBL559968",
+      "prediction": 2.191875
+    },
+    {
+      "id": "CHEMBL1180299",
+      "prediction": 2.1570238095238095
+    },
+    {
+      "id": "CHEMBL2335897",
+      "prediction": 2.2373214285714287
+    },
+    {
+      "id": "CHEMBL204476",
+      "prediction": 2.1744940476190475
+    },
+    {
+      "id": "CHEMBL2164680",
+      "prediction": 2.1680952380952383
+    },
+    {
+      "id": "CHEMBL109396",
+      "prediction": 2.191875
+    },
+    {
+      "id": "CHEMBL551765",
+      "prediction": 2.1570238095238095
+    },
+    {
+      "id": "CHEMBL14690",
+      "prediction": 2.2373214285714287
+    },
+    {
+      "id": "CHEMBL2089276",
+      "prediction": 2.1744940476190475
+    },
+    {
+      "id": "CHEMBL1917461",
+      "prediction": 2.1680952380952383
+    },
+    {
+      "id": "CHEMBL366080",
+      "prediction": 2.191875
+    },
+    {
+      "id": "CHEMBL306262",
+      "prediction": 2.1570238095238095
+    },
+    {
+      "id": "CHEMBL1950724",
+      "prediction": 2.2373214285714287
+    },
+    {
+      "id": "CHEMBL2059864",
+      "prediction": 2.1744940476190475
+    },
+    {
+      "id": "CHEMBL1165028",
+      "prediction": 2.1680952380952383
+    },
+    {
+      "id": "CHEMBL2158836",
+      "prediction": 2.191875
+    },
+    {
+      "id": "CHEMBL205807",
+      "prediction": 2.1570238095238095
+    },
+    {
+      "id": "CHEMBL576068",
+      "prediction": 2.2373214285714287
+    },
+    {
+      "id": "CHEMBL142715",
+      "prediction": 2.1744940476190475
+    },
+    {
+      "id": "CHEMBL409493",
+      "prediction": 2.1680952380952383
+    },
+    {
+      "id": "CHEMBL1945297",
+      "prediction": 2.191875
+    },
+    {
+      "id": "CHEMBL2321991",
+      "prediction": 2.1570238095238095
+    },
+    {
+      "id": "CHEMBL2164670",
+      "prediction": 2.2373214285714287
+    },
+    {
+      "id": "CHEMBL182150",
+      "prediction": 2.1744940476190475
+    },
+    {
+      "id": "CHEMBL1788268",
+      "prediction": 2.1680952380952383
+    },
+    {
+      "id": "CHEMBL1180288",
+      "prediction": 2.191875
+    },
+    {
+      "id": "CHEMBL2158792",
+      "prediction": 2.1570238095238095
+    },
+    {
+      "id": "CHEMBL490512",
+      "prediction": 2.2373214285714287
+    },
+    {
+      "id": "CHEMBL813",
+      "prediction": 2.1744940476190475
+    },
+    {
+      "id": "CHEMBL2158835",
+      "prediction": 2.1680952380952383
+    },
+    {
+      "id": "CHEMBL75880",
+      "prediction": 2.191875
+    },
+    {
+      "id": "CHEMBL1762545",
+      "prediction": 2.1570238095238095
+    },
+    {
+      "id": "CHEMBL1975242",
+      "prediction": 2.2373214285714287
+    },
+    {
+      "id": "CHEMBL1682948",
+      "prediction": 2.1744940476190475
+    },
+    {
+      "id": "CHEMBL2331753",
+      "prediction": 2.1680952380952383
+    },
+    {
+      "id": "CHEMBL74355",
+      "prediction": 2.191875
+    },
+    {
+      "id": "CHEMBL250540",
+      "prediction": 2.1570238095238095
+    },
+    {
+      "id": "CHEMBL1559730",
+      "prediction": 2.2373214285714287
+    },
+    {
+      "id": "CHEMBL2086650",
+      "prediction": 2.1744940476190475
+    },
+    {
+      "id": "CHEMBL237616",
+      "prediction": 2.1680952380952383
+    },
+    {
+      "id": "CHEMBL1607641",
+      "prediction": 2.191875
+    },
+    {
+      "id": "CHEMBL1201373",
+      "prediction": 2.1570238095238095
+    },
+    {
+      "id": "CHEMBL2179669",
+      "prediction": 2.2373214285714287
+    },
+    {
+      "id": "CHEMBL1479463",
+      "prediction": 2.1744940476190475
+    },
+    {
+      "id": "CHEMBL976",
+      "prediction": 2.1680952380952383
+    },
+    {
+      "id": "CHEMBL1213085",
+      "prediction": 2.191875
+    },
+    {
+      "id": "CHEMBL2152076",
+      "prediction": 2.1570238095238095
+    },
+    {
+      "id": "CHEMBL1467",
+      "prediction": 2.2373214285714287
+    },
+    {
+      "id": "CHEMBL1934423",
+      "prediction": 2.1744940476190475
+    },
+    {
+      "id": "CHEMBL119385",
+      "prediction": 2.1680952380952383
+    },
+    {
+      "id": "CHEMBL1917421",
+      "prediction": 2.191875
+    },
+    {
+      "id": "CHEMBL207028",
+      "prediction": 2.1570238095238095
+    },
+    {
+      "id": "CHEMBL212777",
+      "prediction": 2.2373214285714287
+    },
+    {
+      "id": "CHEMBL1916532",
+      "prediction": 2.1744940476190475
+    },
+    {
+      "id": "CHEMBL2041980",
+      "prediction": 2.1680952380952383
+    },
+    {
+      "id": "CHEMBL1682825",
+      "prediction": 2.191875
+    },
+    {
+      "id": "CHEMBL1371",
+      "prediction": 2.1570238095238095
+    },
+    {
+      "id": "CHEMBL322122",
+      "prediction": 2.2373214285714287
+    },
+    {
+      "id": "CHEMBL2035018",
+      "prediction": 2.1744940476190475
+    },
+    {
+      "id": "CHEMBL1689110",
+      "prediction": 2.1680952380952383
+    },
+    {
+      "id": "CHEMBL1770471",
+      "prediction": 2.191875
+    },
+    {
+      "id": "CHEMBL1738840",
+      "prediction": 2.1570238095238095
+    },
+    {
+      "id": "CHEMBL379787",
+      "prediction": 2.2373214285714287
+    },
+    {
+      "id": "CHEMBL447426",
+      "prediction": 2.1744940476190475
+    },
+    {
+      "id": "CHEMBL418822",
+      "prediction": 2.1680952380952383
+    },
+    {
+      "id": "CHEMBL97",
+      "prediction": 2.191875
+    },
+    {
+      "id": "CHEMBL1789941",
+      "prediction": 2.1570238095238095
+    },
+    {
+      "id": "CHEMBL294209",
+      "prediction": 2.2373214285714287
+    },
+    {
+      "id": "CHEMBL2147033",
+      "prediction": 2.1744940476190475
+    },
+    {
+      "id": "CHEMBL2062561",
+      "prediction": 2.1680952380952383
+    },
+    {
+      "id": "CHEMBL1359777",
+      "prediction": 2.191875
+    },
+    {
+      "id": "CHEMBL47361",
+      "prediction": 2.1570238095238095
+    },
+    {
+      "id": "CHEMBL168552",
+      "prediction": 2.2373214285714287
+    },
+    {
+      "id": "CHEMBL1778642",
+      "prediction": 2.1744940476190475
+    },
+    {
+      "id": "CHEMBL249789",
+      "prediction": 2.1680952380952383
+    },
+    {
+      "id": "CHEMBL59956",
+      "prediction": 2.191875
+    },
+    {
+      "id": "CHEMBL2142704",
+      "prediction": 2.1570238095238095
+    },
+    {
+      "id": "CHEMBL1068",
+      "prediction": 2.2373214285714287
+    },
+    {
+      "id": "CHEMBL250961",
+      "prediction": 2.1744940476190475
+    },
+    {
+      "id": "CHEMBL1300982",
+      "prediction": 2.1680952380952383
+    },
+    {
+      "id": "CHEMBL1917436",
+      "prediction": 2.191875
+    },
+    {
+      "id": "CHEMBL1682822",
+      "prediction": 2.1570238095238095
+    },
+    {
+      "id": "CHEMBL654",
+      "prediction": 2.2373214285714287
+    },
+    {
+      "id": "CHEMBL499028",
+      "prediction": 2.1744940476190475
+    },
+    {
+      "id": "CHEMBL2171993",
+      "prediction": 2.1680952380952383
+    },
+    {
+      "id": "CHEMBL198114",
+      "prediction": 2.191875
+    },
+    {
+      "id": "CHEMBL1807823",
+      "prediction": 2.1570238095238095
+    },
+    {
+      "id": "CHEMBL2057372",
+      "prediction": 2.2373214285714287
+    },
+    {
+      "id": "CHEMBL1682957",
+      "prediction": 2.1744940476190475
+    },
+    {
+      "id": "CHEMBL1951076",
+      "prediction": 2.1680952380952383
+    },
+    {
+      "id": "CHEMBL575448",
+      "prediction": 2.191875
+    },
+    {
+      "id": "CHEMBL1886726",
+      "prediction": 2.1570238095238095
+    },
+    {
+      "id": "CHEMBL474432",
+      "prediction": 2.2373214285714287
+    },
+    {
+      "id": "CHEMBL1807871",
+      "prediction": 2.1744940476190475
+    },
+    {
+      "id": "CHEMBL2078873",
+      "prediction": 2.1680952380952383
+    },
+    {
+      "id": "CHEMBL335744",
+      "prediction": 2.191875
+    },
+    {
+      "id": "CHEMBL585",
+      "prediction": 2.1570238095238095
+    },
+    {
+      "id": "CHEMBL74582",
+      "prediction": 2.2373214285714287
+    },
+    {
+      "id": "CHEMBL1783119",
+      "prediction": 2.1744940476190475
+    },
+    {
+      "id": "CHEMBL322271",
+      "prediction": 2.1680952380952383
+    },
+    {
+      "id": "CHEMBL660",
+      "prediction": 2.191875
+    },
+    {
+      "id": "CHEMBL2325726",
+      "prediction": 2.1570238095238095
+    },
+    {
+      "id": "CHEMBL358816",
+      "prediction": 2.2373214285714287
+    },
+    {
+      "id": "CHEMBL216981",
+      "prediction": 2.1744940476190475
+    },
+    {
+      "id": "CHEMBL2346972",
+      "prediction": 2.1680952380952383
+    },
+    {
+      "id": "CHEMBL2036739",
+      "prediction": 2.191875
+    },
+    {
+      "id": "CHEMBL44722",
+      "prediction": 2.1570238095238095
+    },
+    {
+      "id": "CHEMBL1939749",
+      "prediction": 2.2373214285714287
+    },
+    {
+      "id": "CHEMBL175296",
+      "prediction": 2.1744940476190475
+    },
+    {
+      "id": "CHEMBL1800526",
+      "prediction": 2.1680952380952383
+    },
+    {
+      "id": "CHEMBL741",
+      "prediction": 2.191875
+    },
+    {
+      "id": "CHEMBL1770477",
+      "prediction": 2.1570238095238095
+    },
+    {
+      "id": "CHEMBL1604571",
+      "prediction": 2.2373214285714287
+    },
+    {
+      "id": "CHEMBL426161",
+      "prediction": 2.1744940476190475
+    },
+    {
+      "id": "CHEMBL2325714",
+      "prediction": 2.1680952380952383
+    },
+    {
+      "id": "CHEMBL2177165",
+      "prediction": 2.191875
+    },
+    {
+      "id": "CHEMBL2325735",
+      "prediction": 2.1570238095238095
+    },
+    {
+      "id": "CHEMBL2036576",
+      "prediction": 2.2373214285714287
+    },
+    {
+      "id": "CHEMBL1682965",
+      "prediction": 2.1744940476190475
+    },
+    {
+      "id": "CHEMBL1809229",
+      "prediction": 2.1680952380952383
+    },
+    {
+      "id": "CHEMBL387125",
+      "prediction": 2.191875
+    },
+    {
+      "id": "CHEMBL2325983",
+      "prediction": 2.1570238095238095
+    },
+    {
+      "id": "CHEMBL2208429",
+      "prediction": 2.2373214285714287
+    },
+    {
+      "id": "CHEMBL387545",
+      "prediction": 2.1744940476190475
+    },
+    {
+      "id": "CHEMBL2023350",
+      "prediction": 2.1680952380952383
+    },
+    {
+      "id": "CHEMBL1889452",
+      "prediction": 2.191875
+    },
+    {
+      "id": "CHEMBL2216859",
+      "prediction": 2.1570238095238095
+    },
+    {
+      "id": "CHEMBL273449",
+      "prediction": 2.2373214285714287
+    },
+    {
+      "id": "CHEMBL509",
+      "prediction": 2.1744940476190475
+    },
+    {
+      "id": "CHEMBL2164745",
+      "prediction": 2.1680952380952383
+    },
+    {
+      "id": "CHEMBL2023802",
+      "prediction": 2.191875
+    },
+    {
+      "id": "CHEMBL567161",
+      "prediction": 2.1570238095238095
+    },
+    {
+      "id": "CHEMBL1682824",
+      "prediction": 2.2373214285714287
+    },
+    {
+      "id": "CHEMBL184659",
+      "prediction": 2.1744940476190475
+    },
+    {
+      "id": "CHEMBL1684",
+      "prediction": 2.1680952380952383
+    },
+    {
+      "id": "CHEMBL193646",
+      "prediction": 2.191875
+    },
+    {
+      "id": "CHEMBL153036",
+      "prediction": 2.1570238095238095
+    },
+    {
+      "id": "CHEMBL390674",
+      "prediction": 2.2373214285714287
+    },
+    {
+      "id": "CHEMBL2029359",
+      "prediction": 2.1744940476190475
+    },
+    {
+      "id": "CHEMBL50161",
+      "prediction": 2.1680952380952383
+    },
+    {
+      "id": "CHEMBL2086691",
+      "prediction": 2.191875
+    },
+    {
+      "id": "CHEMBL1703518",
+      "prediction": 2.1570238095238095
+    },
+    {
+      "id": "CHEMBL1084762",
+      "prediction": 2.2373214285714287
+    },
+    {
+      "id": "CHEMBL1290746",
+      "prediction": 2.1744940476190475
+    },
+    {
+      "id": "CHEMBL225363",
+      "prediction": 2.1680952380952383
+    },
+    {
+      "id": "CHEMBL193757",
+      "prediction": 2.191875
+    },
+    {
+      "id": "CHEMBL1382733",
+      "prediction": 2.1570238095238095
+    },
+    {
+      "id": "CHEMBL1190521",
+      "prediction": 2.2373214285714287
+    },
+    {
+      "id": "CHEMBL210887",
+      "prediction": 2.1744940476190475
+    },
+    {
+      "id": "CHEMBL1916264",
+      "prediction": 2.1680952380952383
+    },
+    {
+      "id": "CHEMBL226856",
+      "prediction": 2.191875
+    },
+    {
+      "id": "CHEMBL2361579",
+      "prediction": 2.1570238095238095
+    },
+    {
+      "id": "CHEMBL1308863",
+      "prediction": 2.2373214285714287
+    },
+    {
+      "id": "CHEMBL1762157",
+      "prediction": 2.1744940476190475
+    },
+    {
+      "id": "CHEMBL100675",
+      "prediction": 2.1680952380952383
+    },
+    {
+      "id": "CHEMBL2207286",
+      "prediction": 2.191875
+    },
+    {
+      "id": "CHEMBL428777",
+      "prediction": 2.1570238095238095
+    },
+    {
+      "id": "CHEMBL644",
+      "prediction": 2.2373214285714287
+    },
+    {
+      "id": "CHEMBL1608462",
+      "prediction": 2.1744940476190475
+    },
+    {
+      "id": "CHEMBL2207659",
+      "prediction": 2.1680952380952383
+    },
+    {
+      "id": "CHEMBL2107729",
+      "prediction": 2.191875
+    },
+    {
+      "id": "CHEMBL101119",
+      "prediction": 2.1570238095238095
+    },
+    {
+      "id": "CHEMBL22242",
+      "prediction": 2.2373214285714287
+    },
+    {
+      "id": "CHEMBL1094250",
+      "prediction": 2.1744940476190475
+    },
+    {
+      "id": "CHEMBL2336320",
+      "prediction": 2.1680952380952383
+    },
+    {
+      "id": "CHEMBL239767",
+      "prediction": 2.191875
+    },
+    {
+      "id": "CHEMBL2171036",
+      "prediction": 2.1570238095238095
+    },
+    {
+      "id": "CHEMBL250132",
+      "prediction": 2.2373214285714287
+    },
+    {
+      "id": "CHEMBL235579",
+      "prediction": 2.1744940476190475
+    },
+    {
+      "id": "CHEMBL514384",
+      "prediction": 2.1680952380952383
+    },
+    {
+      "id": "CHEMBL294878",
+      "prediction": 2.191875
+    },
+    {
+      "id": "CHEMBL686",
+      "prediction": 2.1570238095238095
+    },
+    {
+      "id": "CHEMBL167226",
+      "prediction": 2.2373214285714287
+    },
+    {
+      "id": "CHEMBL550438",
+      "prediction": 2.1744940476190475
+    },
+    {
+      "id": "CHEMBL301265",
+      "prediction": 2.1680952380952383
+    },
+    {
+      "id": "CHEMBL1807855",
+      "prediction": 2.191875
+    },
+    {
+      "id": "CHEMBL1232461",
+      "prediction": 2.1570238095238095
+    },
+    {
+      "id": "CHEMBL403812",
+      "prediction": 2.2373214285714287
+    },
+    {
+      "id": "CHEMBL521809",
+      "prediction": 2.1744940476190475
+    },
+    {
+      "id": "CHEMBL1807870",
+      "prediction": 2.1680952380952383
+    },
+    {
+      "id": "CHEMBL481563",
+      "prediction": 2.191875
+    },
+    {
+      "id": "CHEMBL1592130",
+      "prediction": 2.1570238095238095
+    },
+    {
+      "id": "CHEMBL173706",
+      "prediction": 2.2373214285714287
+    },
+    {
+      "id": "CHEMBL1916086",
+      "prediction": 2.1744940476190475
+    },
+    {
+      "id": "CHEMBL2036748",
+      "prediction": 2.1680952380952383
+    },
+    {
+      "id": "CHEMBL1800660",
+      "prediction": 2.191875
+    },
+    {
+      "id": "CHEMBL2171049",
+      "prediction": 2.1570238095238095
+    },
+    {
+      "id": "CHEMBL2333941",
+      "prediction": 2.2373214285714287
+    },
+    {
+      "id": "CHEMBL2151323",
+      "prediction": 2.1744940476190475
+    },
+    {
+      "id": "CHEMBL2325014",
+      "prediction": 2.1680952380952383
+    },
+    {
+      "id": "CHEMBL1073",
+      "prediction": 2.191875
+    },
+    {
+      "id": "CHEMBL280713",
+      "prediction": 2.1570238095238095
+    },
+    {
+      "id": "CHEMBL1721498",
+      "prediction": 2.2373214285714287
+    },
+    {
+      "id": "CHEMBL1945292",
+      "prediction": 2.1744940476190475
+    },
+    {
+      "id": "CHEMBL520742",
+      "prediction": 2.1680952380952383
+    },
+    {
+      "id": "CHEMBL1430654",
+      "prediction": 2.191875
+    },
+    {
+      "id": "CHEMBL1738761",
+      "prediction": 2.1570238095238095
+    },
+    {
+      "id": "CHEMBL2023801",
+      "prediction": 2.2373214285714287
+    },
+    {
+      "id": "CHEMBL100945",
+      "prediction": 2.1744940476190475
+    },
+    {
+      "id": "CHEMBL99408",
+      "prediction": 2.1680952380952383
+    },
+    {
+      "id": "CHEMBL1950722",
+      "prediction": 2.191875
+    },
+    {
+      "id": "CHEMBL1917462",
+      "prediction": 2.1570238095238095
+    },
+    {
+      "id": "CHEMBL1824031",
+      "prediction": 2.2373214285714287
+    },
+    {
+      "id": "CHEMBL258175",
+      "prediction": 2.1744940476190475
+    },
+    {
+      "id": "CHEMBL474484",
+      "prediction": 2.1680952380952383
+    },
+    {
+      "id": "CHEMBL260091",
+      "prediction": 2.191875
+    },
+    {
+      "id": "CHEMBL2208432",
+      "prediction": 2.1570238095238095
+    },
+    {
+      "id": "CHEMBL1917455",
+      "prediction": 2.2373214285714287
+    },
+    {
+      "id": "CHEMBL481611",
+      "prediction": 2.1744940476190475
+    },
+    {
+      "id": "CHEMBL11",
+      "prediction": 2.1680952380952383
+    },
+    {
+      "id": "CHEMBL1682836",
+      "prediction": 2.191875
+    },
+    {
+      "id": "CHEMBL14516",
+      "prediction": 2.1570238095238095
+    },
+    {
+      "id": "CHEMBL6966",
+      "prediction": 2.2373214285714287
+    },
+    {
+      "id": "CHEMBL575492",
+      "prediction": 2.1744940476190475
+    },
+    {
+      "id": "CHEMBL2031563",
+      "prediction": 2.1680952380952383
+    },
+    {
+      "id": "CHEMBL621",
+      "prediction": 2.191875
+    },
+    {
+      "id": "CHEMBL208487",
+      "prediction": 2.1570238095238095
+    },
+    {
+      "id": "CHEMBL1956334",
+      "prediction": 2.2373214285714287
+    },
+    {
+      "id": "CHEMBL115022",
+      "prediction": 2.1744940476190475
+    }
+  ]
+}

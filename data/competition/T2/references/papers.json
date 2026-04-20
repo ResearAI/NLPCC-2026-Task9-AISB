@@ -1,0 +1,90 @@
+[
+  {
+    "id": 1,
+    "title": "DeepSeek-Prover-V2",
+    "authors": "Ren et al.",
+    "arxiv_id": "2504.21801",
+    "url": "https://arxiv.org/abs/2504.21801",
+    "year": 2025,
+    "venue": "arXiv Apr 2025",
+    "type": "method",
+    "summary": "88.9% miniF2F, 49/658 PutnamBench. Subgoal decomposition + RL for formal theorem proving."
+  },
+  {
+    "id": 2,
+    "title": "Goedel-Prover-V2",
+    "authors": "Lin et al.",
+    "arxiv_id": "2508.03613",
+    "url": "https://arxiv.org/abs/2508.03613",
+    "year": 2025,
+    "venue": "arXiv Aug 2025",
+    "type": "method",
+    "summary": "90.4% miniF2F with 8B model, demonstrating small models can compete in formal proving."
+  },
+  {
+    "id": 3,
+    "title": "Kimina-Prover",
+    "authors": "Wang et al.",
+    "arxiv_id": "2504.11354",
+    "url": "https://arxiv.org/abs/2504.11354",
+    "year": 2025,
+    "venue": "arXiv Apr 2025",
+    "type": "method",
+    "summary": "First demonstration that model scale matters for theorem proving. 16.46% Pass@32 on FormalMATH."
+  },
+  {
+    "id": 4,
+    "title": "FormalMATH: Benchmarking Formal Mathematical Reasoning of LLMs",
+    "authors": "Yu, Peng et al.",
+    "arxiv_id": "2505.02735",
+    "url": "https://arxiv.org/abs/2505.02735",
+    "year": 2025,
+    "venue": "arXiv May 2025",
+    "type": "benchmark",
+    "summary": "5,560 formally verified Lean4 statements spanning high school to research level mathematics."
+  },
+  {
+    "id": 5,
+    "title": "Seed-Prover 1.5",
+    "authors": "Chen et al. (ByteDance)",
+    "arxiv_id": "2512.17260",
+    "url": "https://arxiv.org/abs/2512.17260",
+    "year": 2025,
+    "venue": "arXiv Dec 2025",
+    "type": "method",
+    "summary": "88% PutnamBench. Agentic Prover architecture with iterative refinement."
+  },
+  {
+    "id": 6,
+    "title": "HorizonMath",
+    "authors": "Wang et al.",
+    "arxiv_id": "2603.15617",
+    "url": "https://arxiv.org/abs/2603.15617",
+    "year": 2026,
+    "venue": "arXiv Mar 2026",
+    "type": "finding",
+    "summary": "PROVOCATIVE: First benchmark measuring AI mathematical discovery capability. GPT-5.4 Pro improved 2 known optimal results."
+  },
+  {
+    "id": 7,
+    "title": "Aristotle (Harmonic): IMO Gold + First AI Formal Proof of Open Conjecture",
+    "authors": "Achim et al.",
+    "arxiv_id": "2510.01346",
+    "url": "https://arxiv.org/abs/2510.01346",
+    "year": 2025,
+    "venue": "arXiv Oct 2025",
+    "type": "finding",
+    "summary": "PROVOCATIVE: IMO gold medal + first AI-generated formal proof of an open conjecture (Erdos #124)."
+  },
+  {
+    "id": 8,
+    "title": "AlphaProof",
+    "authors": "Hubert et al.",
+    "arxiv_id": "",
+    "url": "https://doi.org/10.1038/s41586-024-08095-6",
+    "year": 2025,
+    "venue": "Nature 2025",
+    "type": "method",
+    "summary": "PROVOCATIVE: IMO silver medal but ~500 TPU-days per problem. Raises debate on efficiency of formal proving."
+  }
+]

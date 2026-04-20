@@ -1,0 +1,1 @@
+{"iteration":1,"timestamp":"2026-04-12T00:00:00Z","status":"SUCCESS","hypothesis":"Starter baseline proves no theorem.","action":"Emit empty proof list.","code_hash":"starter","metrics_after":{"proof_rate":0.0}}

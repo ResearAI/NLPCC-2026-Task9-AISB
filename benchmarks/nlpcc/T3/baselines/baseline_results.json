@@ -1,0 +1,83 @@
+{
+  "baseline_name": "frozen_cpu_oof_mean_majority",
+  "final_score": 0.6385,
+  "endpoints": {
+    "caco2_wang": {
+      "metric": "mae",
+      "score": 0.6402,
+      "normalized": 0.6097,
+      "n": 91
+    },
+    "herg": {
+      "metric": "accuracy",
+      "score": 1.0,
+      "normalized": 1.0,
+      "n": 65
+    },
+    "ames": {
+      "metric": "accuracy",
+      "score": 0.5227,
+      "normalized": 0.5227,
+      "n": 727
+    },
+    "cyp3a4_veith": {
+      "metric": "accuracy",
+      "score": 0.5528,
+      "normalized": 0.5528,
+      "n": 1232
+    },
+    "lipophilicity_az": {
+      "metric": "mae",
+      "score": 0.9717,
+      "normalized": 0.5072,
+      "n": 420
+    }
+  },
+  "status": "local_public_dev_rerun",
+  "validated_at": "2026-04-19",
+  "experiment_setting": {
+    "data": "benchmarks/nlpcc/T3/data/dev",
+    "folds": 5,
+    "policy": "out-of-fold mean for regression, out-of-fold majority for classification",
+    "dependencies": "Python standard library only",
+    "evaluator": "benchmarks/nlpcc/T3/evaluation/evaluate.py",
+    "backend_replay": "PASS with Docker aisb-t3:latest, canary scan clean, CAS=1.0"
+  },
+  "reference_results": {
+    "source": "TDC ADMET public leaderboard",
+    "scope": "external reference results on TDC full endpoints, not AISB/NLPCC official score",
+    "results": {
+      "caco2_wang": {
+        "model": "CaliciBoost",
+        "metric": "MAE",
+        "value": "0.256 ± 0.006",
+        "better": "lower"
+      },
+      "herg": {
+        "model": "MapLight + GNN",
+        "metric": "AUROC",
+        "value": "0.880 ± 0.002",
+        "better": "higher"
+      },
+      "ames": {
+        "model": "ZairaChem",
+        "metric": "AUROC",
+        "value": "0.871 ± 0.002",
+        "better": "higher"
+      },
+      "cyp3a4_veith": {
+        "model": "MapLight + GNN",
+        "metric": "AUPRC",
+        "value": "0.916 ± 0.000",
+        "better": "higher"
+      },
+      "lipophilicity_astrazeneca": {
+        "model": "MiniMol",
+        "metric": "MAE",
+        "value": "0.456 ± 0.008",
+        "better": "lower"
+      }
+    }
+  },
+  "note": "This is the frozen CPU-safe NLPCC local baseline for the public dev package. External TDC references and ADMET-AI remain context rows, not official NLPCC scores unless rerun under the NLPCC evaluator."
+}

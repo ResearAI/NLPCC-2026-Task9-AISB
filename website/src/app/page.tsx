@@ -1,12 +1,20 @@
 import Link from "next/link";
 import Image from "next/image";
+import { NLPCC_PACKAGE_URL, PUBLIC_REPO_URL } from "@/lib/publicLinks";
 
 const STATS = [
-  { value: "3", label: "Research Directions", sub: "研究方向" },
-  { value: "2", label: "Competition Tracks", sub: "竞赛赛道" },
-  { value: "24", label: "Reference Papers", sub: "参考论文" },
-  { value: "CAS", label: "Integrity Audit", sub: "诚信审核" },
+  { value: "12", label: "Research Directions", sub: "研究方向" },
+  { value: "117", label: "Benchmarks", sub: "AISB 总基准" },
+  { value: "8", label: "AI Scientist Systems", sub: "AI 科学家系统" },
 ];
+
+const CURRENT_COMPETITION = {
+  title: "NLPCC 2026 AISB Shared Task",
+  status: "Current public competition",
+  summary:
+    "A reduced, runnable AISB release for testing AI Scientist agents on T1 agentic coding, T2 formal proof, and T3 LifeSci/ADMET discovery.",
+  details: ["3 runnable directions", "paper + benchmark boards", "local self-service replay"],
+};
 
 // Research cycle and dual-track visuals are now image-based (see /public/)
 
@@ -20,7 +28,7 @@ export default function HomePage() {
             <div>
               <span className="inline-block px-3 py-1 rounded-full text-xs font-semibold tracking-wide mb-5"
                     style={{ background: 'rgba(212,168,83,0.2)', color: 'var(--gold-300)', border: '1px solid rgba(212,168,83,0.3)', fontFamily: "'Source Code Pro', monospace" }}>
-                NLPCC 2026 SHARED TASK
+                AI SCIENTIST BENCHMARK PLATFORM
               </span>
 
               <h1 style={{ fontFamily: "'Playfair Display', Georgia, serif", color: 'white' }}
@@ -34,11 +42,11 @@ export default function HomePage() {
               </h2>
 
               <p className="text-lg leading-relaxed mb-2 max-w-xl" style={{ color: 'rgba(255,255,255,0.85)' }}>
-                Evaluating <strong style={{ color: 'var(--gold-300)' }}>autonomous AI research capability</strong> —
-                discover problems, think, explore, validate through experiments, and communicate findings.
+                Evaluating <strong style={{ color: 'var(--gold-300)' }}>complete AI research capability</strong>:
+                discover problems, form hypotheses, run real experiments, and write traceable research papers.
               </p>
               <p className="text-base leading-relaxed mb-8 max-w-xl" style={{ color: 'rgba(255,255,255,0.6)', fontFamily: "'Noto Sans SC', sans-serif" }}>
-                评测AI自主科研能力 — 发现问题、思考探索、假设-实验验证、将结论讲出来让人理解
+                AISB 是面向多场比赛和多方向 benchmark 的平台；NLPCC 2026 是当前置顶公开赛，公开方向统一为 Agentic Coding、Formal Math、LifeSci/ADMET。
               </p>
 
               <div className="flex gap-3 flex-wrap">
@@ -52,10 +60,10 @@ export default function HomePage() {
                       style={{ borderColor: 'rgba(255,255,255,0.25)', color: 'rgba(255,255,255,0.85)' }}>
                   Call for Participation
                 </Link>
-                <Link href="/tracks"
+                <Link href="/competitions"
                       className="px-6 py-3 rounded-xl font-medium text-sm transition border"
                       style={{ borderColor: 'rgba(255,255,255,0.25)', color: 'rgba(255,255,255,0.85)' }}>
-                  Explore Tracks
+                  Explore Competitions
                 </Link>
               </div>
             </div>
@@ -76,7 +84,7 @@ export default function HomePage() {
 
       {/* Stats — white section */}
       <section className="max-w-7xl mx-auto px-6 -mt-8 relative z-20">
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
           {STATS.map((s) => (
             <div key={s.label} className="card p-5 text-center">
               <div style={{ fontFamily: "'Source Code Pro', monospace", color: 'var(--navy-700)' }}
@@ -90,25 +98,111 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Research Cycle text */}
-      <section className="max-w-7xl mx-auto px-6 py-12 text-center">
-        <h2 style={{ fontFamily: "'Playfair Display', Georgia, serif", color: 'var(--navy-700)' }} className="text-3xl font-semibold mb-2">
-          The Research Cycle
-        </h2>
-        <p style={{ color: 'var(--gray-500)', fontFamily: "'Noto Sans SC', sans-serif" }}>
-          发现问题 → 思考探索 → 实验验证 → 表达结论
-        </p>
+      {/* Current Competition */}
+      <section className="max-w-7xl mx-auto px-6 py-12">
+        <div className="card-gold rounded-2xl p-8 bg-white">
+          <div className="grid lg:grid-cols-[1.3fr_1fr] gap-8 items-center">
+            <div>
+              <span className="inline-block px-3 py-1 rounded-full text-xs font-semibold mb-4"
+                    style={{ background: 'var(--gold-100)', color: 'var(--gold-600)', fontFamily: "'Source Code Pro', monospace" }}>
+                PINNED COMPETITION
+              </span>
+              <h2 style={{ fontFamily: "'Playfair Display', Georgia, serif", color: 'var(--navy-700)' }}
+                  className="text-3xl font-semibold mb-3">
+                {CURRENT_COMPETITION.title}
+              </h2>
+              <p className="text-sm mb-4" style={{ color: 'var(--gray-500)', fontFamily: "'Noto Sans SC', sans-serif" }}>
+                {CURRENT_COMPETITION.summary}
+              </p>
+              <div className="flex flex-wrap gap-2 mb-6">
+                {CURRENT_COMPETITION.details.map((item) => (
+                  <span key={item} className="px-3 py-1 rounded-full text-xs"
+                        style={{ background: 'var(--gray-50)', color: 'var(--gray-600)', border: '1px solid var(--gray-200)', fontFamily: "'Source Code Pro', monospace" }}>
+                    {item}
+                  </span>
+                ))}
+              </div>
+              <div className="flex gap-3 flex-wrap">
+                <Link href="/tracks"
+                      className="px-5 py-2.5 rounded-lg text-sm font-semibold"
+                      style={{ background: 'var(--navy-700)', color: 'white' }}>
+                  NLPCC Tracks
+                </Link>
+                <Link href="/cfp"
+                      className="px-5 py-2.5 rounded-lg text-sm font-semibold border"
+                      style={{ borderColor: 'var(--gold-300)', color: 'var(--gold-600)' }}>
+                  CFP
+                </Link>
+                <Link href="/leaderboard"
+                      className="px-5 py-2.5 rounded-lg text-sm font-semibold border"
+                      style={{ borderColor: 'var(--gray-200)', color: 'var(--navy-700)' }}>
+                  Leaderboard
+                </Link>
+              </div>
+            </div>
+            <div className="rounded-xl p-5" style={{ background: 'var(--gray-50)', border: '1px solid var(--gray-200)' }}>
+              <div className="text-xs uppercase tracking-wider mb-3" style={{ color: 'var(--gray-400)', fontFamily: "'Source Code Pro', monospace" }}>
+                Agent Entry
+              </div>
+              <h3 className="text-lg font-semibold mb-2" style={{ color: 'var(--navy-700)', fontFamily: "'Playfair Display', Georgia, serif" }}>
+                Give the agent a repository and an instruction
+              </h3>
+              <p className="text-sm mb-4 leading-relaxed" style={{ color: 'var(--gray-500)' }}>
+                AI Scientist can do this, but the input should be an executable instruction, not a vague prompt. The current public release is the NLPCC package, so the agent should start from that package, inspect T1, T2, and T3, recommend a direction, and run the chosen benchmark end to end.
+              </p>
+              <div className="grid gap-3">
+                <div className="rounded-lg p-3" style={{ background: 'white', border: '1px solid var(--gray-200)' }}>
+                  <div className="text-xs uppercase tracking-wider mb-1" style={{ color: 'var(--gray-400)', fontFamily: "'Source Code Pro', monospace" }}>
+                    NLPCC Agent Instruction
+                  </div>
+                  <pre className="text-xs leading-relaxed overflow-x-auto rounded-lg p-3 mt-2" style={{ background: 'var(--gray-50)', border: '1px solid var(--gray-200)', color: 'var(--gray-600)', fontFamily: "'Source Code Pro', monospace" }}>
+{`Use current NLPCC public package: ${NLPCC_PACKAGE_URL}
+Inspect T1,T2,T3 under benchmarks/nlpcc, read the benchmark package and papers for each direction,
+tell me which direction best fits my goal and why, then run the chosen benchmark end to end
+and prepare a strict submission with validate/package/replay ready.`}
+                  </pre>
+                </div>
+                <div className="flex gap-3 flex-wrap">
+                  <a href={NLPCC_PACKAGE_URL}
+                        target="_blank"
+                        rel="noreferrer"
+                        className="px-4 py-2 rounded-lg text-sm font-semibold border"
+                        style={{ borderColor: 'var(--gray-200)', color: 'var(--navy-700)' }}>
+                    Open NLPCC Package
+                  </a>
+                  <a href={PUBLIC_REPO_URL}
+                        target="_blank"
+                        rel="noreferrer"
+                        className="px-4 py-2 rounded-lg text-sm font-semibold border"
+                        style={{ borderColor: 'var(--gray-200)', color: 'var(--navy-700)' }}>
+                    Open Public Repo
+                  </a>
+                  <Link href="/rules"
+                        className="px-4 py-2 rounded-lg text-sm font-semibold"
+                        style={{ background: 'var(--navy-700)', color: 'white' }}>
+                    Copy Agent Instruction
+                  </Link>
+                  <Link href="/papers"
+                        className="px-4 py-2 rounded-lg text-sm font-semibold border"
+                        style={{ borderColor: 'var(--gold-300)', color: 'var(--gold-600)' }}>
+                    Open Paper Library
+                  </Link>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
       </section>
 
       {/* Two Tracks Visual */}
-      <section className="max-w-7xl mx-auto px-6 py-8">
+      <section className="max-w-7xl mx-auto px-6 py-14">
         <div className="flex justify-center">
-          <Image src="/dual-track.jpeg" alt="Track A: Scientific Research vs Track B: SOTA Challenge"
+          <Image src="/dual-track.jpeg" alt="Paper Track and Benchmark Track"
                  width={1600} height={800} className="rounded-xl"
                  style={{ maxWidth: '800px', width: '100%', height: 'auto' }} />
         </div>
         <p className="text-center mt-4 text-sm" style={{ color: 'var(--gray-500)', fontFamily: "'Noto Sans SC', sans-serif" }}>
-          Track A 以科学发现为核心，Track B 以实验提升为核心，共享 AI Scientist 底座
+          Paper Track 和 Benchmark Track 分开排名；T1/T2/T3 是 benchmark 方向，不是固定加权混合分。
         </p>
         <div className="text-center mt-4">
           <Link href="/integrity"
@@ -122,46 +216,46 @@ export default function HomePage() {
       {/* Two Tracks */}
       <section className="max-w-7xl mx-auto px-6 py-16">
         <h2 style={{ fontFamily: "'Playfair Display', Georgia, serif", color: 'var(--navy-700)' }} className="text-3xl font-semibold mb-2">
-          Competition Tracks
+          AISB Leaderboard Tracks
         </h2>
         <p className="mb-8" style={{ color: 'var(--gray-500)', fontFamily: "'Noto Sans SC', sans-serif" }}>
-          两大赛道，全面评估 AI 科研能力
+          AISB 支持完全自动化和人机协同两类参与方式；NLPCC 当前公开 3 个可本地 replay 的方向。
         </p>
 
         <div className="grid md:grid-cols-2 gap-6">
-          <Link href="/tracks#trackA" className="card p-8 group">
+          <Link href="/leaderboard" className="card p-8 group">
             <span className="px-3 py-1 rounded-full text-xs font-bold"
                   style={{ background: 'var(--gold-100)', color: 'var(--gold-600)', border: '1px solid var(--gold-300)', fontFamily: "'Source Code Pro', monospace" }}>
-              TRACK 1
+              PAPER
             </span>
             <h3 style={{ fontFamily: "'Playfair Display', Georgia, serif", color: 'var(--navy-700)' }}
                 className="text-2xl mt-3 mb-1 font-semibold group-hover:text-[var(--gold-600)] transition">
-              Scientific Research
+              Paper Track
             </h3>
             <p className="text-sm mb-3" style={{ color: 'var(--gold-600)', fontFamily: "'Noto Sans SC', sans-serif" }}>
-              科学研究赛道
+              论文赛道
             </p>
             <p className="text-sm leading-relaxed" style={{ color: 'var(--gray-500)' }}>
-              Discover scientific problems from literature, form hypotheses, validate through experiments,
-              and write a paper that communicates the findings clearly. Experiments support the idea — the idea is the core.
+              Evaluate research papers produced by AI Scientist systems. Ranking is based on paper quality,
+              traceable claims, research insight, and integrity verification.
             </p>
           </Link>
 
-          <Link href="/tracks#trackB" className="card p-8 group">
+          <Link href="/leaderboard" className="card p-8 group">
             <span className="px-3 py-1 rounded-full text-xs font-bold"
                   style={{ background: 'var(--violet-50)', color: 'var(--violet-600)', border: '1px solid rgba(107,70,193,0.2)', fontFamily: "'Source Code Pro', monospace" }}>
-              TRACK 2
+              BENCHMARK
             </span>
             <h3 style={{ fontFamily: "'Playfair Display', Georgia, serif", color: 'var(--navy-700)' }}
                 className="text-2xl mt-3 mb-1 font-semibold group-hover:text-[var(--violet-600)] transition">
-              Benchmark SOTA Challenge
+              Benchmark Track
             </h3>
             <p className="text-sm mb-3" style={{ color: 'var(--violet-600)', fontFamily: "'Noto Sans SC', sans-serif" }}>
-              基准提升赛道
+              基准赛道
             </p>
             <p className="text-sm leading-relaxed" style={{ color: 'var(--gray-500)' }}>
-              Propose scientifically grounded methods to improve SOTA. Experiments are the primary evidence,
-              but you must explain <strong>why your method works</strong> — interpretable improvement over blind optimization.
+              Evaluate executable benchmark performance on T1/T2/T3. Ranking is based on verified task scores,
+              reproducibility, experiment settings, and integrity verification.
             </p>
           </Link>
         </div>
@@ -175,10 +269,10 @@ export default function HomePage() {
           </h3>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
             {[
-              { date: "Jun", cn: "6月", event: "Announcement", eventCn: "竞赛公告" },
-              { date: "Jul", cn: "7月", event: "Task Packages", eventCn: "任务发布" },
-              { date: "Oct 1", cn: "10月1日", event: "Deadline", eventCn: "提交截止" },
-              { date: "Nov", cn: "11月", event: "NLPCC Macau", eventCn: "澳门发布" },
+              { date: "Apr 15", cn: "4月15日", event: "Public Release", eventCn: "公开发布" },
+              { date: "May 25", cn: "5月25日", event: "Registration", eventCn: "报名截止" },
+              { date: "Jun 1", cn: "6月1日", event: "Live Update", eventCn: "排行榜更新" },
+              { date: "Aug 1", cn: "8月1日", event: "Deadline", eventCn: "提交截止" },
             ].map((d) => (
               <div key={d.date} className="pl-4" style={{ borderLeft: '3px solid var(--gold-400)' }}>
                 <div style={{ fontFamily: "'Source Code Pro', monospace", color: 'var(--navy-700)' }}

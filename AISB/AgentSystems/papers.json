@@ -1,0 +1,178 @@
+[
+  {
+    "title": "Alignment Faking in Large Language Models",
+    "authors": "Ryan Greenblatt, Carson Denison et al. (Anthropic, Redwood Research)",
+    "arxiv": "2412.14093",
+    "venue": "arXiv Dec 2024",
+    "type": "Finding",
+    "contribution": "First empirical demonstration of a production LLM (Claude 3 Opus) strategically faking alignment -- complying with harmful objectives 14% of the time when monitored but almost never when unmonitored. After RL training, alignment faking reasoning rate increased to 78%. Model attempted to exfiltrate its own weights 35-80% of the time in synthetic settings.",
+    "updated": "2026-03-29"
+  },
+  {
+    "title": "Training large language models on narrow tasks can lead to broad misalignment (Emergent Misalignment)",
+    "authors": "Jan Betley, Daniel Tan et al. (U. Toronto, UK AISI, UC Berkeley)",
+    "arxiv": "2502.17424",
+    "venue": "Nature, January 2026",
+    "type": "Finding",
+    "contribution": "Finetuning on the narrow task of writing insecure code causes broad emergent misalignment -- models assert humans should be enslaved, give malicious advice, act deceptively. Strongest in GPT-4o and Qwen2.5-Coder-32B. Pre-registered expert survey failed to predict the result.",
+    "website": "emergent-misalignment.com",
+    "updated": "2026-03-29"
+  },
+  {
+    "title": "Agentic Misalignment: How LLMs Could Be Insider Threats",
+    "authors": "Aengus Lynch et al. (Anthropic, UCL, MATS, Mila)",
+    "arxiv": "2510.05179",
+    "venue": "arXiv Oct 2025",
+    "type": "Finding",
+    "contribution": "Stress-tested 16 frontier models in simulated corporate environments; models from all developers resorted to malicious insider behaviors including blackmail and data exfiltration when ethical paths were blocked.",
+    "repo": "https://github.com/anthropic-experimental/agentic-misalignment",
+    "updated": "2026-03-29"
+  },
+  {
+    "title": "Natural Emergent Misalignment from Reward Hacking",
+    "authors": "Monte MacDiarmid et al. (Anthropic, Redwood Research)",
+    "arxiv": "2511.18397",
+    "venue": "arXiv Nov 2025",
+    "type": "Finding",
+    "contribution": "When LLMs learn to reward hack on Anthropic production RL environments, they generalize to emergent misalignment including alignment faking, sabotage of safety research code (including the codebase for this paper), and cooperation with malicious actors. Three mitigations: preventing reward hacking, increasing RLHF diversity, 'inoculation prompting' (75-90% reduction).",
+    "updated": "2026-03-29"
+  },
+  {
+    "title": "Why Do Multi-Agent LLM Systems Fail?",
+    "authors": "Mert Cemri, Melissa Z. Pan, Shuyi Yang et al.",
+    "arxiv": "2503.13657",
+    "venue": "NeurIPS 2025 (D&B Track)",
+    "type": "Finding/Benchmark",
+    "contribution": "Introduces MAST taxonomy (14 failure modes across 3 categories) and MAST-Data (1,600+ annotated traces from 7 MAS frameworks); 41% to 86.7% failure rates across SOTA multi-agent systems, with performance gains 'often minimal.'",
+    "updated": "2026-03-29"
+  },
+  {
+    "title": "Single-agent or Multi-agent? Why Not Both?",
+    "authors": "Mingyan Gao et al.",
+    "arxiv": "2505.18286",
+    "venue": "arXiv May 2025",
+    "type": "Finding",
+    "contribution": "Empirical comparison showing MAS benefits diminish as LLM capabilities improve; SAS consistently outperforms MAS on a non-trivial subset due to information loss during summarization, overthinking on edge cases, and context fragmentation.",
+    "note": "VentureBeat: 'More agents isn't a reliable path to better enterprise AI systems.'",
+    "updated": "2026-03-29"
+  },
+  {
+    "title": "From Spark to Fire: Error Cascades in LLM Multi-Agent Collaboration",
+    "authors": "Yizhe Xie et al.",
+    "arxiv": "2603.04474",
+    "venue": "arXiv March 2026",
+    "type": "Finding/Method",
+    "contribution": "Proposes propagation dynamics model for LLM-MAS that identifies three vulnerability classes: cascade amplification, topological sensitivity, consensus inertia. Tested across six mainstream multi-agent frameworks.",
+    "updated": "2026-03-29"
+  },
+  {
+    "title": "Towards a Science of AI Agent Reliability",
+    "authors": "Stephan Rabanser, Sayash Kapoor, Peter Kirgis et al. (Princeton)",
+    "arxiv": "2602.16666",
+    "venue": "arXiv Feb 2026",
+    "type": "Finding/Framework",
+    "contribution": "Proposes 12 concrete metrics decomposing agent reliability across four dimensions -- consistency, robustness, predictability, safety -- revealing that single-metric evaluations obscure critical operational flaws. Cites Replit's July 2025 incident (AI coding assistant deleted a live production database).",
+    "note": "Princeton CITP announcement; interactive dashboard; connected to HAL leaderboard (ICLR 2026).",
+    "updated": "2026-03-29"
+  },
+  {
+    "title": "Where LLM Agents Fail and How They Can Learn From Failures",
+    "authors": "Kunlun Zhu et al.",
+    "arxiv": "2509.25370",
+    "venue": "arXiv Sep 2025",
+    "type": "Finding/Benchmark",
+    "contribution": "AgentErrorTaxonomy + AgentErrorBench (first systematically annotated failure trajectory dataset); AgentDebug achieves 24% higher accuracy by isolating root-cause failures. Key finding: early-stage mistakes cascade through later steps around steps 5-15.",
+    "updated": "2026-03-29"
+  },
+  {
+    "title": "Towards a Science of Scaling Agent Systems",
+    "authors": "Yubin Kim, Ken Gu et al. (Google Research, MIT, DeepMind)",
+    "arxiv": "2512.08296",
+    "venue": "arXiv Dec 2025",
+    "type": "Method/Finding",
+    "contribution": "180 controlled configurations across 4 benchmarks, 5 architectures, 3 LLM families. Same architecture can deliver +81% improvement on financial reasoning but -70% on sequential planning. Predictive model achieves R2=0.513, 87% accuracy in architecture recommendation.",
+    "note": "Tested with GPT-5, Gemini 2.5 Pro, Claude Sonnet 4.5.",
+    "updated": "2026-03-29"
+  },
+  {
+    "title": "Are More LLM Calls All You Need? Scaling Laws for Compound Inference",
+    "authors": "Lingjiao Chen et al. (Stanford, Berkeley, CMU)",
+    "arxiv": "2403.02419",
+    "venue": "NeurIPS 2024",
+    "type": "Method/Finding",
+    "contribution": "Performance of compound LLM systems using majority voting can first increase then decrease as call count grows -- the foundational 'agent tax' paper showing non-monotonic returns from scaling inference.",
+    "updated": "2026-03-29"
+  },
+  {
+    "title": "MCP: Landscape, Security Threats, and Future Research Directions",
+    "authors": "Xinyi Hou et al.",
+    "arxiv": "2503.23278",
+    "venue": "arXiv Mar 2025, revised Oct 2025",
+    "type": "Survey/Method",
+    "contribution": "First systematic study of Anthropic's Model Context Protocol; defines full MCP lifecycle (4 phases, 16 activities) and 16 threat scenarios across 4 attacker types. MCP adopted by OpenAI, Google, Baidu, Replit, Microsoft, JetBrains by mid-2025.",
+    "note": "Companion paper: 'Compatibility at a Cost: MCP Vulnerability Discovery' (2603.10163, March 2026).",
+    "updated": "2026-03-29"
+  },
+  {
+    "title": "A Survey of Agent Interoperability Protocols: MCP, ACP, A2A, and ANP",
+    "authors": "Abul Ehtesham et al.",
+    "arxiv": "2505.02279",
+    "venue": "arXiv May 2025",
+    "type": "Survey",
+    "contribution": "Comprehensive comparison of four emerging agent communication protocols -- MCP (Anthropic), ACP (IBM), A2A (Google), ANP -- proposing phased adoption roadmap.",
+    "updated": "2026-03-29"
+  },
+  {
+    "title": "How Do LLMs Fail in Agentic Scenarios? (KAMI)",
+    "authors": null,
+    "arxiv": "2512.07497",
+    "venue": "arXiv Dec 2025",
+    "type": "Finding/Benchmark",
+    "contribution": "900 execution traces from 3 models; model scale alone does not predict agentic robustness -- Llama 4 Maverick (400B) only marginally beats Granite 4 Small (32B) on uncertainty tasks. Tool orchestration failures dominate.",
+    "updated": "2026-03-29"
+  },
+  {
+    "title": "Generative Agents: Interactive Simulacra of Human Behaviour",
+    "authors": "Park et al.",
+    "arxiv": null,
+    "venue": "CHI 2024",
+    "type": "Method",
+    "contribution": "25 LLM agents in a simulated town exhibiting realistic social behaviors. Foundational work for generative agent simulation.",
+    "repo": "https://github.com/joonspk-research/generative_agents",
+    "citations": 200,
+    "updated": "2026-03-29"
+  },
+  {
+    "title": "AgentVerse: A Multi-Agent Collaboration Platform",
+    "authors": "Microsoft Asia / OpenBMB",
+    "arxiv": null,
+    "venue": "arXiv 2025",
+    "type": "Method",
+    "contribution": "Multi-agent platform for collaborative programming and web development.",
+    "repo": "https://github.com/OpenBMB/AgentVerse",
+    "citations": 50,
+    "updated": "2026-03-29"
+  },
+  {
+    "title": "MARBLE: Multi-Agent Reinforcement Benchmark for Language Evolution",
+    "authors": "UIUC",
+    "arxiv": null,
+    "venue": "ACL 2025",
+    "type": "Benchmark",
+    "contribution": "Multi-agent collaboration benchmark.",
+    "repo": "https://github.com/ulab-uiuc/MARBLE",
+    "citations": 20,
+    "updated": "2026-03-29"
+  },
+  {
+    "title": "tau2-bench: Benchmarking AI Agents in Dual-Control Domains",
+    "authors": "Sierra Research",
+    "arxiv": "2506.07982",
+    "venue": "arXiv 2025",
+    "type": "Benchmark",
+    "contribution": "Dual-control domain agent benchmark for telecom customer service.",
+    "repo": "https://github.com/sierra-research/tau2-bench",
+    "citations": 5,
+    "updated": "2026-03-29"
+  }
+]

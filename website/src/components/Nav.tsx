@@ -2,10 +2,13 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { PUBLIC_REPO_URL } from "@/lib/publicLinks";
 
 const NAV_LINKS = [
   { href: "/", label: "Home" },
-  { href: "/tracks", label: "Tracks" },
+  { href: "/competitions", label: "Competitions" },
+  { href: "/tracks", label: "NLPCC" },
+  { href: "/papers", label: "Papers" },
   { href: "/leaderboard", label: "Leaderboard" },
   { href: "/integrity", label: "Integrity" },
   { href: "/rules", label: "Rules" },
@@ -30,7 +33,7 @@ export default function Nav() {
               AISB <span style={{ color: 'var(--gray-400)' }}>2026</span>
             </span>
             <span className="text-[10px] tracking-[0.12em] uppercase" style={{ color: 'var(--gray-400)' }}>
-              NLPCC Shared Task
+              Benchmark Platform
             </span>
           </div>
         </Link>
@@ -67,7 +70,7 @@ export default function Nav() {
         </nav>
 
         <div className="flex items-center gap-4">
-          <a href="https://github.com/ResearAI/NLPCC-2026-Task9-AISB" target="_blank" rel="noreferrer"
+          <a href={PUBLIC_REPO_URL} target="_blank" rel="noreferrer"
              className="text-sm transition hidden sm:block" style={{ color: 'var(--gray-400)' }}>
             GitHub
           </a>

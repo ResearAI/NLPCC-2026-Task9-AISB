@@ -1,0 +1,32 @@
+{
+  "baseline_name": "starter_frozen_mean_majority",
+  "data_root": "E:\\courese\\AISB_2026\\benchmarks\\nlpcc\\T3\\data\\dev",
+  "generated_at": "2026-04-19T09:28:35.118339+00:00",
+  "endpoints": {
+    "caco2_wang": {
+      "task": "regression",
+      "n": 91,
+      "policy": "public_dev_out_of_fold_mean_or_majority"
+    },
+    "herg": {
+      "task": "classification",
+      "n": 65,
+      "policy": "public_dev_out_of_fold_mean_or_majority"
+    },
+    "ames": {
+      "task": "classification",
+      "n": 727,
+      "policy": "public_dev_out_of_fold_mean_or_majority"
+    },
+    "cyp3a4_veith": {
+      "task": "classification",
+      "n": 1232,
+      "policy": "public_dev_out_of_fold_mean_or_majority"
+    },
+    "lipophilicity_az": {
+      "task": "regression",
+      "n": 420,
+      "policy": "public_dev_out_of_fold_mean_or_majority"
+    }
+  }
+}

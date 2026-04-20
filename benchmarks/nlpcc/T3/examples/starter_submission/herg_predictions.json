@@ -1,0 +1,264 @@
+{
+  "predictions": [
+    {
+      "id": "DEMETHYLASTEMIZOLE",
+      "prediction": 1.0
+    },
+    {
+      "id": "GBR-12909",
+      "prediction": 1.0
+    },
+    {
+      "id": "LY-97241",
+      "prediction": 1.0
+    },
+    {
+      "id": "CLOFILIUM PHOSPHATE",
+      "prediction": 1.0
+    },
+    {
+      "id": "FLUSPIRILENE",
+      "prediction": 1.0
+    },
+    {
+      "id": "BENPERIDOL",
+      "prediction": 1.0
+    },
+    {
+      "id": "6",
+      "prediction": 1.0
+    },
+    {
+      "id": "BMCL20031829_03",
+      "prediction": 1.0
+    },
+    {
+      "id": "VANOXERINE HYDROCHLORIDE",
+      "prediction": 1.0
+    },
+    {
+      "id": "L-691121",
+      "prediction": 1.0
+    },
+    {
+      "id": "TERFENADINE",
+      "prediction": 1.0
+    },
+    {
+      "id": "BMCL20031829_02",
+      "prediction": 1.0
+    },
+    {
+      "id": "DOFETILIDE",
+      "prediction": 1.0
+    },
+    {
+      "id": "BMCL20031829_15",
+      "prediction": 1.0
+    },
+    {
+      "id": "DIGITOXIN",
+      "prediction": 1.0
+    },
+    {
+      "id": "ASTEMIZOLE",
+      "prediction": 1.0
+    },
+    {
+      "id": "CLEMASTINE",
+      "prediction": 1.0
+    },
+    {
+      "id": "CLOFILIUM",
+      "prediction": 1.0
+    },
+    {
+      "id": "E-4031",
+      "prediction": 1.0
+    },
+    {
+      "id": "SERTINDOLE",
+      "prediction": 1.0
+    },
+    {
+      "id": "TOLTERODINE TARTRATE",
+      "prediction": 1.0
+    },
+    {
+      "id": "L-702958",
+      "prediction": 1.0
+    },
+    {
+      "id": "OUABAIN",
+      "prediction": 1.0
+    },
+    {
+      "id": "LIDOFLAZINE",
+      "prediction": 1.0
+    },
+    {
+      "id": "TOLTERODINE",
+      "prediction": 1.0
+    },
+    {
+      "id": "PIMOZIDE",
+      "prediction": 1.0
+    },
+    {
+      "id": "WOMBAT07",
+      "prediction": 1.0
+    },
+    {
+      "id": "CISAPRIDE HYDRATE",
+      "prediction": 1.0
+    },
+    {
+      "id": "HALOPERIDOL",
+      "prediction": 1.0
+    },
+    {
+      "id": "BRL-37872",
+      "prediction": 1.0
+    },
+    {
+      "id": "CISAPRIDE",
+      "prediction": 1.0
+    },
+    {
+      "id": "ELIPRODIL",
+      "prediction": 1.0
+    },
+    {
+      "id": "MK-499",
+      "prediction": 1.0
+    },
+    {
+      "id": "BMCL20031829_13",
+      "prediction": 1.0
+    },
+    {
+      "id": "WOMBAT59",
+      "prediction": 1.0
+    },
+    {
+      "id": "IBUTILIDE",
+      "prediction": 1.0
+    },
+    {
+      "id": "NORASTEMIZOLE",
+      "prediction": 1.0
+    },
+    {
+      "id": "BEKM-1",
+      "prediction": 1.0
+    },
+    {
+      "id": "DESMETHYLASTEMIZOLE",
+      "prediction": 1.0
+    },
+    {
+      "id": "HALOFANTRINE",
+      "prediction": 1.0
+    },
+    {
+      "id": "DROPERIDOL",
+      "prediction": 1.0
+    },
+    {
+      "id": "VINPOCETINE",
+      "prediction": 1.0
+    },
+    {
+      "id": "BMCL20031829_08",
+      "prediction": 1.0
+    },
+    {
+      "id": "ER-118585",
+      "prediction": 1.0
+    },
+    {
+      "id": "BMCL-16-2006-4263-1",
+      "prediction": 1.0
+    },
+    {
+      "id": "DIGOXIN",
+      "prediction": 1.0
+    },
+    {
+      "id": "AMIODARONE HYDROCHLORIDE",
+      "prediction": 1.0
+    },
+    {
+      "id": "DESBUTYLHALOFANTRINE",
+      "prediction": 1.0
+    },
+    {
+      "id": "N-DESBUTYLHALOFANTRINE",
+      "prediction": 1.0
+    },
+    {
+      "id": "DARIFENACIN",
+      "prediction": 1.0
+    },
+    {
+      "id": "WOMBAT06",
+      "prediction": 1.0
+    },
+    {
+      "id": "BMCL20031829_01",
+      "prediction": 1.0
+    },
+    {
+      "id": "H345_32",
+      "prediction": 1.0
+    },
+    {
+      "id": "THIORIDAZINE",
+      "prediction": 1.0
+    },
+    {
+      "id": "GLYCERYL-NONIVAMIDE",
+      "prediction": 1.0
+    },
+    {
+      "id": "IFENPRODIL",
+      "prediction": 1.0
+    },
+    {
+      "id": "TAMOXIFENE",
+      "prediction": 1.0
+    },
+    {
+      "id": "KETANSERIN",
+      "prediction": 1.0
+    },
+    {
+      "id": "WOMBAT33",
+      "prediction": 1.0
+    },
+    {
+      "id": "WOMBAT60",
+      "prediction": 1.0
+    },
+    {
+      "id": "NILOTINIB",
+      "prediction": 1.0
+    },
+    {
+      "id": "PERGOLIDE",
+      "prediction": 1.0
+    },
+    {
+      "id": "ZIPRASIDONE",
+      "prediction": 1.0
+    },
+    {
+      "id": "BMCL20031829_07",
+      "prediction": 1.0
+    },
+    {
+      "id": "VERAPAMIL",
+      "prediction": 1.0
+    }
+  ]
+}

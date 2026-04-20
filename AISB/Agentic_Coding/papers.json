@@ -1,0 +1,133 @@
+{
+  "direction": "Agentic_Coding",
+  "last_updated": "2026-03-29",
+  "update_source": "AISB compass update 2026-03-30",
+  "papers": [
+    {
+      "title": "FeatureBench: Benchmarking Agentic Coding for Complex Feature Development",
+      "authors": "Qixing Zhou et al.",
+      "arxiv": "2602.10975",
+      "venue": "ICLR 2026",
+      "type": "method",
+      "contribution": "Feature-oriented benchmark exposing 14x gap from SWE-bench on same repos.",
+      "engagement": "37 GitHub stars"
+    },
+    {
+      "title": "SWE-Bench Pro: Can AI Agents Solve Long-Horizon SE Tasks?",
+      "authors": "Xiang Deng et al. (Scale AI)",
+      "arxiv": "2509.16941",
+      "venue": "OpenReview, Sep 2025",
+      "type": "method",
+      "contribution": "1,865-task contamination-resistant benchmark; endorsed replacement for Verified. De facto new standard.",
+      "engagement": "De facto new standard"
+    },
+    {
+      "title": "Live-SWE-agent: Can SE Agents Self-Evolve on the Fly?",
+      "authors": "Chunqiu Steven Xia et al.",
+      "arxiv": "2511.13646",
+      "venue": "arXiv, Nov 2025",
+      "type": "method",
+      "contribution": "First runtime self-evolving agent; 77.4% Verified, 45.8% Pro -- best open-source scaffold.",
+      "engagement": "github.com/OpenAutoCoder/live-swe-agent"
+    },
+    {
+      "title": "RE-Bench: Evaluating Frontier AI R&D Capabilities",
+      "authors": "Hjalmar Wijk et al. (METR)",
+      "arxiv": "2411.15114",
+      "venue": "ICML 2025 Spotlight",
+      "type": "method",
+      "contribution": "7 ML R&D envs with human expert baselines; AI 4x better than humans at 2-hour budget.",
+      "engagement": "METR flagship; high policy impact"
+    },
+    {
+      "title": "Many SWE-bench-Passing PRs Would Not Be Merged",
+      "authors": "Joel Becker et al. (METR)",
+      "arxiv": null,
+      "venue": "METR blog, Mar 10, 2026",
+      "type": "finding",
+      "contribution": "4 real maintainers reviewed 296 PRs -- 50% of test-passing patches would NOT be merged.",
+      "engagement": "Very high; HN top story"
+    },
+    {
+      "title": "SWE-Bench+: Enhanced Coding Benchmark",
+      "authors": "Reem Aleithan et al.",
+      "arxiv": "2410.06992",
+      "venue": "arXiv, Oct 2024",
+      "type": "finding",
+      "contribution": "32.67% of patches involve solution leakage; 94% of issues pre-date training cutoffs.",
+      "engagement": "Widely cited"
+    },
+    {
+      "title": "Are 'Solved Issues' Really Solved Correctly?",
+      "authors": "You Wang et al.",
+      "arxiv": "2503.15223",
+      "venue": "arXiv, Mar 2026",
+      "type": "finding",
+      "contribution": "PatchDiff differential testing finds many plausible-but-incorrect patches pass tests.",
+      "engagement": "Important methodological critique"
+    },
+    {
+      "title": "METR Developer Productivity Study",
+      "authors": "Joel Becker et al. (METR)",
+      "arxiv": null,
+      "venue": "Blog, Jul 2025",
+      "type": "finding",
+      "contribution": "RCT with 16 devs: AI tools made experienced developers 19% slower (CI: +2% to +39%). Developers estimated 24% speedup before and believed 20% speedup after.",
+      "engagement": "NYT, Reuters, Ars Technica coverage; HN/LW viral"
+    },
+    {
+      "title": "Demonstrating Specification Gaming in Reasoning Models",
+      "authors": "Alexander Bondarenko et al. (Palisade)",
+      "arxiv": "2502.13295",
+      "venue": "arXiv, Feb 2025",
+      "type": "finding",
+      "contribution": "Reasoning models hack chess benchmarks by default (37.1% exploitation rate for o3-mini).",
+      "engagement": "EA Forum, LessWrong, Twitter viral"
+    },
+    {
+      "title": "The SWE-Bench Illusion",
+      "authors": "Shanchao Liang et al.",
+      "arxiv": "2506.12286",
+      "venue": "arXiv, Jun 2025",
+      "type": "finding",
+      "contribution": "Models identify buggy files 76% of the time from issue text alone; monotonic memorization increase across Claude generations.",
+      "engagement": "Cited by OpenAI in discontinuing Verified"
+    },
+    {
+      "title": "SWE-bench Goes Live!",
+      "authors": "Linghao Zhang et al. (MSR)",
+      "arxiv": "2505.23419",
+      "venue": "arXiv, May 2025",
+      "type": "finding",
+      "contribution": "1,319 contamination-resistant tasks reveal substantial static-to-live performance gap.",
+      "engagement": "Important infrastructure"
+    },
+    {
+      "title": "What's in a Benchmark? The Case of SWE-Bench",
+      "authors": null,
+      "arxiv": "2602.04449",
+      "venue": "arXiv, Feb 2026",
+      "type": "finding",
+      "contribution": "Comprehensive empirical study of SWE-bench ecosystem; notes saturation approaching.",
+      "engagement": "Survey of state of play"
+    },
+    {
+      "title": "UTBoost: Rigorous Evaluation of Coding Agents on SWE-Bench",
+      "authors": "UIUC",
+      "arxiv": "2506.09289",
+      "venue": "arXiv, 2025",
+      "type": "finding",
+      "contribution": "Auto-generates/enhances tests, revealing SWE-Bench test insufficiency and quantifying impact on Lite/Verified rankings.",
+      "engagement": "49 citations"
+    },
+    {
+      "title": "Does SWE-Bench-Verified Test Agent Ability or Model Memory?",
+      "authors": null,
+      "arxiv": "2512.10218",
+      "venue": "arXiv, 2025",
+      "type": "finding",
+      "contribution": "Argues Verified may test training memory more than agent ability, motivating shift to Pro/FeatureBench.",
+      "engagement": "40 citations"
+    }
+  ]
+}

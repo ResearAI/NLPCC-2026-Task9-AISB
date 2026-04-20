@@ -6,6 +6,7 @@ const nextConfig: NextConfig = {
   images: {
     unoptimized: true,
   },
+  basePath: process.env.GITHUB_PAGES === "true" ? "/AISB_2026" : "",
 };
 
 export default nextConfig;

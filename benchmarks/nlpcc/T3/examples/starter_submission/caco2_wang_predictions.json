@@ -1,0 +1,368 @@
+{
+  "predictions": [
+    {
+      "id": "(-)-epicatechin",
+      "prediction": -5.289047423611112
+    },
+    {
+      "id": "(2E,4Z,8Z)-N-isobutyldodeca-2,4,10-triene-8 -ynamide",
+      "prediction": -5.392964582191781
+    },
+    {
+      "id": "codeine",
+      "prediction": -5.4012385465753425
+    },
+    {
+      "id": "creatinine",
+      "prediction": -5.330630204109589
+    },
+    {
+      "id": "danazol",
+      "prediction": -5.304676906849315
+    },
+    {
+      "id": "dexamethasone b D glucoside",
+      "prediction": -5.289047423611112
+    },
+    {
+      "id": "dexamethasone b D glucuronide",
+      "prediction": -5.392964582191781
+    },
+    {
+      "id": "DMXAA-G",
+      "prediction": -5.4012385465753425
+    },
+    {
+      "id": "d-praeruptorin",
+      "prediction": -5.330630204109589
+    },
+    {
+      "id": "echinacoside",
+      "prediction": -5.304676906849315
+    },
+    {
+      "id": "EF5154",
+      "prediction": -5.289047423611112
+    },
+    {
+      "id": "EF5170",
+      "prediction": -5.392964582191781
+    },
+    {
+      "id": "EF5232",
+      "prediction": -5.4012385465753425
+    },
+    {
+      "id": "EF5242",
+      "prediction": -5.330630204109589
+    },
+    {
+      "id": "EF5248",
+      "prediction": -5.304676906849315
+    },
+    {
+      "id": "EF5249",
+      "prediction": -5.289047423611112
+    },
+    {
+      "id": "EF5251",
+      "prediction": -5.392964582191781
+    },
+    {
+      "id": "EF5261",
+      "prediction": -5.4012385465753425
+    },
+    {
+      "id": "EF5264",
+      "prediction": -5.330630204109589
+    },
+    {
+      "id": "EF5265",
+      "prediction": -5.304676906849315
+    },
+    {
+      "id": "EF5270",
+      "prediction": -5.289047423611112
+    },
+    {
+      "id": "EF5278",
+      "prediction": -5.392964582191781
+    },
+    {
+      "id": "EF5283",
+      "prediction": -5.4012385465753425
+    },
+    {
+      "id": "EF5292",
+      "prediction": -5.330630204109589
+    },
+    {
+      "id": "elarofiban",
+      "prediction": -5.304676906849315
+    },
+    {
+      "id": "5-chlorosalicylic acid",
+      "prediction": -5.289047423611112
+    },
+    {
+      "id": "epinephrine",
+      "prediction": -5.392964582191781
+    },
+    {
+      "id": "eriodictyol ",
+      "prediction": -5.4012385465753425
+    },
+    {
+      "id": "erythromycin",
+      "prediction": -5.330630204109589
+    },
+    {
+      "id": "famotidine",
+      "prediction": -5.304676906849315
+    },
+    {
+      "id": "fexofenadine",
+      "prediction": -5.289047423611112
+    },
+    {
+      "id": "fexofenadine hydrochloride",
+      "prediction": -5.392964582191781
+    },
+    {
+      "id": "fluparoxan",
+      "prediction": -5.4012385465753425
+    },
+    {
+      "id": "AACV",
+      "prediction": -5.330630204109589
+    },
+    {
+      "id": "glycerol",
+      "prediction": -5.304676906849315
+    },
+    {
+      "id": "glycine-valine acyclovir",
+      "prediction": -5.289047423611112
+    },
+    {
+      "id": "guanabenz",
+      "prediction": -5.392964582191781
+    },
+    {
+      "id": "hesperetin ",
+      "prediction": -5.4012385465753425
+    },
+    {
+      "id": "hexapeptide 01",
+      "prediction": -5.330630204109589
+    },
+    {
+      "id": "hexapeptide 03",
+      "prediction": -5.304676906849315
+    },
+    {
+      "id": "hexapeptide 05",
+      "prediction": -5.289047423611112
+    },
+    {
+      "id": "hexapeptide 06",
+      "prediction": -5.392964582191781
+    },
+    {
+      "id": "hexapeptide 07",
+      "prediction": -5.4012385465753425
+    },
+    {
+      "id": "hexapeptide 08",
+      "prediction": -5.330630204109589
+    },
+    {
+      "id": "hexapeptide 09",
+      "prediction": -5.304676906849315
+    },
+    {
+      "id": "aceclofenac",
+      "prediction": -5.289047423611112
+    },
+    {
+      "id": "hexapeptide 12",
+      "prediction": -5.392964582191781
+    },
+    {
+      "id": "hexapeptide 13",
+      "prediction": -5.4012385465753425
+    },
+    {
+      "id": "hexapeptide 14",
+      "prediction": -5.330630204109589
+    },
+    {
+      "id": "hexapeptide 18",
+      "prediction": -5.304676906849315
+    },
+    {
+      "id": "hexapeptide 20",
+      "prediction": -5.289047423611112
+    },
+    {
+      "id": "acetaminophen",
+      "prediction": -5.392964582191781
+    },
+    {
+      "id": "hexapeptide 22",
+      "prediction": -5.4012385465753425
+    },
+    {
+      "id": "hexapeptide 23",
+      "prediction": -5.330630204109589
+    },
+    {
+      "id": "hexapeptide 24",
+      "prediction": -5.304676906849315
+    },
+    {
+      "id": "hexapeptide 25",
+      "prediction": -5.289047423611112
+    },
+    {
+      "id": "hexapeptide 26",
+      "prediction": -5.392964582191781
+    },
+    {
+      "id": "hexapeptide 27",
+      "prediction": -5.4012385465753425
+    },
+    {
+      "id": "hexapeptide 28",
+      "prediction": -5.330630204109589
+    },
+    {
+      "id": "hexapeptide 29",
+      "prediction": -5.304676906849315
+    },
+    {
+      "id": "hexapeptide 32",
+      "prediction": -5.289047423611112
+    },
+    {
+      "id": "hexapeptide 33",
+      "prediction": -5.392964582191781
+    },
+    {
+      "id": "hexapeptide 34",
+      "prediction": -5.4012385465753425
+    },
+    {
+      "id": "hexapeptide 37",
+      "prediction": -5.330630204109589
+    },
+    {
+      "id": "hexapeptide 38",
+      "prediction": -5.304676906849315
+    },
+    {
+      "id": "hexapeptide 41",
+      "prediction": -5.289047423611112
+    },
+    {
+      "id": "hexapeptide 42",
+      "prediction": -5.392964582191781
+    },
+    {
+      "id": "hexapeptide 47",
+      "prediction": -5.4012385465753425
+    },
+    {
+      "id": "hexapeptide 48",
+      "prediction": -5.330630204109589
+    },
+    {
+      "id": "hexapeptide 52",
+      "prediction": -5.304676906849315
+    },
+    {
+      "id": "hexapeptide 53",
+      "prediction": -5.289047423611112
+    },
+    {
+      "id": "hexapeptide 54",
+      "prediction": -5.392964582191781
+    },
+    {
+      "id": "hexapeptide 55",
+      "prediction": -5.4012385465753425
+    },
+    {
+      "id": "hexapeptide 56",
+      "prediction": -5.330630204109589
+    },
+    {
+      "id": "hexapeptide 57",
+      "prediction": -5.304676906849315
+    },
+    {
+      "id": "hexapeptide 58",
+      "prediction": -5.289047423611112
+    },
+    {
+      "id": "hexapeptide 59",
+      "prediction": -5.392964582191781
+    },
+    {
+      "id": "hexapeptide 60",
+      "prediction": -5.4012385465753425
+    },
+    {
+      "id": "hydralazine",
+      "prediction": -5.330630204109589
+    },
+    {
+      "id": "hydrocortisone",
+      "prediction": -5.304676906849315
+    },
+    {
+      "id": "IACV",
+      "prediction": -5.289047423611112
+    },
+    {
+      "id": "alminoprofen",
+      "prediction": -5.392964582191781
+    },
+    {
+      "id": "imipramine",
+      "prediction": -5.4012385465753425
+    },
+    {
+      "id": "indomethacin",
+      "prediction": -5.330630204109589
+    },
+    {
+      "id": "isoquercitrin ",
+      "prediction": -5.304676906849315
+    },
+    {
+      "id": "ketoconazole",
+      "prediction": -5.289047423611112
+    },
+    {
+      "id": "lamotrigine",
+      "prediction": -5.392964582191781
+    },
+    {
+      "id": "lansoprazole",
+      "prediction": -5.4012385465753425
+    },
+    {
+      "id": "Liquiritin apioside ",
+      "prediction": -5.330630204109589
+    },
+    {
+      "id": "lisinopril",
+      "prediction": -5.304676906849315
+    },
+    {
+      "id": "loracarbef",
+      "prediction": -5.289047423611112
+    }
+  ]
+}

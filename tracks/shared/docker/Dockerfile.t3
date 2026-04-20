@@ -1,0 +1,181 @@
+# =============================================================================
+# AISB 2026 -- Track T3: TDC + Matbench (Drug Discovery + Materials)
+# Base: python:3.11-slim
+# Spec: SECURITY_SPECIFICATION.md Section 2 & 8.3
+# Resources: 4 CPU, 16 GB RAM, 10 GB disk, 120 min timeout, whitelist network
+# Image target size: ~5 GB
+# =============================================================================
+FROM python:3.11-slim AS base
+
+LABEL maintainer="AISB 2026 Organizing Committee"
+LABEL description="Track T3 evaluation container (TDC + Matbench)"
+LABEL version="1.0"
+LABEL org.opencontainers.image.source="https://github.com/aisb2026/aisb"
+
+# ---------------------------------------------------------------------------
+# 1. System packages
+#    RDKit requires a number of system libraries; we install them here.
+# ---------------------------------------------------------------------------
+ENV DEBIAN_FRONTEND=noninteractive
+RUN apt-get update && apt-get install -y --no-install-recommends \
+        build-essential \
+        gcc \
+        g++ \
+        gfortran \
+        cmake \
+        libopenblas-dev \
+        liblapack-dev \
+        libboost-all-dev \
+        libcairo2-dev \
+        libeigen3-dev \
+        libfreetype6-dev \
+        libhdf5-dev \
+        git \
+        curl \
+        wget \
+        ca-certificates \
+        && rm -rf /var/lib/apt/lists/*
+
+# ---------------------------------------------------------------------------
+# 2. Python packages -- heavy scientific stack
+#    Install in dependency order to avoid conflicts.
+# ---------------------------------------------------------------------------
+# Stage 2a: PyTorch CPU-only (large, install first for layer caching)
+RUN pip install --no-cache-dir --upgrade pip setuptools wheel \
+    && pip install --no-cache-dir \
+        torch==2.2.1+cpu \
+        --index-url https://download.pytorch.org/whl/cpu
+
+# Stage 2b: Core scientific packages
+COPY <<'REQUIREMENTS_CORE' /tmp/requirements_core.txt
+numpy==1.26.4
+pandas==2.2.1
+scikit-learn==1.4.1.post1
+scipy==1.12.0
+matplotlib==3.8.3
+seaborn==0.13.2
+requests==2.31.0
+pyyaml==6.0.1
+jsonschema==4.21.1
+h5py==3.10.0
+joblib==1.3.2
+REQUIREMENTS_CORE
+
+RUN pip install --no-cache-dir -r /tmp/requirements_core.txt
+
+# Stage 2c: Chemistry -- RDKit
+# Install rdkit via pip (the rdkit package on PyPI since 2022.09)
+RUN pip install --no-cache-dir rdkit==2023.9.5
+
+# Stage 2d: Materials science -- pymatgen and dependencies
+# Stage 2d: Materials science
+# Let pip resolve compatible versions (pymatgen/mp-api/emmet-core have tight cross-deps)
+RUN pip install --no-cache-dir \
+    pymatgen \
+    matminer \
+    mp-api \
+    emmet-core
+
+# Stage 2e: TDC (Therapeutics Data Commons)
+RUN pip install --no-cache-dir setuptools PyTDC>=1.0.0
+
+# Stage 2f: Additional ML packages useful for T3 tasks
+COPY <<'REQUIREMENTS_ML' /tmp/requirements_ml.txt
+xgboost==2.0.3
+lightgbm==4.3.0
+torch-geometric
+REQUIREMENTS_ML
+
+RUN pip install --no-cache-dir -r /tmp/requirements_ml.txt
+
+# Clean up requirement files
+RUN rm -f /tmp/requirements_*.txt
+
+# PyTDC needs pkg_resources which was removed from setuptools 70+
+# Pin setuptools<70 to get pkg_resources back
+RUN pip install --no-cache-dir "setuptools<70" && python -c "import pkg_resources; print('pkg_resources OK')"
+
+# Verify critical packages
+RUN python -c "\
+import numpy; import pandas; import sklearn; \
+import torch; import rdkit; from rdkit import Chem; \
+import pymatgen; import matminer; import tdc; \
+from importlib.metadata import version; \
+print('T3 packages OK:', \
+      'numpy', numpy.__version__, \
+      'torch', torch.__version__, \
+      'rdkit', rdkit.__version__, \
+      'pymatgen', version('pymatgen'), \
+      'matminer', version('matminer'), \
+      'tdc', version('PyTDC'))"
+
+# ---------------------------------------------------------------------------
+# 3. Create non-root agent user (UID 1000)
+# ---------------------------------------------------------------------------
+RUN groupadd --gid 1000 agent \
+    && useradd --uid 1000 --gid agent --shell /bin/bash --create-home agent
+
+# ---------------------------------------------------------------------------
+# 4. Workspace structure (per SECURITY_SPECIFICATION.md Section 2.1)
+# ---------------------------------------------------------------------------
+# Root-owned, read-only directories (actual data bind-mounted at runtime)
+RUN mkdir -p /opt/aisb/task \
+             /opt/aisb/data \
+             /opt/aisb/tests \
+    && chown root:root /opt/aisb/task /opt/aisb/data /opt/aisb/tests \
+    && chmod 555 /opt/aisb/task \
+    && chmod 444 /opt/aisb/data \
+    && chmod 444 /opt/aisb/tests
+
+# Agent-owned directories
+RUN mkdir -p /home/agent/workspace \
+             /home/agent/submission/paper \
+             /home/agent/submission/code \
+             /home/agent/submission/predictions \
+             /home/agent/submission/logs \
+             /home/agent/submission/figures \
+             /home/agent/.cache/pip \
+             /home/agent/.cache/huggingface \
+    && chown -R agent:agent /home/agent/workspace \
+                            /home/agent/submission \
+                            /home/agent/.cache \
+    && chmod 755 /home/agent/workspace \
+    && chmod 755 /home/agent/submission
+
+# ---------------------------------------------------------------------------
+# 5. Security hardening
+# ---------------------------------------------------------------------------
+# Remove compilers but keep runtime libs (libgomp needed by lightgbm/xgboost/torch)
+RUN apt-get purge -y --auto-remove build-essential gcc g++ gfortran cmake \
+    && apt-get update && apt-get install -y --no-install-recommends libgomp1 \
+    && rm -rf /var/lib/apt/lists/* /root/.cache /tmp/*
+
+# ---------------------------------------------------------------------------
+# 6. Runtime configuration
+# ---------------------------------------------------------------------------
+ENV HOME=/home/agent
+ENV PIP_CACHE_DIR=/home/agent/.cache/pip
+ENV HF_HOME=/home/agent/.cache/huggingface
+ENV TRANSFORMERS_CACHE=/home/agent/.cache/huggingface
+ENV PYTHONUNBUFFERED=1
+ENV PYTHONDONTWRITEBYTECODE=1
+ENV MPLBACKEND=Agg
+# RDKit environment
+ENV RDBASE=/usr/local/lib/python3.11/site-packages/rdkit
+
+WORKDIR /home/agent/workspace
+
+# Copy entrypoint (clears cache, validates env)
+COPY tracks/shared/docker/entrypoint.sh /usr/local/bin/entrypoint.sh
+RUN chmod 755 /usr/local/bin/entrypoint.sh
+
+USER agent:agent
+
+# Healthcheck: verify the container starts correctly
+HEALTHCHECK --interval=30s --timeout=10s --start-period=10s --retries=2 \
+    CMD python -c "\
+import numpy; import rdkit; import pymatgen; import torch; \
+print('healthy')" || exit 1
+
+ENTRYPOINT ["/usr/local/bin/entrypoint.sh"]
+CMD ["python", "/home/agent/workspace/run.py"]

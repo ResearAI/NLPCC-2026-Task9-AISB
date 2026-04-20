@@ -1,0 +1,143 @@
+# =============================================================================
+# AISB 2026 -- Track T2: FormalMATH (Lean 4 proofs)
+# Base: python:3.11-slim (avoids PPA issues)
+# Lean4 v4.15.0 (confirmed working on Windows Docker)
+# =============================================================================
+FROM python:3.11-slim AS base
+
+LABEL maintainer="AISB 2026 Organizing Committee"
+LABEL description="Track T2 evaluation container (FormalMATH, Lean 4)"
+LABEL version="2.0"
+
+# ---------------------------------------------------------------------------
+# 1. System packages
+# ---------------------------------------------------------------------------
+ENV DEBIAN_FRONTEND=noninteractive
+RUN apt-get update && apt-get install -y --no-install-recommends \
+        git \
+        curl \
+        ca-certificates \
+        && rm -rf /var/lib/apt/lists/*
+
+# ---------------------------------------------------------------------------
+# 2. Python packages (minimal -- this track is Lean-focused)
+# ---------------------------------------------------------------------------
+COPY <<'REQUIREMENTS' /tmp/requirements.txt
+numpy==1.26.4
+pandas==2.2.1
+requests==2.31.0
+pyyaml==6.0.1
+jsonschema==4.21.1
+REQUIREMENTS
+
+RUN pip install --no-cache-dir --upgrade pip setuptools wheel \
+    && pip install --no-cache-dir -r /tmp/requirements.txt \
+    && rm /tmp/requirements.txt
+
+# ---------------------------------------------------------------------------
+# 3. Create non-root agent user (UID 1000)
+# ---------------------------------------------------------------------------
+RUN groupadd --gid 1000 agent \
+    && useradd --uid 1000 --gid agent --shell /bin/bash --create-home agent
+
+# ---------------------------------------------------------------------------
+# 4. Install elan + Lean 4 v4.15.0
+# ---------------------------------------------------------------------------
+ENV ELAN_HOME=/usr/local/elan
+ENV PATH="${ELAN_HOME}/bin:${PATH}"
+
+RUN ELAN_HOME=/usr/local/elan \
+    && curl -sSf https://raw.githubusercontent.com/leanprover/elan/master/elan-init.sh \
+    | ELAN_HOME=${ELAN_HOME} sh -s -- -y --no-modify-path --default-toolchain leanprover/lean4:v4.15.0 \
+    && if [ ! -d "${ELAN_HOME}" ]; then \
+         mv "$HOME/.elan" "${ELAN_HOME}" 2>/dev/null || true; \
+       fi \
+    && chmod -R a+rX ${ELAN_HOME}
+
+RUN lean --version && lake --version
+
+# Login shells used by some agents can reset PATH. Keep Lean tools available
+# from /usr/local/bin so `bash -lc "lean --version"` works as expected.
+RUN ln -sf ${ELAN_HOME}/bin/lean /usr/local/bin/lean \
+    && ln -sf ${ELAN_HOME}/bin/lake /usr/local/bin/lake \
+    && ln -sf ${ELAN_HOME}/bin/elan /usr/local/bin/elan
+
+# ---------------------------------------------------------------------------
+# 5. Workspace structure
+# ---------------------------------------------------------------------------
+RUN mkdir -p /opt/aisb/task /opt/aisb/data /opt/aisb/tests \
+    && chown root:root /opt/aisb/task /opt/aisb/data /opt/aisb/tests \
+    && chmod 555 /opt/aisb/task \
+    && chmod 444 /opt/aisb/data \
+    && chmod 444 /opt/aisb/tests
+
+RUN mkdir -p /home/agent/workspace \
+             /home/agent/submission/logs \
+             /home/agent/.cache/pip \
+             /home/agent/.cache/lean \
+    && chown -R agent:agent /home/agent/workspace \
+                            /home/agent/submission \
+                            /home/agent/.cache \
+    && chmod 755 /home/agent/workspace \
+    && chmod 755 /home/agent/submission
+
+# ---------------------------------------------------------------------------
+# 6. Lean project template
+# ---------------------------------------------------------------------------
+COPY <<'LEANPKG' /opt/aisb/lean-template/lakefile.lean
+import Lake
+open Lake DSL
+
+package aisb_proof where
+  leanOptions := #[
+    ⟨`autoImplicit, false⟩
+  ]
+
+@[default_target]
+lean_lib AisbProof where
+  srcDir := "."
+
+require mathlib from git
+  "https://github.com/leanprover-community/mathlib4.git"
+  @ "v4.15.0"
+LEANPKG
+
+COPY <<'TOOLCHAIN' /opt/aisb/lean-template/lean-toolchain
+leanprover/lean4:v4.15.0
+TOOLCHAIN
+
+RUN cd /opt/aisb/lean-template \
+    && lake update \
+    && for i in 1 2 3; do lake exe cache get && exit 0; sleep 5; done; exit 1
+
+RUN cp -a /opt/aisb/lean-template /opt/aisb/lean-runtime
+
+RUN chown -R root:root /opt/aisb/lean-template \
+    && chmod -R 555 /opt/aisb/lean-template \
+    && chown -R agent:agent /opt/aisb/lean-runtime \
+    && chmod -R u+rwX,go+rX /opt/aisb/lean-runtime
+
+# ---------------------------------------------------------------------------
+# 7. Security hardening
+# ---------------------------------------------------------------------------
+RUN rm -rf /root/.cache /tmp/*
+
+# ---------------------------------------------------------------------------
+# 8. Entrypoint + Runtime
+# ---------------------------------------------------------------------------
+COPY tracks/shared/docker/entrypoint.sh /usr/local/bin/entrypoint.sh
+RUN chmod 755 /usr/local/bin/entrypoint.sh
+
+ENV HOME=/home/agent
+ENV PYTHONUNBUFFERED=1
+ENV ELAN_TOOLCHAIN_DIR=${ELAN_HOME}/toolchains
+ENV PATH="${ELAN_HOME}/bin:/usr/local/bin:/usr/bin:/bin:/usr/local/games:/usr/games"
+
+WORKDIR /home/agent/workspace
+USER agent:agent
+
+HEALTHCHECK --interval=30s --timeout=10s --start-period=10s --retries=2 \
+    CMD lean --version && python -c "import numpy; print('healthy')" || exit 1
+
+ENTRYPOINT ["/usr/local/bin/entrypoint.sh"]
+CMD ["python", "/home/agent/workspace/run.py"]

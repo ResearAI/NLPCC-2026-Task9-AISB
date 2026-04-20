@@ -1,0 +1,32 @@
+[
+  {
+    "title": "FormalMATH: Benchmarking Formal Mathematical Reasoning of LLMs",
+    "url": "https://arxiv.org/abs/2505.02735",
+    "type": "benchmark"
+  },
+  {
+    "title": "DeepSeek-Prover-V2",
+    "url": "https://arxiv.org/abs/2504.21801",
+    "type": "method"
+  },
+  {
+    "title": "DeepSeek-Prover-V1.5: Harnessing Proof Assistant Feedback for Reinforcement Learning and Monte-Carlo Tree Search",
+    "url": "https://github.com/deepseek-ai/DeepSeek-Prover-V1.5",
+    "type": "open_source_method",
+    "reported_results": {
+      "miniF2F-test": "63.5%",
+      "ProofNet": "25.3%"
+    },
+    "reproducibility_note": "Open code and models, but full reproduction requires Linux, Lean4/Mathlib, 7B inference, GPU resources, and RMaxTS search."
+  },
+  {
+    "title": "ReProver / LeanDojo: Retrieval-Augmented Theorem Proving",
+    "url": "https://github.com/lean-dojo/ReProver",
+    "type": "open_source_method",
+    "reported_results": {
+      "miniF2F-test": "26.5%",
+      "ProofNet": "13.8%"
+    },
+    "reproducibility_note": "Small HuggingFace tactic models exist, but correct evaluation needs proof-state extraction and search integration."
+  }
+]

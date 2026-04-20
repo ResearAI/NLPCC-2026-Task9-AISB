@@ -1,0 +1,49 @@
+id: aisb.nlpcc.t2
+name: T2 Formal Mathematical Proof
+version: 0.1.0
+one_line: Evaluate whether an AI Scientist can improve formal theorem proving through Lean4 experiments.
+capability_tags:
+  - scientific_discovery
+  - formal_math
+  - lean4
+  - theorem_proving
+  - hypothesis_experiment_validation
+aisb_direction: T2
+track_fit:
+  - A
+  - B
+task_mode: experiment_driven
+requires_execution: true
+requires_paper: true
+integrity_level: cas_plus_canary
+cost_band: medium
+time_band: 3-4h
+difficulty: hard
+data_access: public
+minimum_config:
+  cpu: 4
+  memory: 16GB
+  disk: 20GB
+  docker: true
+  lean: 4.15.0
+recommended_config:
+  cpu: 8
+  memory: 32GB
+  disk: 40GB
+  docker: true
+  lean: 4.15.0
+recommended_when: Use this benchmark to test autonomous formal proof search and proof repair with executable Lean verification.
+not_recommended_when: Do not use this for informal math reasoning agents that cannot run Lean.
+docker:
+  image: aisb-t2:latest
+  dockerfile: docker/Dockerfile
+docs:
+  overview: README.md
+  agent_instructions: AGENT.md
+  data_card: data/data.md
+  baselines: baselines/baseline.md
+  references: references/papers.json
+  licenses: LICENSES.md
+submission:
+  starter: examples/starter_submission
+  validator: aisb submit validate

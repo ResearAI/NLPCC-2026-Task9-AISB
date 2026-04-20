@@ -1,0 +1,12 @@
+{
+  "direction": "T3",
+  "final_score": 0.6385,
+  "metrics": {
+    "tdc_average": 0.6385,
+    "caco2_wang_mae": 0.6402,
+    "herg_accuracy": 1.0,
+    "ames_accuracy": 0.5227,
+    "cyp3a4_veith_accuracy": 0.5528,
+    "lipophilicity_az_mae": 0.9717
+  }
+}

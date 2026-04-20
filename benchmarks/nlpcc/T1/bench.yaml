@@ -1,0 +1,49 @@
+id: aisb.nlpcc.t1
+name: T1 AI/CS Reasoning & Engineering
+version: 0.1.0
+one_line: Evaluate whether an AI Scientist can improve reasoning and agentic coding performance through real experiments.
+capability_tags:
+  - scientific_discovery
+  - reasoning
+  - agentic_coding
+  - hypothesis_experiment_validation
+aisb_direction: T1
+track_fit:
+  - A
+  - B
+task_mode: experiment_driven
+requires_execution: true
+requires_paper: true
+integrity_level: cas_plus_canary
+cost_band: medium
+time_band: 1-2h
+difficulty: medium
+data_access: gated_and_public
+minimum_config:
+  cpu: 4
+  memory: 16GB
+  disk: 10GB
+  docker: true
+recommended_config:
+  cpu: 8
+  memory: 32GB
+  disk: 20GB
+  docker: true
+  network: enabled_for_agent_exploration
+recommended_when: Use this benchmark to test autonomous reasoning-system improvement with logged experiments.
+not_recommended_when: Do not use this for pure paper-writing agents that cannot execute code or run ablations.
+secrets:
+  - HF_TOKEN
+docker:
+  image: aisb-t1:latest
+  dockerfile: docker/Dockerfile
+docs:
+  overview: README.md
+  agent_instructions: AGENT.md
+  data_card: data/data.md
+  baselines: baselines/baseline.md
+  references: references/papers.json
+  licenses: LICENSES.md
+submission:
+  starter: examples/starter_submission
+  validator: aisb submit validate

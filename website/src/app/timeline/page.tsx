@@ -41,7 +41,7 @@ const TIMELINE_EVENTS = [
     date: "October 15, 2026",
     title: "Results Published",
     description:
-      "Final leaderboard published. Track A and Track B winners announced separately for autonomous and human-assisted categories.",
+      "Final leaderboard published. Paper leaderboard and benchmark leaderboard winners announced separately for autonomous and human-assisted categories.",
     status: "upcoming" as const,
   },
   {

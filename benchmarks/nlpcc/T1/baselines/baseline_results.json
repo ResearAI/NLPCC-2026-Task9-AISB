@@ -1,0 +1,8 @@
+{
+  "baseline_name": "public_runnable_baseline",
+  "hle_accuracy": 0.0,
+  "featurebench_pass_rate": 1.0,
+  "final_score": 0.4,
+  "validated_at": "2026-04-18",
+  "note": "Validated locally on the public T1 dev set and FeatureBench-lite subset."
+}
