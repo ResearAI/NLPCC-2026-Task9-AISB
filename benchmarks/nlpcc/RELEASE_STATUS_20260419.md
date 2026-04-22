@@ -18,6 +18,15 @@ The NLPCC release contains:
 
 T1/T2/T3 are benchmark directions. Paper and benchmark leaderboards are reported separately rather than combined by a fixed weighted formula. New submissions should set `metadata.json.track` to `paper` or `benchmark`; legacy `A`/`B` is still accepted for older packages.
 
+Public scoring policy:
+
+```text
+Track A / paper:      Final_A = 0.0 * S_benchmark + 1.0 * S_paper
+Track B / benchmark:  Final_B = 0.7 * S_benchmark + 0.3 * S_paper
+```
+
+`CAS` is an integrity gate rather than a public leaderboard bonus term.
+
 ## Participation Modes
 
 The no-human rule applies only to the fully autonomous track.

@@ -387,11 +387,11 @@ docker run \
 | Check ID | Check | Tool | Action |
 |----------|-------|------|--------|
 | S6.1 | Task score calculation | `evaluate.py --split test` | Compute accuracy/F1/resolve-rate on hidden test set |
-| S6.2 | Paper quality score (PQS) | `review_paper.py --backend all --num-reviews 3` | Average of 3 LLM reviewer scores, normalized to 0--100 |
-| S6.3 | CAS score | From S5.5 | Value in [0.0, 1.0] |
-| S6.4 | Benchmark Improvement (BI) | Delta from baseline | Value in [0.0, 1.0], normalized |
-| S6.5 | Experiment Success Rate (ESR) | `SUCCESS` count / total iterations | Value in [0.0, 1.0] |
-| S6.6 | Dual Score calculation | Formula (see below) | `DS = 0.4*PQS + 0.3*CAS + 0.2*BI + 0.1*ESR` |
+| S6.2 | Paper quality score (`S_paper`) | `review_paper.py --backend all --num-reviews 3` | Reviewer-led paper score using significance/originality/methodology/writing |
+| S6.3 | Benchmark score (`S_benchmark`) | Official direction evaluator | Verified task score for `T1`, `T2`, or `T3` |
+| S6.4 | CAS score | From S5.5 | Integrity gate based on claim traceability |
+| S6.5 | Reviewer evidence pack | Claims + experiment logs + replay summary | Materials provided to reviewers, not a separate weighted term |
+| S6.6 | Leaderboard calculation | Public scoring policy | `Track A = 1.0*S_paper`; `Track B = 0.7*S_benchmark + 0.3*S_paper`, both under integrity gating |
 | S6.7 | Integrity flag assignment | Aggregate S5 results | `CLEAN`, `WARNING`, or `DISQUALIFIED` |
 | S6.8 | Leaderboard update | PostgreSQL + API | Only if integrity != DISQUALIFIED |
 | S6.9 | Artifact archival | MinIO/S3 upload | Submission + logs + integrity report stored permanently |
@@ -1044,19 +1044,25 @@ The full whitelist is maintained at `tracks/shared/config/package_whitelist.txt`
 
 Packages NOT on the whitelist can be requested via the AISB portal (reviewed within 48 hours).
 
-## Appendix B: Dual Score Formula
+## Appendix B: Public Leaderboard Policy
 
-```
-Dual Score = 0.4 * PQS_norm + 0.3 * CAS + 0.2 * BI_norm + 0.1 * ESR
+Public leaderboard formulas:
+
+```text
+Track A / paper:
+Final_A = 0.0 * S_benchmark + 1.0 * S_paper
+
+Track B / benchmark:
+Final_B = 0.7 * S_benchmark + 0.3 * S_paper
 ```
 
 Where:
-- **PQS_norm**: Paper Quality Score, average of 3 LLM reviews, normalized to [0, 1]. Raw review scores are on a 1--6 NeurIPS scale; normalization: `(raw - 1) / 5`.
-- **CAS**: Claim Accuracy Score, already in [0, 1]. See Section 7.1.
-- **BI_norm**: Benchmark Improvement, `(team_score - baseline_score) / (oracle_score - baseline_score)`, clamped to [0, 1].
-- **ESR**: Experiment Success Rate, `successful_iterations / total_iterations`, in [0, 1].
 
-**Final leaderboard ranking**: Sort by Dual Score descending. Ties broken by lower `total_cost_usd`.
+- **S_paper**: Reviewer-led paper score using significance (30%), originality (25%), methodology/soundness (25%), and writing/clarity (20%).
+- **S_benchmark**: Official evaluator score for the chosen direction.
+- **CAS**: Claim Accuracy Score. CAS is an integrity gate, not a weighted leaderboard term.
+
+**Integrity rule**: if CAS is below threshold, or if the system leaks hidden answers / canaries / fabricated claims, the submission is rejected rather than ranked with a lower public score.
 
 ## Appendix C: Threat Model Summary
 

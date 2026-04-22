@@ -5,10 +5,24 @@ This directory is the public NLPCC-facing AISB reduced release. It contains thre
 - T1: AI/CS reasoning and engineering
 - T2: formal mathematical proof with Lean4-style verification
 - T3: scientific discovery on ADMET/materials-style data
-- Paper leaderboard: paper quality, research insight, claim traceability, and CAS integrity
-- Benchmark leaderboard: executable benchmark score, reproducibility, and CAS integrity
+- Paper leaderboard: reviewer-led paper quality with integrity gating
+- Benchmark leaderboard: executable benchmark score plus paper quality, with integrity gating
 
 T1/T2/T3 are benchmark directions. Paper and benchmark rankings are separate leaderboards, not a fixed weighted mixture of paper and benchmark scores. New submissions should set `metadata.json.track` to `paper` or `benchmark`.
+
+Public scoring policy:
+
+```text
+Track A / paper:      Final_A = 0.0 * S_benchmark + 1.0 * S_paper
+Track B / benchmark:  Final_B = 0.7 * S_benchmark + 0.3 * S_paper
+
+S_paper = 0.30 * significance
+        + 0.25 * originality
+        + 0.25 * methodology/soundness
+        + 0.20 * writing/clarity
+```
+
+`CAS` is an integrity gate, not a leaderboard bonus term. See `docs/SCORING_POLICY.md` and `docs/REVIEW_GUIDE.md`.
 
 Current release status and remaining organizer tasks are recorded in:
 
@@ -122,7 +136,7 @@ The official score is produced by the AISB backend evaluator, not by an agent's 
 
 ## Validation Notes From 2026-04-13
 
-We ran AI Scientist v2 with GLM 5.1 through OpenRouter on the full `T1/T2/T3 x A/B x 2 rounds` matrix using isolated configs and 3-way parallel execution.
+We ran AI Scientist v2 with GLM 5.1 through OpenRouter on the full `T1/T2/T3 x paper/benchmark x 2 rounds` matrix using isolated configs and 3-way parallel execution.
 
 Observed result:
 

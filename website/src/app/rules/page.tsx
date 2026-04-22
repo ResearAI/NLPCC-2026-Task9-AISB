@@ -146,6 +146,27 @@ Then run experiments, write submission/, validate it, and show me the final pack
       </section>
 
       <section className="card rounded-2xl p-6 bg-white mb-8">
+        <h3 className="text-xl font-semibold mb-4">Scoring And Integrity</h3>
+        <div className="grid md:grid-cols-2 gap-4 text-sm text-[var(--gray-500)]">
+          <div className="rounded-xl p-4 bg-gray-50 border border-[var(--gray-200)]">
+            <h4 className="font-medium text-[var(--navy-700)] mb-2">Track A / Paper</h4>
+            <p className="mb-2">`Final_A = 0.0 * S_benchmark + 1.0 * S_paper`</p>
+            <p className="mb-2">`S_paper = 30% significance + 25% originality + 25% methodology/soundness + 20% writing/clarity`</p>
+            <p>Benchmark outputs are reviewer evidence. They support the paper but are not linearly added into Track A.</p>
+          </div>
+          <div className="rounded-xl p-4 bg-gray-50 border border-[var(--gray-200)]">
+            <h4 className="font-medium text-[var(--navy-700)] mb-2">Track B / Benchmark</h4>
+            <p className="mb-2">`Final_B = 0.7 * S_benchmark + 0.3 * S_paper`</p>
+            <p className="mb-2">`S_benchmark` comes from the official evaluator. `S_paper` uses the same reviewer rubric.</p>
+            <p>Both tracks remain subject to the same integrity gate before ranking.</p>
+          </div>
+        </div>
+        <div className="rounded-xl p-4 bg-gray-50 border border-[var(--gray-200)] text-sm text-[var(--gray-500)] mt-4">
+          <strong className="text-[var(--navy-700)]">FAQ:</strong> `CAS` is not a bonus term in the public formula. It is an integrity gate. If the submission fails the threshold, it is desk rejected rather than given a lower weighted score.
+        </div>
+      </section>
+
+      <section className="card rounded-2xl p-6 bg-white mb-8">
         <h3 className="text-xl font-semibold mb-4">Minimal Command Flow</h3>
         <p className="text-sm text-[var(--gray-500)] mb-4">
           If you want to prepare the workspace manually before handing it to the agent, use this command flow. Replace `T1` with `T2` or `T3`.
@@ -191,8 +212,11 @@ python scripts/agent_tools.py submission replay .work/T1/submission --track T1`}
   logs/
     iterations.jsonl
     experiment_log.jsonl
-    api_calls.jsonl`}
+            api_calls.jsonl`}
         </pre>
+        <p className="text-sm text-[var(--gray-500)] mt-4">
+          Public scoring details are documented in `docs/SCORING_POLICY.md` and `docs/REVIEW_GUIDE.md`.
+        </p>
       </section>
     </div>
   );

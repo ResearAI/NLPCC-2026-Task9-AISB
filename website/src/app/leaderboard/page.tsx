@@ -95,6 +95,8 @@ export default function LeaderboardPage() {
         <h3 className="text-lg font-semibold mb-3">Leaderboard Policy</h3>
         <div className="space-y-3 text-sm text-[var(--gray-500)]">
           <p>Paper and benchmark leaderboards are separate. T1/T2/T3 are benchmark directions, not fixed weighted mixtures.</p>
+          <p>Track A uses `Final_A = 1.0 * S_paper`. Track B uses `Final_B = 0.7 * S_benchmark + 0.3 * S_paper`.</p>
+          <p>`CAS` is an integrity gate. Failed integrity checks lead to desk rejection rather than a lower weighted score.</p>
           <p>External papers and public SOTA references may be shown as context, but not as official NLPCC rows.</p>
           <p>Official rows will be published only after organizer-side replay and integrity checks.</p>
         </div>

@@ -106,10 +106,10 @@ export default function CfpPage() {
                 <div>
                   <div className="text-xs uppercase tracking-wider mb-2" style={{ color: 'var(--gray-400)' }}>Evaluation</div>
                   <div style={{ fontFamily: "'Source Code Pro', monospace" }} className="text-xs leading-relaxed">
-                    Paper leaderboard: Paper Quality + CAS integrity gate<br/>
-                    Benchmark leaderboard: Benchmark Score + CAS integrity gate<br/>
-                    T1/T2/T3 are benchmark directions, not score-mixture tracks<br/>
-                    <span style={{ color: 'var(--gold-600)' }}>Top paper rows: human expert review</span>
+                    Final_A = 0.0 x S_benchmark + 1.0 x S_paper<br/>
+                    S_paper = 30% significance + 25% originality + 25% methodology + 20% writing<br/>
+                    Reviewers inspect paper + claims + experiment logs + replay evidence<br/>
+                    <span style={{ color: 'var(--gold-600)' }}>CAS below threshold: desk reject</span>
                   </div>
                 </div>
               </div>
@@ -133,6 +133,12 @@ export default function CfpPage() {
                 <p className="mb-4" style={{ fontFamily: "'Noto Sans SC', sans-serif" }}>
                   AI系统被给定已有SOTA基准线，须提出新方法超越当前最优。实验和跑分作为重要依据，但须解释方法<strong>为什么</strong>有效——可解释的科学提升，而非盲目优化。
                 </p>
+                <div className="rounded-lg p-4 mb-4" style={{ background: 'var(--gray-100)', border: '1px solid var(--white-alpha-06)', fontFamily: "'Source Code Pro', monospace", color: 'var(--gray-500)' }}>
+                  Final_B = 0.7 x S_benchmark + 0.3 x S_paper<br/>
+                  S_benchmark = official evaluator score<br/>
+                  S_paper = reviewer paper score<br/>
+                  CAS below threshold: desk reject
+                </div>
                 <div className="grid md:grid-cols-3 gap-4">
                   {[
                     { id: "B-T1", name: "Agentic Coding & Research Engineering", cn: "智能体代码与科研工程", detail: "Scientific question: can an agent improve code-oriented research systems through real execution and engineering iteration?", link: "/tracks#T1" },
@@ -315,6 +321,26 @@ export default function CfpPage() {
                 <li>`scripts/agent_tools.py` supports evaluate, validate, package, and replay</li>
                 <li>Paper and benchmark boards remain separate</li>
               </ul>
+            </div>
+          </div>
+        </section>
+
+        <section className="card p-8">
+          <h2 style={{ fontFamily: "'Playfair Display', Georgia, serif" }} className="text-2xl font-semibold mb-4">
+            Scoring FAQ / 评分 FAQ
+          </h2>
+          <div className="space-y-4 text-sm" style={{ color: 'var(--gray-500)' }}>
+            <div className="rounded-lg p-4" style={{ background: 'var(--gray-50)', border: '1px solid var(--white-alpha-06)' }}>
+              <div className="font-semibold mb-2" style={{ color: 'var(--navy-700)' }}>Does the paper track linearly mix benchmark score?</div>
+              <div>No. Track A is `1.0 * S_paper`. Benchmark results are reviewer evidence, not a fixed additive term.</div>
+            </div>
+            <div className="rounded-lg p-4" style={{ background: 'var(--gray-50)', border: '1px solid var(--white-alpha-06)' }}>
+              <div className="font-semibold mb-2" style={{ color: 'var(--navy-700)' }}>What does CAS do?</div>
+              <div>CAS is an integrity gate. If the submission fails the threshold, it is desk rejected instead of receiving a reduced weighted score.</div>
+            </div>
+            <div className="rounded-lg p-4" style={{ background: 'var(--gray-50)', border: '1px solid var(--white-alpha-06)' }}>
+              <div className="font-semibold mb-2" style={{ color: 'var(--navy-700)' }}>How is the benchmark track scored?</div>
+              <div>Track B uses `0.7 * S_benchmark + 0.3 * S_paper`, under the same integrity gate.</div>
             </div>
           </div>
         </section>

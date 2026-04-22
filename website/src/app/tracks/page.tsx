@@ -70,7 +70,7 @@ export default function TracksPage() {
               Leaderboard
             </div>
             <p className="text-[var(--gray-500)]">
-              Benchmark and paper boards are separate. Public rows are update-later until submission opening.
+              Track A = `1.0 * S_paper`. Track B = `0.7 * S_benchmark + 0.3 * S_paper`. Public rows are update-later until submission opening.
             </p>
           </div>
         </div>
